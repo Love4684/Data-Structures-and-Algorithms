@@ -9,7 +9,7 @@ void FindMax(int a[R][C])
           while((a[i][j]==1) && (j>=0) )
           {
               j--;
-              Row = i;
+              Row = i ;
           }
         }
         printf("%d",Row);

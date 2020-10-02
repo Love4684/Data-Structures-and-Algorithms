@@ -13,8 +13,7 @@ for(i=n-2;i>=0;i--){
     else
         a[i]=a[i+1];
     if(temp>max)
-    max=temp;
-        
+    max=temp;   
     }
  for(i=0;i<n;i++){
      printf("%d",a[i]);

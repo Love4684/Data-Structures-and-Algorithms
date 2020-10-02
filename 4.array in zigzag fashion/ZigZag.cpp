@@ -18,7 +18,7 @@ void rearrange(int a[] , int n)
         }
         for(i=0;i<n;i++)
         {
-            cout <<a[i]<<" ";
+            cout <<a[i]<<" " ;
         }
     }
 

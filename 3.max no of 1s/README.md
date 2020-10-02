@@ -1,4 +1,4 @@
-Given the sorted 2d array having 0's and 1's , find the row number which have maximum no 1's
+Given the sorted 2d array having 0's and 1's , find the row number which have maximum no 1's.
 #hint check column wise to get one in any row and that wil be the max 
 # input
 # # 0 1 2 3

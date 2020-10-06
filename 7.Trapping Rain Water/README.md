@@ -19,4 +19,11 @@ Method 1 :
                  water wil trap between minimum of right and left
                  min(L[i] , R[i]) - arr[i]
                  
+                 Complexity Analysis: 
+                 
+                 Time Complexity: O(n). 
+                 Only one traversal of the array is needed, So time Complexity is O(n).
+                 Space Complexity: O(n). 
+                 Two extra array is needed each of size n.
+                 
                  

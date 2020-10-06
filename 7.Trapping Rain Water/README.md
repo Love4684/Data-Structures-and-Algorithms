@@ -3,7 +3,9 @@ Given n non-negative integers representing an elevation map where the width of e
 ![rainwatertrap](https://user-images.githubusercontent.com/42657629/95177014-46ae6a80-07db-11eb-8fe3-578ded353d25.png)
 
 input : arr[]={1, 0, 2, 1, 0, 1, 1, 3, 2, 1, 2, 1}
+
 output: 7
+
 Method 1 : 
 
           hint : Crate new array for left max

@@ -7,7 +7,8 @@ using namespace std;
         for(int i = 0; i < n; ++i){
             surplus += Petrol[i] - Distance[i];
             
-            if(surplus < 0){
+            if(surplus < 0)
+            {
                 Start = i+1;
                 deficit+=surplus;
                 surplus = 0;

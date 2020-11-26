@@ -1,7 +1,6 @@
 
 
 #include <iostream>
-
 using namespace std;
 void rearrange(int a[] , int n)
     {   int i;

@@ -48,8 +48,7 @@ void findZeroes(int arr[], int n, int m)
         if (arr[bestL+i] == 0) 
            cout << bestL+i << " "; 
     } 
-} 
-  
+}   
 // Driver program 
 int main() 
 { 

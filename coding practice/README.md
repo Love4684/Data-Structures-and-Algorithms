@@ -1,5 +1,34 @@
+.. sectnum::
+
+===============================================================================
+C++ crash course for C programmers
+===============================================================================
+:Author: `Love Kumar <http://luvji.com/>`_
+:Sources: `crash-course.rst <crash-course.rst>`_
+
+.. contents::
+   :local:
+   :depth: 2
+
+Foreword
+===============================================================================
+This is an introduction to C++ for C programmers:
+
+* If you can't understand the code below, you'd better start with a C tutorial.
+
+  .. code:: c++
+
+     #include <stdio.h>
+
+     void main (int argc, char **argv)
+     {
+         printf("Hello World!\n");
+     }
 
 # program to check whether the entered string is palindrome or not.
+
+===============================================================================
+
 ```cpp
 #include <iostream>
 using namespace std;
@@ -29,4 +58,48 @@ int main(){
     system("pause");
     return 0;
 }
+```
+
+
+# Different methods to reverse a string in C/C++
+
+===============================================================================
+
+
+## METHOD 1. using swap function
+```cpp
+#include <bits/stdc++.h> 
+using namespace std; 
+
+void reverseStr(string& str) 
+{ 
+	int n = str.length(); 
+	for (int i = 0; i < n / 2; i++) 
+		swap(str[i], str[n - i - 1]); 
+} 
+int main() 
+{ 
+	string str = "rohan"; 
+	reverseStr(str); 
+	cout << str; 
+	return 0; 
+} 
+
+```
+## METHOD 2. using reverse() function
+
+```cpp
+#include <bits/stdc++.h> 
+using namespace std; 
+int main() 
+{ 
+	string str = "ROHAN"; 
+	reverse(str.begin(), str.end()); 
+    cout << str; 
+	return 0; 
+} 
+```
+## METHOD 3. using reverse() function
+```cpp
+
 ```

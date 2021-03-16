@@ -1,33 +1,9 @@
-.. sectnum::
 
-===============================================================================
-C++ crash course for C programmers
-===============================================================================
-:Author: `Love Kumar <http://luvji.com/>`_
-:Sources: `crash-course.rst <crash-course.rst>`_
 
-.. contents::
-   :local:
-   :depth: 2
 
-Foreword
-===============================================================================
-This is an introduction to C++ for C programmers:
-
-* If you can't understand the code below, you'd better start with a C tutorial.
-
-  .. code:: c++
-
-     #include <stdio.h>
-
-     void main (int argc, char **argv)
-     {
-         printf("Hello World!\n");
-     }
 
 # program to check whether the entered string is palindrome or not.
 
-===============================================================================
 
 ```cpp
 #include <iostream>

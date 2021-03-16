@@ -78,5 +78,24 @@ METHOD 2. using reverse() function
     return 0; 
   } 
 
-METHOD 3. using reverse() function
+METHOD 3. using .push_back () function
 ------------
+.. code:: c++
+
+   #include <bits/stdc++.h> 
+   using namespace std; 
+
+   void reverse(string str) 
+   { string str1;
+   for (int i=str.length()-1; i>=0; i--) 
+      str1.push_back(str[i]);
+   cout << str1 << endl;
+
+   } 
+
+   int main(void) 
+   { 
+      string s = "dosti"; 
+      reverse(s); 
+      return (0); 
+   } 

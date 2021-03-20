@@ -37,8 +37,22 @@ cpp code
                return 0;
             }
 
+using STL
 
+.. code:: c++
 
+      using namespace std;
+      #include <bits/stdc++.h>
+
+      int main()
+      {
+         int arr[5] = {4, 7, 6, 3, 9};
+         int maxno = *max_element(arr, arr + 5);
+         int minno = *min_element(arr, arr + 5);
+
+         cout<<"min = "<< minno << endl << "max = "<< maxno;
+         return 0;
+      }
 
 
 QuickSort

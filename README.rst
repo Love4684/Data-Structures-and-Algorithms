@@ -62,6 +62,37 @@ using python
       min(arr)
       max(arr)
 
+Searching Algorithms
+===============================================================================
+
+Linear Search
+------------
+
+.. code:: c++
+
+      using namespace std;
+      #include <bits/stdc++.h>
+
+            int LinearSearch(int arr[], int size, int key)
+            {
+               for(int i = 0; i < size; i++)
+               {
+                  if(arr[i]==key)
+                     return i;
+               }
+               return -1;
+            }
+
+            int main()
+            {
+               int arr[5] = {4, 7, 6, 3, 9};
+               int key = 6;
+               int index = LinearSearch(arr, 5, key);
+               (index == -1) ? cout<< "key not found" :cout << "key present at index = " << index;
+               return 0;
+            }
+
+
 QuickSort
 ===============================================================================
 

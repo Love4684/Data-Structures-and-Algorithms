@@ -54,6 +54,12 @@ using STL
          return 0;
       }
 
+using python
+
+.. code:: python
+
+      arr = [4, 7, 6, 3, 9]
+      min(arr)
 
 QuickSort
 ===============================================================================

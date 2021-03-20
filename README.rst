@@ -3,13 +3,13 @@
    :local:
    :depth: 2
    
-Aggash in C++
+Array in C++
 ===============================================================================
 
 An Array is a data structure used to store blocks of information in contiguous
 memory allocation. The data can be integer, strings, characters, class objects, etc.
 
-Finding Max and Min element
+Finding Max and Min element
 ------------
 
 cpp code

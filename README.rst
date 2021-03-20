@@ -53,27 +53,25 @@ python code
 
 .. code:: python
 
-      def quicksort(arr):
-          qs(arr, 0, len(arr) - 1)
-
-      def qs(arr, l, r):
-          if l >= r:
-              return
-          p = partition(arr, l, r)
-
-          qs(arr, l, p - 1)
-          qs(arr, p + 1, r)
-
       def partition(arr, l, r):
-          pivot = arr[r]
-          i = l - 1
-          for j in range(l, r):
-              if arr[j] < pivot:
-                  i += 1
-                  arr[i], arr[j] = arr[j], arr[i]
-          arr[i + 1], arr[r] = arr[r], arr[i + 1]
-          return i + 1
+        i = l-1;
+        pivot = arr[r]
+        for j in range (l, r):
+          if arr[j] < pivot :
+            i = i + 1
+            arr[i] , arr[j] = arr[j] , arr[i]
+        arr[i+1], arr[r] = arr[r], arr[i+1]
+        return i+1
 
-      a1 = [3, 2, 1]
-      quicksort(a1)
-      print(a1)
+      def Quicksort(arr, l, r):
+        if l >= r :
+          return
+        if l < r :
+          pi = partition(arr, l, r)
+          Quicksort(arr, l, pi-1)
+          Quicksort(arr, pi+1, r)
+
+      arr = [9, 5, 6, 7, 3, 8, 2]
+      n = len(arr)
+      Quicksort(arr, 0, n-1)
+      print(arr)

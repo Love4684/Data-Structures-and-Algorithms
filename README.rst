@@ -68,6 +68,8 @@ Searching Algorithms
 Linear Search
 ------------
 
+cpp code
+
 .. code:: c++
 
       using namespace std;
@@ -92,6 +94,22 @@ Linear Search
                return 0;
             }
 
+using python
+
+.. code:: python
+
+      def LinearSearch(arr, size, key):
+        for i in range(size):
+          if arr[i] == key:
+            return i
+        return -1
+
+      arr = [4, 7, 6, 3, 9]
+      index = LinearSearch(arr, len(arr), 6)
+      if index == -1:
+        print ("key not found")
+      else :
+        print("key found at index = ", index)
 
 QuickSort
 ===============================================================================

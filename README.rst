@@ -7,33 +7,35 @@ Aggash in C++
 ===============================================================================
 
 An Array is a data structure used to store blocks of information in contiguous
-memory allocation The data can be integer strings characters class objects etc
+memory allocation. The data can be integer, strings, characters, class objects, etc.
 
 Finding Max and Min element
 ------------
 
 cpp code
 
+
 .. code:: c++
 
-using namespace std;
-#include <bits/stdc++.h>
 
-      int main()
-      {
-         int arr[5] = {4, 7, 6, 3, 9};
-         int maxno = INT_MIN;
-         int minno = INT_MAX;
-         for(int i = 0; i < 5; i++)
-         {
-            maxno = max(maxno, arr[i]);
-            minno = min(minno, arr[i]);
+      using namespace std;
+      #include <bits/stdc++.h>
 
-         }
+            int main()
+            {
+               int arr[5] = {4, 7, 6, 3, 9};
+               int maxno = INT_MIN;
+               int minno = INT_MAX;
+               for(int i = 0; i < 5; i++)
+               {
+                  maxno = max(maxno, arr[i]);
+                  minno = min(minno, arr[i]);
 
-         cout<<"min = "<< minno << endl << "max = "<< maxno;
-         return 0;
-      }
+               }
+
+               cout<<"min = "<< minno << endl << "max = "<< maxno;
+               return 0;
+            }
 
 
 

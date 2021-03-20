@@ -65,7 +65,7 @@ using python
 Searching Algorithms
 ===============================================================================
 
-Linear Search
+Linear Search O(n)
 ------------
 
 cpp code
@@ -110,6 +110,16 @@ using python
         print ("key not found")
       else :
         print("key found at index = ", index)
+
+Binary Search O(log n)
+------------
+
+cpp code
+
+.. code:: c++
+
+
+
 
 QuickSort
 ===============================================================================

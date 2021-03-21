@@ -120,36 +120,34 @@ Recursive implementation of Binary Search
 
 .. code:: c++
 
-
       using namespace std;
       #include <bits/stdc++.h>
 
-            int BinarySearch(int arr[], int starting_index, int last_index, int key)
+            int BinarySearch(int arr[], int l, int r, int key)
             {
-               while(last_index > starting_index)
+               if(r >= l)
                {
-                  int mid = (last_index + starting_index)/2;
+                  int mid = (r + l)/2;
                   if(arr[mid] == key)
                      return mid;
                   if(arr[mid] > key)
-                     BinarySearch(arr, 0, mid-1, key);
+                     return BinarySearch(arr, l, mid-1, key);
 
                   if(arr[mid] < key)
-                     BinarySearch(arr, mid + 1, 4, key);
+                     return BinarySearch(arr, mid + 1, r, key);
                }
                return -1;
             }
 
             int main()
             {
-               int arr[5] = {4, 7, 6, 3, 9};
-               int key = 6;
+               int arr[5] = {3, 4, 6, 7, 9};
+               int key = 9;
                int index = BinarySearch(arr, 0, 4, key);
                (index == -1) ? cout<< "key not found" :cout << "key present at index = " << index;
                return 0;
             }
-
-
+      
 QuickSort
 ===============================================================================
 

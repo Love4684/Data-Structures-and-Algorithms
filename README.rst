@@ -220,3 +220,22 @@ python code
       n = len(arr)
       Quicksort(arr, 0, n-1)
       print(arr)
+
+   
+Bit Manipulation Algorithms
+===============================================================================
+
+
+Binary Number System
+------------
+
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" title="\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" />
+
+in decimal
+Ex : (125)_{10} = (1 \times { 10}^2 + 2\times {10}^1 + 5\times {10}^0)_{10}
+cpp code
+
+
+.. code:: c++
+
+

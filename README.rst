@@ -229,10 +229,9 @@ Bit Manipulation Algorithms
 Binary Number System
 ------------
 
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" title="\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" />
+![equation](http://www.sciweavers.org/download/Tex2Img_1616342073.jpg)
 
-in decimal
-Ex : (125)_{10} = (1 \times { 10}^2 + 2\times {10}^1 + 5\times {10}^0)_{10}
+
 cpp code
 
 

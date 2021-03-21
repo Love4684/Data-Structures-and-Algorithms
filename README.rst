@@ -116,9 +116,38 @@ Binary Search O(log n)
 
 cpp code
 
+Recursive implementation of Binary Search
+
 .. code:: c++
 
 
+      using namespace std;
+      #include <bits/stdc++.h>
+
+            int BinarySearch(int arr[], int starting_index, int last_index, int key)
+            {
+               while(last_index > starting_index)
+               {
+                  int mid = (last_index + starting_index)/2;
+                  if(arr[mid] == key)
+                     return mid;
+                  if(arr[mid] > key)
+                     BinarySearch(arr, 0, mid-1, key);
+
+                  if(arr[mid] < key)
+                     BinarySearch(arr, mid + 1, 4, key);
+               }
+               return -1;
+            }
+
+            int main()
+            {
+               int arr[5] = {4, 7, 6, 3, 9};
+               int key = 6;
+               int index = BinarySearch(arr, 0, 4, key);
+               (index == -1) ? cout<< "key not found" :cout << "key present at index = " << index;
+               return 0;
+            }
 
 
 QuickSort

@@ -229,7 +229,7 @@ Bit Manipulation Algorithms
 Binary Number System
 ------------
 
-![equation](http://www.sciweavers.org/download/Tex2Img_1616342073.jpg)
+.. image:: http://www.sciweavers.org/download/Tex2Img_1616342073.jpg
 
 
 cpp code

@@ -238,3 +238,333 @@ cpp code
 .. code:: c++
 
 
+C++ What is OOP?
+===============================================================================
+
+The oops concept focuses on writing the reusable code. oops is about creating objects that contain both data and functions.
+
+Class
+------------
+
+It is a user-defined data type, which holds its own data members and member functions, which can be accessed and used by creating an instance of that class. A class is like a blueprint for an object.
+
+.. code:: c++
+
+      class MyClass {       // The class
+        public:             // Access specifier
+          int myNum;        // Attribute (int variable)
+          string myString;  // Attribute (string variable)
+      };
+
+Object
+------------
+
+Any entity that has state and behavior is known as an object. For example: chair, pen, table, keyboard, bike etc. 
+
+Object
+------------
+
+.. code:: c++
+
+
+      class MyClass {       // The class
+        public:             // Access specifier
+          int myNum;        // Attribute (int variable)
+          string myString;  // Attribute (string variable)
+      };
+
+      int main() {
+        MyClass myObj;  // Create an object of MyClass
+
+        // Access attributes and set values
+        myObj.myNum = 15; 
+        myObj.myString = "Some text";
+
+        // Print attribute values
+        cout << myObj.myNum << "\n";
+        cout << myObj.myString;
+        return 0;
+      }
+
+Class Methods
+------------
+
+Methods are functions that belongs to the class.
+
+Inside Example
+
+.. code:: c++
+
+      class MyClass {        // The class
+        public:              // Access specifier
+          void myMethod() {  // Method/function defined inside the class
+            cout << "Hello World!";
+          }
+      };
+
+      int main() {
+        MyClass myObj;     // Create an object of MyClass
+        myObj.myMethod();  // Call the method
+        return 0;
+      }
+
+Outside Example
+
+.. code:: c++
+
+      class MyClass {        // The class
+        public:              // Access specifier
+          void myMethod();   // Method/function declaration
+      };
+
+      // Method/function definition outside the class
+      void MyClass::myMethod() {
+        cout << "Hello World!";
+      }
+
+      int main() {
+        MyClass myObj;     // Create an object of MyClass
+        myObj.myMethod();  // Call the method
+        return 0;
+      }
+  
+  
+C++ Constructors
+------------
+
+A constructor in C++ is a special method that is automatically called when an object of a class is created. To create a constructor, use the same name as the class, followed by parentheses ():
+
+The constructor has the same name as the class, it is always public, and it does not have any return value.
+
+.. code:: c++
+
+      class Car {        // The class
+        public:          // Access specifier
+          string brand;  // Attribute
+          string model;  // Attribute
+          int year;      // Attribute
+          Car(string x, string y, int z) { // Constructor with parameters
+            brand = x;
+            model = y;
+            year = z;
+          }
+      };
+
+      int main() {
+        // Create Car objects and call the constructor with different values
+        Car carObj1("BMW", "X5", 1999);
+        Car carObj2("Ford", "Mustang", 1969);
+
+        // Print values
+        cout << carObj1.brand << " " << carObj1.model << " " << carObj1.year << "\n";
+        cout << carObj2.brand << " " << carObj2.model << " " << carObj2.year << "\n";
+        return 0;
+      }
+
+C++ Access Specifiers
+------------
+
+In C++, there are three access specifiers:
+
+public - members are accessible from outside the class
+private - members cannot be accessed (or viewed) from outside the class
+protected - members cannot be accessed from outside the class, however, they can be accessed in inherited classes.
+
+C++ Encapsulation
+------------
+
+Binding (or wrapping) code and data together into a single unit is known as encapsulation. For example: capsule, it is wrapped with different medicines.
+
+The meaning of Encapsulation, is to make sure that "sensitive" data is hidden from users. To achieve this, you must declare class variables/attributes as private (cannot be accessed from outside the class). If you want others to read or modify the value of a private member, you can provide public get and set methods.
+
+It is considered good practice to declare your class attributes as private (as often as you can). Encapsulation ensures better control of your data, because you (or others) can change one part of the code without affecting other parts
+Increased security of data
+
+.. code:: c++
+
+      #include <iostream>
+      using namespace std;
+
+      class Employee {
+        private:
+          // Private attribute
+          int salary;
+
+        public:
+          // Setter
+          void setSalary(int s) {
+            salary = s;
+          }
+          // Getter
+          int getSalary() {
+            return salary;
+          }
+      };
+
+      int main() {
+        Employee myObj;
+        myObj.setSalary(50000);
+        cout << myObj.getSalary();
+        return 0;
+      }
+
+The salary attribute is private, which have restricted access.
+
+The public setSalary() method takes a parameter (s) and assigns it to the salary attribute (salary = s).
+
+The public getSalary() method returns the value of the private salary attribute.
+
+Inside main(), we create an object of the Employee class. Now we can use the setSalary() method to set the value of the private attribute to 50000. Then we call the getSalary() method on the object to return the value.
+
+Abstraction
+------------
+
+Hiding internal details and showing functionality is known as abstraction. For example: phone call, we don't know the internal processing.
+
+In C++, we use abstract class and interface to achieve abstraction.
+
+C++ Inheritance
+------------
+
+When one object acquires all the properties and behaviours of parent object i.e. known as inheritance. It provides code reusability.
+
+In C++, it is possible to inherit attributes and methods from one class to another. We group the "inheritance concept" into two categories:
+
+derived class (child) - the class that inherits from another class
+base class (parent) - the class being inherited from
+To inherit from a class, use the : symbol.
+
+In the example below, the Car class (child) inherits the attributes and methods from the Vehicle class (parent):
+
+.. code:: c++
+
+      // Base class
+      class Vehicle {
+        public:
+          string brand = "Ford";
+          void honk() {
+            cout << "Tuut, tuut! \n" ;
+          }
+      };
+
+      // Derived class
+      class Car: public Vehicle {
+        public:
+          string model = "Mustang";
+      };
+
+      int main() {
+        Car myCar;
+        myCar.honk();
+        cout << myCar.brand + " " + myCar.model;
+        return 0;
+      }
+      
+Why And When To Use "Inheritance"?
+
+- It is useful for code reusability: reuse attributes and methods of an existing class when you create a new class.
+
+C++ Polymorphism
+------------
+
+When one task is performed by different ways i.e. known as polymorphism. For example: to convince the customer differently, to draw something e.g. shape or rectangle etc.
+
+In C++, we use Function overloading and Function overriding to achieve polymorphism.
+
+For example, think of a base class called Animal that has a method called animalSound(). Derived classes of Animals could be Pigs, Cats, Dogs, Birds - And they also have their own implementation of an animal sound (the pig oinks, and the cat meows, etc.):
+
+Example
+
+.. code:: c++
+
+      // Base class
+      class Animal {
+        public:
+          void animalSound() {
+          cout << "The animal makes a sound \n" ;
+        }
+      };
+
+      // Derived class
+      class Pig : public Animal {
+        public:
+          void animalSound() {
+          cout << "The pig says: wee wee \n" ;
+        }
+      };
+
+      // Derived class
+      class Dog : public Animal {
+        public:
+          void animalSound() {
+          cout << "The dog says: bow wow \n" ;
+        }
+      };
+      
+Now we can create Pig and Dog objects and override the animalSound() method:
+
+.. code:: c++
+
+      // Base class
+      class Animal {
+        public:
+          void animalSound() {
+          cout << "The animal makes a sound \n" ;
+        }
+      };
+
+      // Derived class
+      class Pig : public Animal {
+        public:
+          void animalSound() {
+          cout << "The pig says: wee wee \n" ;
+         }
+      };
+
+      // Derived class
+      class Dog : public Animal {
+        public:
+          void animalSound() {
+          cout << "The dog says: bow wow \n" ;
+        }
+      };
+
+      int main() {
+        Animal myAnimal;
+        Pig myPig;
+        Dog myDog;
+
+        myAnimal.animalSound();
+        myPig.animalSound();
+        myDog.animalSound();
+        return 0;
+      }
+      
+C++ Exceptions
+--------------
+
+.. code:: c++
+
+      #include <iostream>
+      using namespace std;
+
+      int main() {
+        try {
+          int age = 15;
+          if (age >= 18) {
+            cout << "Access granted - you are old enough.";
+          } else {
+            throw (age);
+          }
+        }
+        catch (int myNum) {
+          cout << "Access denied - You must be at least 18 years old.\n";
+          cout << "Age is: " << myNum;  
+        }
+        return 0;
+      }
+
+output
+
+Access denied - You must be at least 18 years old.
+Age is: 15

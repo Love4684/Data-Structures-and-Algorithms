@@ -114,9 +114,11 @@ using python
 Binary Search O(log n)
 ------------
 
+T(n) = T(n/2) + c 
+
 cpp code
 
-Recursive implementation of Binary Search
+Recursive implementation of Binary Search , it's work on sorted array
 
 .. code:: c++
 
@@ -148,7 +150,40 @@ Recursive implementation of Binary Search
                return 0;
             }
 
-Merge Sort
+Iterative implementation of Binary Search
+
+.. code:: cpp
+
+
+      #include <bits/stdc++.h>
+      using namespace std;
+      int binarySearch(int arr[], int l, int r, int x)
+      {
+         while (l <= r) {
+            int m = l + (r - l) / 2;
+            if (arr[m] == x)
+               return m;
+            if (arr[m] < x)
+               l = m + 1;
+            else
+               r = m - 1;
+         }
+         return -1;
+      }
+
+      int main(void)
+      {
+         int arr[5] = { 2, 3, 4, 10, 40 };
+         int x = 10;
+         int result = binarySearch(arr, 0, n - 1, x);
+         (result == -1) ? cout << "not present"
+                  : cout << "present at index " << result;
+         return 0;
+      }
+
+
+
+Merge Sort (O(n log n))
 ===============================================================================
 
 Merge Sort is a Divide and Conquer algorithm. It divides the input array into two halves, calls itself for the two halves, and then merges the two sorted halves.
@@ -225,7 +260,9 @@ cpp code
 
 QuickSort
 ===============================================================================
-
+Worst-case (n²)
+Average performance	O(n log n)
+Best-case performance	O(n log n) 
 QuickSort is a Divide and Conquer algorithm. It picks an element as pivot and partitions the given array around the picked pivot. There are many different versions of quickSort that pick pivot in different ways. 
 
 cpp code

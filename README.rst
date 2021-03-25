@@ -182,9 +182,12 @@ Iterative implementation of Binary Search
       }
 
 
+Sorting sorting algorithms
+===============================================================================
+
 
 Merge Sort (O(n log n))
-===============================================================================
+------------
 
 Merge Sort is a Divide and Conquer algorithm. It divides the input array into two halves, calls itself for the two halves, and then merges the two sorted halves.
 cpp code
@@ -259,10 +262,13 @@ cpp code
       }
 
 QuickSort
-===============================================================================
+------------
 Worst-case (n²)
+
 Average performance	O(n log n)
+
 Best-case performance	O(n log n) 
+
 QuickSort is a Divide and Conquer algorithm. It picks an element as pivot and partitions the given array around the picked pivot. There are many different versions of quickSort that pick pivot in different ways. 
 
 cpp code

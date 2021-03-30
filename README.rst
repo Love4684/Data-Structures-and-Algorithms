@@ -357,183 +357,33 @@ cpp code
 .. code:: c++
 
 
-C++ What is OOP?
+C++ OOPs Concepts
 ===============================================================================
 
-The oops concept focuses on writing the reusable code. oops is about creating objects that contain both data and functions.
+
+oops is about creating objects that contain both data and functions.
+
+Object
+------------
+
+Any entity that has state and behavior is known as an object. For example: chair, pen, table, keyboard, bike etc. It can be physical and logical.
 
 Class
 ------------
 
-It is a user-defined data type, which holds its own data members and member functions, which can be accessed and used by creating an instance of that class. A class is like a blueprint for an object.
+A class is like a blueprint for an object. It is a user-defined data type, which holds its own data members and member functions.
 
-.. code:: c++
-
-      class MyClass {       // The class
-        public:             // Access specifier
-          int myNum;        // Attribute (int variable)
-          string myString;  // Attribute (string variable)
-      };
-
-Object
+Inheritance
 ------------
 
-Any entity that has state and behavior is known as an object. For example: chair, pen, table, keyboard, bike etc. 
+When one object acquires all the properties and behaviours of parent object i.e. known as inheritance. It provides code reusability. It is used to achieve runtime polymorphism.
 
-Object
+Polymorphism
 ------------
 
-.. code:: c++
+When one task is performed by different ways i.e. known as polymorphism. For example: to convince the customer differently, to draw something e.g. shape or rectangle etc.
 
-
-      class MyClass {       // The class
-        public:             // Access specifier
-          int myNum;        // Attribute (int variable)
-          string myString;  // Attribute (string variable)
-      };
-
-      int main() {
-        MyClass myObj;  // Create an object of MyClass
-
-        // Access attributes and set values
-        myObj.myNum = 15; 
-        myObj.myString = "Some text";
-
-        // Print attribute values
-        cout << myObj.myNum << "\n";
-        cout << myObj.myString;
-        return 0;
-      }
-
-Class Methods
-------------
-
-Methods are functions that belongs to the class.
-
-Inside Example
-
-.. code:: c++
-
-      class MyClass {        // The class
-        public:              // Access specifier
-          void myMethod() {  // Method/function defined inside the class
-            cout << "Hello World!";
-          }
-      };
-
-      int main() {
-        MyClass myObj;     // Create an object of MyClass
-        myObj.myMethod();  // Call the method
-        return 0;
-      }
-
-Outside Example
-
-.. code:: c++
-
-      class MyClass {        // The class
-        public:              // Access specifier
-          void myMethod();   // Method/function declaration
-      };
-
-      // Method/function definition outside the class
-      void MyClass::myMethod() {
-        cout << "Hello World!";
-      }
-
-      int main() {
-        MyClass myObj;     // Create an object of MyClass
-        myObj.myMethod();  // Call the method
-        return 0;
-      }
-  
-  
-C++ Constructors
-------------
-
-A constructor in C++ is a special method that is automatically called when an object of a class is created. To create a constructor, use the same name as the class, followed by parentheses ():
-
-The constructor has the same name as the class, it is always public, and it does not have any return value.
-
-.. code:: c++
-
-      class Car {        // The class
-        public:          // Access specifier
-          string brand;  // Attribute
-          string model;  // Attribute
-          int year;      // Attribute
-          Car(string x, string y, int z) { // Constructor with parameters
-            brand = x;
-            model = y;
-            year = z;
-          }
-      };
-
-      int main() {
-        // Create Car objects and call the constructor with different values
-        Car carObj1("BMW", "X5", 1999);
-        Car carObj2("Ford", "Mustang", 1969);
-
-        // Print values
-        cout << carObj1.brand << " " << carObj1.model << " " << carObj1.year << "\n";
-        cout << carObj2.brand << " " << carObj2.model << " " << carObj2.year << "\n";
-        return 0;
-      }
-
-C++ Access Specifiers
-------------
-
-In C++, there are three access specifiers:
-
-public - members are accessible from outside the class
-private - members cannot be accessed (or viewed) from outside the class
-protected - members cannot be accessed from outside the class, however, they can be accessed in inherited classes.
-
-C++ Encapsulation
-------------
-
-Binding (or wrapping) code and data together into a single unit is known as encapsulation. For example: capsule, it is wrapped with different medicines.
-
-The meaning of Encapsulation, is to make sure that "sensitive" data is hidden from users. To achieve this, you must declare class variables/attributes as private (cannot be accessed from outside the class). If you want others to read or modify the value of a private member, you can provide public get and set methods.
-
-It is considered good practice to declare your class attributes as private (as often as you can). Encapsulation ensures better control of your data, because you (or others) can change one part of the code without affecting other parts
-Increased security of data
-
-.. code:: c++
-
-      #include <iostream>
-      using namespace std;
-
-      class Employee {
-        private:
-          // Private attribute
-          int salary;
-
-        public:
-          // Setter
-          void setSalary(int s) {
-            salary = s;
-          }
-          // Getter
-          int getSalary() {
-            return salary;
-          }
-      };
-
-      int main() {
-        Employee myObj;
-        myObj.setSalary(50000);
-        cout << myObj.getSalary();
-        return 0;
-      }
-
-The salary attribute is private, which have restricted access.
-
-The public setSalary() method takes a parameter (s) and assigns it to the salary attribute (salary = s).
-
-The public getSalary() method returns the value of the private salary attribute.
-
-Inside main(), we create an object of the Employee class. Now we can use the setSalary() method to set the value of the private attribute to 50000. Then we call the getSalary() method on the object to return the value.
+In C++, we use Function overloading and Function overriding to achieve polymorphism.
 
 Abstraction
 ------------
@@ -542,122 +392,252 @@ Hiding internal details and showing functionality is known as abstraction. For e
 
 In C++, we use abstract class and interface to achieve abstraction.
 
-C++ Inheritance
+Encapsulation
 ------------
 
-When one object acquires all the properties and behaviours of parent object i.e. known as inheritance. It provides code reusability.
+Binding code and data together into a single unit is known as encapsulation. For example: capsule, it is wrapped with different medicines.
 
-In C++, it is possible to inherit attributes and methods from one class to another. We group the "inheritance concept" into two categories:
-
-derived class (child) - the class that inherits from another class
-base class (parent) - the class being inherited from
-To inherit from a class, use the : symbol.
-
-In the example below, the Car class (child) inherits the attributes and methods from the Vehicle class (parent):
-
-.. code:: c++
-
-      // Base class
-      class Vehicle {
-        public:
-          string brand = "Ford";
-          void honk() {
-            cout << "Tuut, tuut! \n" ;
-          }
-      };
-
-      // Derived class
-      class Car: public Vehicle {
-        public:
-          string model = "Mustang";
-      };
-
-      int main() {
-        Car myCar;
-        myCar.honk();
-        cout << myCar.brand + " " + myCar.model;
-        return 0;
-      }
-      
-Why And When To Use "Inheritance"?
-
-- It is useful for code reusability: reuse attributes and methods of an existing class when you create a new class.
-
-C++ Polymorphism
+Advantage of OOPs
 ------------
 
-When one task is performed by different ways i.e. known as polymorphism. For example: to convince the customer differently, to draw something e.g. shape or rectangle etc.
+OOPs makes development and maintenance easier.
 
-In C++, we use Function overloading and Function overriding to achieve polymorphism.
+OOPs provide data hiding whereas in Procedure-oriented programming language a global data can be accessed from anywhere.
 
-For example, think of a base class called Animal that has a method called animalSound(). Derived classes of Animals could be Pigs, Cats, Dogs, Birds - And they also have their own implementation of an animal sound (the pig oinks, and the cat meows, etc.):
+Why we need OOPs in Programming language?
+------------
 
-Example
+1. Duplicate code is a Bad.
+
+2. Code will always be changed.
+
+So, above statement proves, OOPs is provides code reusability which reduce the duplication of code because once you have duplicate code, you have make changes everywhere which leads to performance. Code can be changed anytime or requirement of application changed anytime so when you want to make changes in your application, OOPs makes it easier.
+
+Structure vs class in C++
+------------
+
+1) Members of a class are private by default and members of a struct are public by default.
+
+2) Both can have constructors, methods, properties, fields, constants, enumerations, events, and event handlers. 
+
+struct for plain-old-data structures without any class-like features;
+
+class when you make use of features such as private or protected members, non-default constructors and operators, etc.
 
 .. code:: c++
 
-      // Base class
-      class Animal {
-        public:
-          void animalSound() {
-          cout << "The animal makes a sound \n" ;
-        }
+    class Test {
+        int x; // x is private
+    };
+    int main()
+    {
+      Test t;
+      t.x = 20; // compiler error because x is private
+      getchar();
+      return 0;
+    }
+    
+.. code:: c++
+    
+    #include <stdio.h>
+
+    struct Test {
+        int x; // x is public
+    };
+    int main()
+    {
+      Test t;
+      t.x = 20; // works fine because x is public
+      getchar();
+      return 0;
+    }
+
+C++ Access Specifiers
+------------
+
+In C++, there are three access specifiers:
+
+public - members are accessible from outside the class
+
+private - members cannot be accessed (or viewed) from outside the class
+
+protected - members cannot be accessed from outside the class, however, they can be accessed in inherited classes.
+
+Types of Class Member Functions in C++
+------------
+Member functions are the functions, which have their declaration inside the class definition. The definition of member functions can be inside or outside the definition of class.
+
+.. code:: c++
+
+      class Cube
+      {
+          public:
+          int side;
+          int getVolume();
       };
 
-      // Derived class
-      class Pig : public Animal {
-        public:
-          void animalSound() {
-          cout << "The pig says: wee wee \n" ;
-        }
+      // member function defined outside class definition using the scope resolution ::
+      int Cube :: getVolume()
+      {
+          return side*side*side;
+      }
+
+      int main()
+      {
+          Cube C1;
+          C1.side = 4;    // setting side value
+          cout<< "Volume of cube C1 = "<< C1.getVolume();
+      }
+      
+      
+1) Simple functions:
+...................
+
+These are the basic member function, which doesn’t have any special keyword like static etc as a prefix.
+
+.. code:: c++
+
+      return_type functionName(parameter_list)
+      {
+      function body;
+      }
+      
+2) Static functions:
+....................
+
+Static is a keyword which can be used with data members as well as the member functions. These functions work for the class as whole rather than for a particular object of a class.
+
+It can be called using the object and the direct member access . operator. But, its more typical to call a static member function by itself, using class name and scope resolution :: operator.
+
+.. code:: c++
+
+      class X
+      {
+       public:
+       static void f(){};
       };
 
-      // Derived class
-      class Dog : public Animal {
-        public:
-          void animalSound() {
-          cout << "The dog says: bow wow \n" ;
-        }
+      int main()
+      {
+       X::f();   // calling member function directly with class name
+      }
+      
+3) Const functions: 
+...................
+
+A function becomes const when const keyword is used in function’s declaration. The idea of const functions is not to allow them to modify the object on which they are called.
+
+.. code:: c++
+
+      #include<iostream>
+      using namespace std;
+
+      class Test {
+          int value;
+      public:
+          Test(int v = 0) {value = v;}
+
+          // We get compiler error if we add a line like "value = 100;"
+          // in this function.
+          int getValue() const {return value;}  
       };
       
-Now we can create Pig and Dog objects and override the animalSound() method:
+4) Inline functions: 
+....................
+
+C++ provides inline functions to reduce the function call overhead. An inline function is a function that is expanded in line when it is called. When the inline function is called whole code of the inline function gets inserted or substituted at the point of inline function call. This substitution is performed by the C++ compiler at compile time. Inline function may increase efficiency if it is small.
+
+Some Important points about Inline Functions
+
+We must keep inline functions small, small inline functions have better efficiency.
+
+Inline functions do increase efficiency, but we should not make all the functions inline. Because if we make large functions inline, it may lead to code bloat, and might affect the speed too.
+
+Hence, it is adviced to define large functions outside the class definition using scope resolution :: operator, because if we define such functions inside class definition, then they become inline automatically.
+
+Inline functions are kept in the Symbol Table by the compiler, and all the call for such functions is taken care at compile time.
 
 .. code:: c++
 
-      // Base class
-      class Animal {
-        public:
-          void animalSound() {
-          cout << "The animal makes a sound \n" ;
-        }
-      };
-
-      // Derived class
-      class Pig : public Animal {
-        public:
-          void animalSound() {
-          cout << "The pig says: wee wee \n" ;
-         }
-      };
-
-      // Derived class
-      class Dog : public Animal {
-        public:
-          void animalSound() {
-          cout << "The dog says: bow wow \n" ;
-        }
-      };
-
-      int main() {
-        Animal myAnimal;
-        Pig myPig;
-        Dog myDog;
-
-        myAnimal.animalSound();
-        myPig.animalSound();
-        myDog.animalSound();
-        return 0;
+      #include <iostream>
+      using namespace std;
+      inline int cube(int s)
+      {
+         return s*s*s;
       }
+      int main()
+      {
+         cout << "The cube of 3 is: " << cube(3) << "\n";
+         return 0;
+      } //Output: The cube of 3 is: 27
+      
+5) Friend function: 
+....................
+
+If a function is defined as a friend function in C++, then the protected and private data of a class can be accessed using the function. 
+For accessing the data, the declaration of a friend function should be done inside the body of a class starting with the keyword friend.
+A friend function of a class is defined outside that class' scope but it has the right to access all private and protected members of the class.
+
+.. code:: c++
+
+      #include <iostream>    
+      using namespace std;    
+      class Box    
+      {    
+          private:    
+              int length;    
+          public:    
+              Box(): length(0) { }    
+              friend int printLength(Box); //friend function    
+      };    
+      int printLength(Box b)    
+      {    
+         b.length += 10;    
+          return b.length;    
+      }    
+      int main()    
+      {    
+          Box b;    
+          cout<<"Length of box: "<< printLength(b)<<endl;    
+          return 0;    
+      }    
+
+C++ Friend class
+................
+
+A friend class can access both private and protected members of the class in which it has been declared as friend.
+
+.. code:: c++
+
+      #include <iostream>  
+
+      using namespace std;  
+
+      class A  
+      {  
+          int x =5;  
+          friend class B;           // friend class.  
+      };  
+      class B  
+      {  
+        public:  
+          void display(A &a)  
+          {  
+              cout<<"value of x is : "<<a.x;  
+          }  
+      };  
+      int main()  
+      {  
+          A a;  
+          B b;  
+          b.display(a);  
+          return 0;  
+      }  
+      
+When we make a class as friend, all its member functions automatically become friend functions.
+
+Friend Functions is a reason, why C++ is not called as a pure Object Oriented language. Because it violates the concept of Encapsulation.
+
       
 C++ Exceptions
 --------------

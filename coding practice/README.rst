@@ -148,3 +148,5 @@ printing-pattern
 Length of the longest substring without repeating characters
 ===============================================================================
 
+Distribute N candies among K people
+===============================================================================

@@ -70,7 +70,57 @@ output
       1 2 4 5 7 100 100 100 100 123 
       1 1 1 1 1 4 4 4 4 1 
       
-      
+Vector of Pairs
+-------------- 
+
+.. code:: c++
+
+      #include<bits/stdc++.h>
+      using namespace std;
+
+      void printvec(vector<pair<int , int>> &v)
+
+      { v.push_back({3, 5});
+          for (int i = 0; i < v.size(); ++i)
+          {
+
+              cout << v[i].first << " " << v[i].second << endl;
+          }
+      }
+      int main()
+      {
+          vector<pair<int, int>> v;
+          // v = {{2, 3}, {4, 5}, {7, 6}};
+          int n;
+          cin >> n;
+          for (int i = 0; i < n; ++i)
+          {   int x, y;
+              cin >> x >> y;
+              v.push_back({x, y});
+          }
+          printvec(v);
+      }
+
+input
+
+.. code:: c++
+
+      3
+      5 1
+      10 3
+      20 4
+
+
+output
+
+.. code:: c++
+
+      5 1
+      10 3
+      20 4
+      3 5
+
+
 Map
 --------------
 

@@ -28,6 +28,8 @@ vector
           A.push_back(100);
           A.push_back(100);
           A.push_back(123);
+          
+          // vector<int>::iterator lower , upper;
 
 
           auto lower = lower_bound(A.begin(), A.end(), 100);   // >=

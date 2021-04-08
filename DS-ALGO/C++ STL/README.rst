@@ -279,3 +279,37 @@ output
 
       5 10 20 
       5 10 20 
+
+Remove duplicates from a given string
+------------
+.. code:: c++
+
+      #include<bits/stdc++.h>
+      using namespace std;
+      int main()
+      {int hash[123] = {0};
+         string s, result = "";
+         cin >> s;
+         for (int i = 0; i < s.size(); ++i)
+         {
+            if(hash[s[i]] == 0)
+            {
+               hash[s[i]] = 1;
+               result += s[i];
+            }
+         }
+         cout << result;
+      }
+      
+input
+
+.. code:: c++
+
+      retyyrtywyss
+
+
+output
+
+.. code:: c++
+
+     retyws

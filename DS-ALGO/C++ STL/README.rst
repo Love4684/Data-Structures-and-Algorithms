@@ -61,11 +61,11 @@ output
 
 .. code:: c++
 
-lower of 100 = 100 and uper of 100 = 123
-frequency of 100 = 4
-lower index 100 = 6
-upper index 100 = 10
-frequency of 100 = 4
-size of vector = 10
-1 2 4 5 7 100 100 100 100 123 
-1 1 1 1 1 4 4 4 4 1 
+      lower of 100 = 100 and uper of 100 = 123
+      frequency of 100 = 4
+      lower index 100 = 6
+      upper index 100 = 10
+      frequency of 100 = 4
+      size of vector = 10
+      1 2 4 5 7 100 100 100 100 123 
+      1 1 1 1 1 4 4 4 4 1 

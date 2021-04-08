@@ -236,3 +236,46 @@ outut
       20 4
 
 
+set
+===============================================================================
+
+rmove dupicate
+-------------- 
+
+
+.. code:: c++
+
+      #include<bits/stdc++.h>
+      using namespace std;
+      int main()
+      {
+         set<int> s;
+         int n; cin >> n;
+         for (int i = 0; i < n; ++i)
+         {
+             int temp; cin >> temp;
+             s.insert(temp);
+         }
+         for(auto pr : s)
+          cout << pr << " ";
+          cout << endl;
+
+         for (auto it = s.begin() ; it != s.end(); it++)
+         {
+             cout << *it << " ";
+         }
+      }
+      
+input
+
+.. code:: c++
+
+8
+10 20 20 10 10 20 5 20 
+
+output
+
+.. code:: c++
+
+      5 10 20 
+      5 10 20 

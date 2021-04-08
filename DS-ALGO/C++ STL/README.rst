@@ -155,3 +155,36 @@ output
       5 1
       10 3
       20 4
+
+for string
+
+.. code:: c++
+
+      #include<bits/stdc++.h>
+      using namespace std;
+      int main()
+      {
+         map< string, int> m;
+         int n; cin >> n;
+         for (int i = 0; i < n; ++i)
+         {
+             string s; cin >> s;
+             m[s]++; 
+         }
+         for(auto pr : m)
+          cout << pr.first << " " << pr.second << endl;
+      }
+      
+ input
+ 
+       5
+      sed
+      drw
+      sed
+      drw
+      drw
+      
+output
+
+      drw 3
+      sed 2

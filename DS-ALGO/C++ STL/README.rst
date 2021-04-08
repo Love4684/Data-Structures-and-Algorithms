@@ -176,7 +176,9 @@ for string
          for(auto pr : m)
           cout << pr.first << " " << pr.second << endl;
       }
-      
+
+.. code:: c++
+
  input
  
        5
@@ -185,7 +187,9 @@ for string
       sed
       drw
       drw
-      
+
+.. code:: c++
+
 output
 
       drw 3

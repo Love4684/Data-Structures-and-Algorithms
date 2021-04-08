@@ -177,10 +177,11 @@ for string
           cout << pr.first << " " << pr.second << endl;
       }
 
-.. code:: c++
 
  input
  
+.. code:: c++
+
        5
       sed
       drw
@@ -188,9 +189,10 @@ for string
       drw
       drw
 
-.. code:: c++
 
 output
+
+.. code:: c++
 
       drw 3
       sed 2

@@ -205,3 +205,34 @@ Counting frequencies of array elements
 
 .. code:: c++
 
+      #include<bits/stdc++.h>
+      using namespace std;
+      int main()
+      {
+         unordered_map< int, int> m;
+         int n; cin >> n;
+         for (int i = 0; i < n; ++i)
+         {
+             int temp; cin >> temp;
+             m[temp]++; 
+         }
+         for(auto pr : m)
+          cout << pr.first << " " << pr.second << endl;
+      }
+
+input
+
+.. code:: c++
+
+      8
+      10 20 20 10 10 20 5 20 
+      
+outut
+
+.. code:: c++
+
+      5 1
+      10 3
+      20 4
+
+

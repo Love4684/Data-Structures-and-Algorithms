@@ -28,8 +28,6 @@ vector
           A.push_back(100);
           A.push_back(100);
           A.push_back(123);
-          
-          // vector<int>::iterator lower , upper;
 
 
           auto lower = lower_bound(A.begin(), A.end(), 100);   // >=
@@ -37,12 +35,25 @@ vector
 
           // 1 2 4 5 7 100 100 100 100 123
 
-          cout << *lower << " " << *upper << endl;
+          cout << "lower of 100 = " <<*lower << " " << "and uper of 100 = " << *upper << endl;
 
-          cout << (lower - A.begin() + 1) << endl;
-          cout << (upper - A.begin() + 1) << endl;
 
-          cout << upper - lower << endl;
+
+          cout << "frequency of 100 = " << count(A.begin(), A.end(), 100) << endl;
+
+          cout << "lower index 100 = " << (lower - A.begin() + 1) << endl;
+          cout << "upper index 100 = " << (upper - A.begin() + 1) << endl;
+
+          cout << "frequency of 100 = " << upper - lower << endl;
+
+          cout << "size of vector = " << A.size() << endl;
+
+          for(auto it : A) cout <<  it << " ";
+
+              cout << endl ;
+
+          for(auto it : A) cout << count(A.begin(), A.end(), it) << " ";
+
 
       }
       
@@ -50,7 +61,11 @@ output
 
 .. code:: c++
 
-    100 123
-    6
-    10
-    4
+lower of 100 = 100 and uper of 100 = 123
+frequency of 100 = 4
+lower index 100 = 6
+upper index 100 = 10
+frequency of 100 = 4
+size of vector = 10
+1 2 4 5 7 100 100 100 100 123 
+1 1 1 1 1 4 4 4 4 1 

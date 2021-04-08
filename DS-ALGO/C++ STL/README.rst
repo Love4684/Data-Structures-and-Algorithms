@@ -120,6 +120,11 @@ output
       20 4
       3 5
 
+Vector of vector
+-------------- 
+
+.. code:: c++
+
 
 Map
 --------------

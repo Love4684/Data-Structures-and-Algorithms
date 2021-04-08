@@ -280,6 +280,29 @@ output
       5 10 20 
       5 10 20 
 
+.. code:: c++
+
+      #include<bits/stdc++.h>
+      using namespace std;
+      int main()
+      {int arr[6] = {4, 2, 3, 3, 2, 4 };
+         set<int> s;
+         for (int i = 0; i < 6; ++i)
+         {
+            s.insert(arr[i]);
+         }
+         for(auto pr : s)
+          cout << pr << " ";
+          cout << endl;
+      }
+      
+output
+
+.. code:: c++
+
+      2 3 4 
+      
+      
 Remove duplicates from a given string
 ------------
 .. code:: c++
@@ -300,6 +323,8 @@ Remove duplicates from a given string
          }
          cout << result;
       }
+      
+      
       
 input
 

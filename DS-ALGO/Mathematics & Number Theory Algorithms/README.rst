@@ -26,6 +26,8 @@ Count trailing zeroes in factorial of a number
 
 output
 
+.. code:: c++
+
     2
 
 Check if a number is Palindrome

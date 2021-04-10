@@ -197,6 +197,37 @@ output
       drw 3
       sed 2
 
+Non-Repeating Element
+-------------- 
+
+.. code:: c++
+
+      #include<bits/stdc++.h>
+      using namespace std;
+      int main()
+      {
+          vector<int> v = { 9, 4, 9, 6, 7, 4};
+          map<int, int> m;
+          for (int i = 0; i < v.size(); ++i)
+          {
+              m[v[i]]++;
+          }
+          for(auto x : m)
+          {
+              if(x.second == 1)
+              {
+                  cout << x.first;
+                   break;
+              }
+          }
+      }
+
+output
+
+.. code:: c++
+
+     6
+
 unordered_map
 ===============================================================================
 

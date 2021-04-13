@@ -6,6 +6,65 @@
 MATH
 ===============================================================================
 
+Factorial of a number
+-------------------------
+.. code:: c++
+
+      #include<bits/stdc++.h>
+      using namespace std;
+      int main()
+       {      
+           int n, result = 1;
+              cin >> n;
+              for(int i = 2; i <= n; i++)
+              {
+                  result *= i;
+              }
+              cout << result;
+          return 0;
+      }
+      
+      
+ Factorial of a large number
+-------------------------
+.. code:: c++
+     
+         #include<bits/stdc++.h>
+         using namespace std;
+
+         void find_fact(int n)
+         {
+             int carry=0,val;
+             vector<int>v;
+             v.push_back(n);
+             for(int i = n-1;i>1;i--)
+             {
+                 for(int j=0;j<v.size();j++)
+                 {
+                     val = v[j]*i + carry;
+                     v[j] = val%10;
+                     carry = val/10;
+                 }
+                 while(carry)
+                 {
+                     v.push_back(carry%10);
+                     carry=carry/10;
+                 }
+             }
+             reverse(v.begin(),v.end());
+             for(int i=0;i<v.size();i++)
+                 cout << v[i];
+         }
+         int main()
+          {      
+              int n;
+                 cin >> n;
+                 find_fact(n);
+             return 0;
+         }      
+      
+      
+
 Count trailing zeroes in factorial of a number
 -------------------------
 .. code:: c++

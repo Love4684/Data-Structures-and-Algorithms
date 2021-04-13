@@ -3,11 +3,13 @@
    :local:
    :depth: 3
 
+
 MATH
 ===============================================================================
 
 Factorial of a number
 -------------------------
+
 .. code:: c++
 
       #include<bits/stdc++.h>
@@ -27,6 +29,7 @@ Factorial of a number
       
  Factorial of a large number
 -------------------------
+
 .. code:: c++
      
          #include<bits/stdc++.h>
@@ -67,6 +70,7 @@ Factorial of a number
 
 Count trailing zeroes in factorial of a number
 -------------------------
+
 .. code:: c++
 
     #include<bits/stdc++.h>

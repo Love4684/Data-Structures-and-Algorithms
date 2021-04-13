@@ -27,7 +27,8 @@ Factorial of a number
       }
       
       
- Factorial of a large number
+ 
+Factorial of a large number
 -------------------------
 
 .. code:: c++

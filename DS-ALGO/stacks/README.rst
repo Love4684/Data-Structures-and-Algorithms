@@ -37,3 +37,16 @@ Reverse a Sentence using Stacks
 
           return 0;
       }
+
+input
+
+.. code:: c++
+
+      RAM is a good boy
+
+
+output
+
+.. code:: c++
+
+      boy good a is RAM 

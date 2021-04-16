@@ -163,3 +163,40 @@ output
 
       The reverse of the number is: 336543
       not palindrom
+
+
+Sieve of Eratosthenes Given a number n, print all primes smaller than or equal to n.
+-------------------------
+
+.. code:: c++
+
+      #include<bits/stdc++.h>
+      using namespace std;
+
+      int main()
+       {     
+           int arr[100] = {0};
+           int n = 30;
+           for (int i = 2; i < n; ++i)
+           {
+               for (int j = i*i; j < n; j+=i)
+               {
+                   if(arr[j] == 0)
+                   {
+                      arr[j] = 1;
+                   }
+               }
+           }
+           for (int i = 2; i < n; ++i)
+           {
+               if(arr[i] == 0)
+                  cout << i << " ";
+           }
+           return 0;
+      }
+
+output
+
+.. code:: c++
+
+      2 3 5 7 11 13 17 19 23 29 

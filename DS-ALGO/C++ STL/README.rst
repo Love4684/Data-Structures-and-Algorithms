@@ -369,3 +369,55 @@ output
 .. code:: c++
 
      retyws
+
+
+List
+===============================================================================
+
+.. code:: c++
+
+      #include<bits/stdc++.h>
+      using namespace std;
+
+      int main()
+       {     
+           list<int> list1 = {4, 2, 7, 1, 5};
+           list<int> list2 = {8, 5, 9, 6, 3};
+           list1.reverse();
+           for(auto it : list1)
+              cout << it << " ";
+          cout << endl;
+          list1.merge(list2);
+          for(auto it : list1)
+              cout << it << " ";
+          list1.sort();
+          cout << endl;
+          for(auto it : list1)
+              cout << it << " ";
+          list1.unique();
+          cout << endl;
+          for(auto it : list1)
+              cout << it << " ";
+          list1.remove(6);
+          cout << endl;
+          for(auto it : list1)
+              cout << it << " ";
+          list<int> :: iterator it = list1.begin();
+          advance(it, 2);
+          list1.insert(it, 5);
+          cout << endl;
+          for(auto it : list1)
+              cout << it << " ";
+           return 0;
+      }
+
+output
+
+.. code:: c++
+
+      5 1 7 2 4 
+      5 1 7 2 4 8 5 9 6 3 
+      1 2 3 4 5 5 6 7 8 9 
+      1 2 3 4 5 6 7 8 9 
+      1 2 3 4 5 7 8 9 
+      1 2 5 3 4 5 7 8 9 

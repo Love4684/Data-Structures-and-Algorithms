@@ -50,3 +50,11 @@ output
 .. code:: c++
 
       boy good a is RAM 
+      
+Check for Balanced Brackets in an expression (well-formedness) using Stack
+===============================================================================
+
+.. code:: c++
+      
+      
+      

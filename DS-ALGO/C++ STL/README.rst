@@ -14,6 +14,18 @@ vector
       #include<bits/stdc++.h>
       using namespace std;
       int main()
+      {int arr[] = {1, 3, 4, 7, 4, 2, 7, 9, 5, 6};
+          vector<int> v;
+          v.assign(arr, arr+10);
+          for(auto it : v)
+              cout << it << " ";
+      }
+
+.. code:: c++
+
+      #include<bits/stdc++.h>
+      using namespace std;
+      int main()
       {
           vector <int> A = {2, 4, 7, 5 , 1};
           sort(A.begin(), A.end());   //O(NlogN) sorting

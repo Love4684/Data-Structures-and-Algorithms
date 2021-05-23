@@ -48,3 +48,16 @@ Print all subsequences of a string
           string str = "abc";
           powerset(str, 0, "");
       }
+
+output
+
+.. code:: c++
+
+      abc
+      ab
+      ac
+      a
+      bc
+      b
+      c
+

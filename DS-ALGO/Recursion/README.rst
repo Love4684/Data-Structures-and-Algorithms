@@ -61,3 +61,42 @@ output
       b
       c
 
+Write a program to print all permutations of a given string
+===============================================================================
+
+.. code:: c++
+
+      #include<bits/stdc++.h>
+      using namespace std;
+      void permutation(string str, int l, int r)
+      {
+          if(l == r)
+          {
+              cout << str << endl;
+              return;
+          }
+          for (int i = l; i <= r; ++i)
+          {
+              swap(str[l], str[i]);
+              permutation(str, l+1, r);
+              swap(str[l], str[i]);
+
+          }
+      }
+
+      int main()
+      {
+          string str = "ABC";
+          permutation(str, 0, str.size()-1);
+      }
+      
+.. code:: c++
+
+      ABC
+      ACB
+      BAC
+      BCA
+      CBA
+      CAB
+
+      

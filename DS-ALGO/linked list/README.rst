@@ -74,6 +74,21 @@ Inserting a node
       }
       
 .. code:: c++
+
+      node* reverse_rec(node* &head)
+      {
+          if(head==NULL || head->next == NULL)
+          {
+              return head;
+          }
+          node* newhead = reverse_rec(head->next);
+          head->next->next = head;
+          head->next = NULL;
+
+          return newhead;
+      }
+      
+.. code:: c++
       
       int main()
       {
@@ -83,11 +98,13 @@ Inserting a node
           insert(head, 80);
           insert(head, 8);
           display(head);
-          node* newhead = reverse(head);
+          // node* newhead = reverse(head);
+          // cout << endl;
+          // display(newhead);
+          node* rec_head = reverse_rec(head);
           cout << endl;
-          display(newhead);
+          display(rec_head);
 
           return 0;
       }
-
 

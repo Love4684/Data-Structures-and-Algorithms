@@ -445,9 +445,11 @@ Given an array replace every element by smaller element on left side.
 
       O/P : int max 16 16 4 3 3
  
-Given the sorted 2d array having 0's and 1's , find the row number which have maximum no 1's. #hint check column wise to get one in any row and that wil be the max
+Given the sorted 2d array having 0's and 1's , find the row number which have maximum no 1's.
 ===============================================================================
 
+ #hint check column wise to get one in any row and that wil be the max
+ 
 .. code:: c++
 
       #include <bits/stdc++.h> 
@@ -806,3 +808,43 @@ method 3
                        Only one traversal of the array is needed, So time Complexity is O(n).
                        Space Complexity: O(n). 
                        Two extra array is needed each of size n.
+
+Circular Tour
+===============================================================================
+
+Suppose there is a circle. There are n petrol pumps on that circle. You are given two sets of data. The amount of petrol that every petrol pump has. Distance from that petrol pump to the next petrol pump. Calculate the first point from where a truck will be able to complete the circle (The truck will stop at each petrol pump and it has infinite capacity). Expected time complexity is O(n).
+
+Assume for 1-litre petrol, the truck can go 1 unit of distance.
+For example, let there be 4 petrol pumps with amount of petrol and distance to next petrol pump value pairs as {4, 6}, {6, 5}, {7, 3} and {4, 5}.
+
+Return the starting petrol pumps index if you can travel around the circuit once in the clockwise direction, otherwise return -1.
+
+.. code:: c++
+
+      #include <bits/stdc++.h> 
+      using namespace std;  
+          int canCompleteCircuit(int Petrol[], int Distance[], int n ) 
+          {
+              int deficit = 0, surplus = 0, Start = 0;
+              for(int i = 0; i < n; ++i){
+                  surplus += Petrol[i] - Distance[i];
+
+                  if(surplus < 0)
+                  {
+                      Start = i+1;
+                      deficit+=surplus;
+                      surplus = 0;
+                  }
+              }
+              return (surplus+deficit < 0) ? -1 : Start;
+          }
+      int main()
+      {
+          int Petrol[]  = {6,3,7};
+          int Distance[] = {4,6,3};
+          int n=sizeof(Petrol)/sizeof(Petrol[0]);
+          int start = canCompleteCircuit(Petrol,Distance, n);  
+
+          (start == -1)? cout<<"No solution": cout<<"Start = "<<start;  
+          return 0; 
+      }

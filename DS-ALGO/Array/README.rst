@@ -483,9 +483,12 @@ Given the sorted 2d array having 0's and 1's , find the row number which have ma
        2 0 0 1 1
        3 1 1 1 1
        output 3
-          
-Given an array rearrange the element of array in zigzag fashion .
+ 
+array in zigzag fashion
 ===============================================================================
+
+Given an array rearrange the element of array in zigzag fashion .
+
 
 .. code:: c++          
 
@@ -522,8 +525,11 @@ Given an array rearrange the element of array in zigzag fashion .
       I/P 4 3 7 8 6 2 1
       O/P 3 7 4 8 2 6 1
 
-Given an array of integers, update every element with multiplication of previous and next element with following execeptions. a.) First element replaced by multiplication of first and second. b.) Last element replaced by multiplication of last and second last.
+multiplication of previous and next element
 ===============================================================================
+
+Given an array of integers, update every element with multiplication of previous and next element with following execeptions. a.) First element replaced by multiplication of first and second. b.) Last element replaced by multiplication of last and second last.
+
 
 .. code:: c++
 
@@ -564,9 +570,12 @@ Given an array of integers, update every element with multiplication of previous
 
       I/P : arr[] = {2, 3, 4, 5, 6}
       O/p : arr[] = {6, 8, 15, 24, 30}
-      
-You are given with an array of 1s and 0s. And you are given with an integer m, which signifies number of flips allowed. find the maximum number of consecutive 1's. and also find the position of zeros which when flipped will produce maximum continuous series of 1s.
+
+Maximized Number of Consecutive 1’s
 ===============================================================================
+
+You are given with an array of 1s and 0s. And you are given with an integer m, which signifies number of flips allowed. find the maximum number of consecutive 1's. and also find the position of zeros which when flipped will produce maximum continuous series of 1s.
+
 
 .. code:: c++
 
@@ -638,8 +647,10 @@ You are given with an array of 1s and 0s. And you are given with an integer m, w
       arr={1 1 0 1 1 0 0 1 1 1 } m=2
       output={1 1 0 1 1 1 1 1 1 1} position=5,6
 
-Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.
+Trapping Rain Water
 ===============================================================================
+
+Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.
 
 .. image:: https://user-images.githubusercontent.com/42657629/95177014-46ae6a80-07db-11eb-8fe3-578ded353d25.png
 
@@ -647,36 +658,151 @@ method 1
 --------
 .. code:: c++
 
-#include<bits/stdc++.h>
-#include<iostream>
-using namespace std;
-int maxWater(int arr[], int n)
-{int i,j;
-    int total_water=0;
-    for (i=0; i<n; i++) 
-    {
-        int left_max=arr[i];
-        for (j=0; j<i; j++) 
-        {
-            left_max=max(left_max,arr[j]);
-        }
-        
-        int right_max=arr[i];
-        for (j=i+1; j<n; j++) 
-        {
-            right_max=max(right_max,arr[j]);
-        }
-        
-        total_water  = total_water + min(right_max,left_max)-arr[i];
-    }
-    return total_water;
-}
-int main()  
-{  
-    int arr[] = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};  
-    int n = sizeof(arr)/sizeof(arr[0]);  
+      #include<bits/stdc++.h>
+      #include<iostream>
+      using namespace std;
+      int maxWater(int arr[], int n)
+      {int i,j;
+          int total_water=0;
+          for (i=0; i<n; i++) 
+          {
+              int left_max=arr[i];
+              for (j=0; j<i; j++) 
+              {
+                  left_max=max(left_max,arr[j]);
+              }
+
+              int right_max=arr[i];
+              for (j=i+1; j<n; j++) 
+              {
+                  right_max=max(right_max,arr[j]);
+              }
+
+              total_water  = total_water + min(right_max,left_max)-arr[i];
+          }
+          return total_water;
+      }
+      int main()  
+      {  
+          int arr[] = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};  
+          int n = sizeof(arr)/sizeof(arr[0]);  
+
+          cout << maxWater(arr, n);  
+
+          return 0;  
+      } 
+
+method 2
+--------
+.. code:: c++
+
+      #include <iostream>
+      using namespace std;
+      #include<bits/stdc++.h>
+      #include <algorithm>
+      int main() 
+      {
+          int t;
+          cin>>t;
+
+         while(t--)
+         {
+             int n,i;
+             cin>>n;
+
+
+             int a[n];
+             for( i = 0; i < n ; i++)
+             {
+               cin>>a[i];
+
+             }
+
+             int l[n];
+             l[0]=a[0];
+             for( i = 1; i < n ; i++)
+             {
+                 l[i]=max(a[i],l[i-1]);
+             }
+
+              int r[n];
+              r[n-1]=a[n-1];
+              for( i = n-2; i>=0 ; i--)
+             {
+                 r[i]=max(a[i],r[i+1]);
+             }
+
+             int sum=0;
+             for( i = 0; i < n ; i++)
+             {
+                 sum=sum+((min(l[i], r[i]))-a[i]);
+             }
+             cout<<sum<<endl;
+         }
+
+      }
       
-    cout << maxWater(arr, n);  
-      
-    return 0;  
-} 
+method 3
+--------
+.. code:: c++
+
+      #include<bits/stdc++.h>
+      using namespace std;
+      int Water_Trap(int a[], int n)
+      {
+          int i=0;
+          int j=n-1;
+          int result=0;
+          int left_max=0, right_max=0;
+          while(i<j)
+          {
+              if(a[i]<=a[j])
+              {
+                  left_max=max(left_max,a[i]);
+                  result+=left_max-a[i];
+                  i++;
+              }
+              else
+              {
+                  right_max=max(right_max,a[j]);
+                  result+=right_max-a[j];
+                  j--;
+              }
+          }
+
+          return result;
+      }
+      int main() 
+      { 
+          int a[] = { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 }; 
+          int n = sizeof(a) / sizeof(a[0]); 
+          cout << "Maximum water that can be accumulated is "
+               << Water_Trap(a, n); 
+          return 0; 
+      }
+
+.. code:: c++
+
+      input : arr[]={1, 0, 2, 1, 0, 1, 1, 3, 2, 1, 2, 1}
+
+      output: 7
+
+      Method 1 : 
+
+                hint : Crate new array for left max
+
+                       L[] = {1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3}
+
+                       Create another array for right max
+
+                       R[] = {3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 1}
+
+                       water wil trap between minimum of right and left
+                       min(L[i] , R[i]) - arr[i]
+
+                       Complexity Analysis: 
+
+                       Time Complexity: O(n). 
+                       Only one traversal of the array is needed, So time Complexity is O(n).
+                       Space Complexity: O(n). 
+                       Two extra array is needed each of size n.

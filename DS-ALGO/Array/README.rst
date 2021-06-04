@@ -445,4 +445,44 @@ Given an array replace every element by smaller element on left side.
 
       O/P : int max 16 16 4 3 3
  
-      
+Given the sorted 2d array having 0's and 1's , find the row number which have maximum no 1's. #hint check column wise to get one in any row and that wil be the max
+===============================================================================
+
+.. code:: c++
+
+      #include <bits/stdc++.h> 
+      using namespace std;
+      const int R = 4;
+      const int C = 4;
+      void FindMax(int a[R][C])
+          {   int Row=0,i;
+              int j=C-1;
+              for(i=0;i<R;i++)
+              {
+                while((a[i][j]==1) && (j>=0) )
+                {
+                    j--;
+                    Row = i ;
+                }
+              }
+              cout<<Row;
+         }
+      int main()
+          { 
+            int a[ ][4] = {{0,0,1,1},{1,1,1,1},{0,0,1,1},{1,1,1,1}};
+            FindMax(a);
+            return 0;
+          }
+          
+.. code:: c++
+
+       input
+         0 1 2 3
+       0 0 0 1 1
+       1 0 1 1 1
+       2 0 0 1 1
+       3 1 1 1 1
+       output 3
+          
+          
+         

@@ -408,3 +408,41 @@ Given an array replace every element by greater element on right side.
       I/p : 16 17 4 3 5 2
 
       o/p : 17 5 5 5 2 -1
+
+Given an array replace every element by smaller element on left side.
+===============================================================================
+
+.. code:: c++
+
+      #include <iostream>
+      using namespace std;
+      #include<bits/stdc++.h> 
+      int main()
+      {
+      int n=6,i,temp;    
+      int a[6]={16,17,4,3,5,2};
+      int min;
+      min= a[0];
+      a[0]=INT_MAX;
+      for(i=1;i<n;i++)
+      {
+          temp=a[i];
+          if(min>a[i-1])
+              a[i]=a[i-1];
+          else
+              a[i]=min;
+          min=temp;
+      }
+       for(i=0;i<n;i++)
+       {
+           cout<<a[i]<<" ";
+       }   
+      }
+
+.. code:: c++
+
+      I/o : 16 17 4 3 5 2
+
+      O/P : int max 16 16 4 3 3
+ 
+      

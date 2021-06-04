@@ -484,5 +484,40 @@ Given the sorted 2d array having 0's and 1's , find the row number which have ma
        3 1 1 1 1
        output 3
           
-          
-         
+Given the sorted 2d array having 0's and 1's , find the row number which have maximum no 1's. #hint check column wise to get one in any row and that wil be the max
+===============================================================================
+
+.. code:: c++          
+
+      #include <iostream>
+      using namespace std;
+      void rearrange(int a[] , int n)
+          {   int i;
+              for(i=0;i<n-1;i++)
+              {
+                  if(i%2==0)
+                  {
+                      if(a[i]>a[i+1])
+                      swap(a[i],a[i+1]);
+                  }
+                  else
+                      if(a[i]<a[i+1])
+                      swap(a[i],a[i+1]);
+              }
+              for(i=0;i<n;i++)
+              {
+                  cout <<a[i]<<" " ;
+              }
+          }
+
+      int main()
+      {
+          int a[7] = {4,3,7,8,6,2,1};
+           rearrange(a , 7);   
+          return 0;
+      }
+
+.. code:: c++          
+
+      I/P 4 3 7 8 6 2 1
+      O/P 3 7 4 8 2 6 1

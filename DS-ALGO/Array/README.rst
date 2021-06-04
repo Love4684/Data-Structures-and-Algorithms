@@ -484,7 +484,7 @@ Given the sorted 2d array having 0's and 1's , find the row number which have ma
        3 1 1 1 1
        output 3
           
-Given the sorted 2d array having 0's and 1's , find the row number which have maximum no 1's. #hint check column wise to get one in any row and that wil be the max
+Given an array rearrange the element of array in zigzag fashion .
 ===============================================================================
 
 .. code:: c++          
@@ -521,3 +521,162 @@ Given the sorted 2d array having 0's and 1's , find the row number which have ma
 
       I/P 4 3 7 8 6 2 1
       O/P 3 7 4 8 2 6 1
+
+Given an array of integers, update every element with multiplication of previous and next element with following execeptions. a.) First element replaced by multiplication of first and second. b.) Last element replaced by multiplication of last and second last.
+===============================================================================
+
+.. code:: c++
+
+      #include <iostream>
+      using namespace std;
+      void NewArray(int arr[] , int n)
+      {   
+          if(n<=1)                         //if number of element less then two
+          {
+              return;            
+          }
+
+          int previous = arr[0];          //first element assigning with keeping the track of this element     
+          arr[0] =previous*arr[1];
+
+          for(int i=1; i<n-1; i++)
+          {
+              int current = arr[i];
+              arr[i]  = previous*arr[i+1];
+              previous = current;
+          }
+
+          arr[n-1] = previous*arr[n-1];
+      }
+
+      int main()
+      {int n,i;
+          int arr[] = {2, 3, 4, 5, 6};
+          n=sizeof(arr)/sizeof(arr[0]);
+          NewArray(arr , n);
+          for(i=0;i<n;i++)
+          {
+             cout << arr[i]  <<" "; 
+          }
+      }
+
+.. code:: c++
+
+      I/P : arr[] = {2, 3, 4, 5, 6}
+      O/p : arr[] = {6, 8, 15, 24, 30}
+      
+You are given with an array of 1s and 0s. And you are given with an integer m, which signifies number of flips allowed. find the maximum number of consecutive 1's. and also find the position of zeros which when flipped will produce maximum continuous series of 1s.
+===============================================================================
+
+.. code:: c++
+
+      #include<bits/stdc++.h> 
+      using namespace std; 
+      void findZeroes(int arr[], int n, int m) 
+      { 
+          // Left and right indexes of current window 
+          int wL = 0, wR = 0;  
+
+          // Left index and size of the widest window  
+          int bestL = 0, bestWindow = 0;  
+
+          // Count of zeroes in current window 
+          int zeroCount = 0;  
+
+          // While right boundary of current window doesn't cross  
+          // right end 
+          while (wR < n) 
+          { 
+              // If zero count of current window is less than m, 
+              // widen the window toward right 
+              if (zeroCount <= m) 
+              { 
+                  if (arr[wR] == 0) 
+                    zeroCount++; 
+                  wR++; 
+              } 
+
+              // If zero count of current window is more than m, 
+              // reduce the window from left 
+              if (zeroCount > m) 
+              { 
+                  if (arr[wL] == 0) 
+                    zeroCount--; 
+                  wL++; 
+              } 
+
+              // Updqate widest window if this window size is more 
+              if ((wR-wL > bestWindow) && (zeroCount<=m)) 
+              { 
+                  bestWindow = wR-wL; 
+                  bestL = wL;
+              } 
+          } 
+        cout<<"mximum 1's "<<bestWindow<<endl;
+          // Print positions of zeroes in the widest window 
+          cout << "Indexes of zeroes to be flipped are "; 
+          for (int i=0; i<bestWindow; i++) 
+          { 
+              if (arr[bestL+i] == 0) 
+                 cout << bestL+i << " "; 
+          } 
+      }   
+      // Driver program 
+      int main() 
+      { 
+         int arr[] = {1, 1, 0, 1, 1, 0, 0, 1, 1, 1}; 
+         int m = 2; 
+         int n =  sizeof(arr)/sizeof(arr[0]); 
+         findZeroes(arr, n, m); 
+         return 0; 
+      } 
+      
+.. code:: c++
+
+      arr={1 1 0 1 1 0 0 1 1 1 } m=1
+      output={1 1 1 1 1 0 0 1 1 1} position=2
+      arr={1 1 0 1 1 0 0 1 1 1 } m=2
+      output={1 1 0 1 1 1 1 1 1 1} position=5,6
+
+Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.
+===============================================================================
+
+![rainwatertrap](https://user-images.githubusercontent.com/42657629/95177014-46ae6a80-07db-11eb-8fe3-578ded353d25.png)
+
+method 1
+--------
+.. code:: c++
+
+#include<bits/stdc++.h>
+#include<iostream>
+using namespace std;
+int maxWater(int arr[], int n)
+{int i,j;
+    int total_water=0;
+    for (i=0; i<n; i++) 
+    {
+        int left_max=arr[i];
+        for (j=0; j<i; j++) 
+        {
+            left_max=max(left_max,arr[j]);
+        }
+        
+        int right_max=arr[i];
+        for (j=i+1; j<n; j++) 
+        {
+            right_max=max(right_max,arr[j]);
+        }
+        
+        total_water  = total_water + min(right_max,left_max)-arr[i];
+    }
+    return total_water;
+}
+int main()  
+{  
+    int arr[] = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};  
+    int n = sizeof(arr)/sizeof(arr[0]);  
+      
+    cout << maxWater(arr, n);  
+      
+    return 0;  
+} 

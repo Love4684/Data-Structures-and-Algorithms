@@ -336,7 +336,7 @@ python code
       Quicksort(arr, 0, n-1)
       print(arr)
 
-Segregate Even and Odd numbers
+!. Segregate Even and Odd numbers
 ===============================================================================
 
 cpp code
@@ -376,7 +376,128 @@ output
 
       6 4 2 4 3 1 5 
 
-Given an array replace every element by greater element on right side.
+2. Program to print the diamond shape
+===============================================================================
+
+cpp code
+
+.. code:: c++
+
+   #include<bits/stdc++.h>
+   using namespace std;
+
+   int main()
+    {
+        int n, j, k;
+           cin >> n;
+           for(int i = 1; i <= n; i++ )
+           {
+               for (j = n; j > i; j--)
+               {
+                   cout << " ";
+               }
+               for (k = 1; k <= i; k++)
+               {
+                   cout << "* ";
+               }
+               cout << endl;
+           }
+           for(int i = 1; i < n; i++ )
+           {
+               for (j = 1; j <= i; j++)
+               {
+                   cout << " ";
+               }
+               for (k = n-1; k >= i; k--)
+               {
+                   cout << "* ";
+               }
+               cout << endl;
+           }
+
+       return 0;
+   }
+
+output
+
+.. code:: c++
+
+          * 
+         * * 
+        * * * 
+       * * * * 
+      * * * * * 
+       * * * * 
+        * * * 
+         * * 
+          * 
+
+3. product of all prime number less than given number
+===============================================================================
+
+.. code:: c++
+
+    #include<bits/stdc++.h>
+    using namespace std;
+
+    int main()
+     {      
+         int n, result = 1, j;
+            cin >> n;
+            for(int i = 2; i < n; i++ )
+            {
+                for (j = 2; j < i; j++)
+                {
+                    if(i%j == 0)
+                    {
+                        break;
+                    }
+                }
+                if(i == j)
+                    result *= i;
+            }
+            cout << result << endl;
+        return 0;
+    }
+    // ans = 30
+
+3. Given an array A[] and a number x, check for pair in A[] with sum as x
+----------------------------------------------------
+
+.. code:: c++
+
+      #include<bits/stdc++.h>
+      using namespace std;
+
+      void findpair(std::vector<int> v, int sum)
+      {
+          sort(v.begin(), v.end());
+          int l = 0;
+          int r = v.size() - 1;
+          while(l<r)
+          {
+              if((v[l] + v[r]) == sum)
+              {
+                  cout << v[l] << " " << v[r];
+                  break;
+              }
+              if((v[l] + v[r]) < sum)
+                  l++;
+              else
+                  r--;
+          }
+      }
+
+      int main()
+      {
+         std::vector<int> v = {4, 5, 6, 7, 5, 4, 4};
+         int sum = 10;
+         findpair(v, sum);
+         return 0;
+      }
+
+
+4. Given an array replace every element by greater element on right side.
 ===============================================================================
 
 .. code:: c++
@@ -409,7 +530,7 @@ Given an array replace every element by greater element on right side.
 
       o/p : 17 5 5 5 2 -1
 
-Given an array replace every element by smaller element on left side.
+5. Given an array replace every element by smaller element on left side.
 ===============================================================================
 
 .. code:: c++
@@ -445,7 +566,7 @@ Given an array replace every element by smaller element on left side.
 
       O/P : int max 16 16 4 3 3
  
-Given the sorted 2d array having 0's and 1's , find the row number which have maximum no 1's.
+6. Given the sorted 2d array having 0's and 1's , find the row number which have maximum no 1's.
 ===============================================================================
 
  #hint check column wise to get one in any row and that wil be the max
@@ -486,7 +607,7 @@ Given the sorted 2d array having 0's and 1's , find the row number which have ma
        3 1 1 1 1
        output 3
  
-array in zigzag fashion
+7. array in zigzag fashion
 ===============================================================================
 
 Given an array rearrange the element of array in zigzag fashion .
@@ -527,7 +648,7 @@ Given an array rearrange the element of array in zigzag fashion .
       I/P 4 3 7 8 6 2 1
       O/P 3 7 4 8 2 6 1
 
-multiplication of previous and next element
+8. multiplication of previous and next element
 ===============================================================================
 
 Given an array of integers, update every element with multiplication of previous and next element with following execeptions. a.) First element replaced by multiplication of first and second. b.) Last element replaced by multiplication of last and second last.
@@ -573,7 +694,7 @@ Given an array of integers, update every element with multiplication of previous
       I/P : arr[] = {2, 3, 4, 5, 6}
       O/p : arr[] = {6, 8, 15, 24, 30}
 
-Maximized Number of Consecutive 1’s
+9. Maximized Number of Consecutive 1’s
 ===============================================================================
 
 You are given with an array of 1s and 0s. And you are given with an integer m, which signifies number of flips allowed. find the maximum number of consecutive 1's. and also find the position of zeros which when flipped will produce maximum continuous series of 1s.
@@ -649,7 +770,7 @@ You are given with an array of 1s and 0s. And you are given with an integer m, w
       arr={1 1 0 1 1 0 0 1 1 1 } m=2
       output={1 1 0 1 1 1 1 1 1 1} position=5,6
 
-Trapping Rain Water
+10. Trapping Rain Water
 ===============================================================================
 
 Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.
@@ -809,7 +930,7 @@ method 3
                        Space Complexity: O(n). 
                        Two extra array is needed each of size n.
 
-Circular Tour
+11. Circular Tour
 ===============================================================================
 
 Suppose there is a circle. There are n petrol pumps on that circle. You are given two sets of data. The amount of petrol that every petrol pump has. Distance from that petrol pump to the next petrol pump. Calculate the first point from where a truck will be able to complete the circle (The truck will stop at each petrol pump and it has infinite capacity). Expected time complexity is O(n).

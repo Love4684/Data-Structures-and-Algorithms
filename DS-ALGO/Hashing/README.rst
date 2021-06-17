@@ -39,30 +39,24 @@ output
 
      retyws
 
-Given an array A[] and a number x, check for pair in A[] with sum as x
+  `Two Sum <https://leetcode.com/problems/two-sum/>`_
 =========================================================================
 
 .. code:: c++
 
-      #include<bits/stdc++.h>
-      using namespace std;
-
-      void findpair(std::vector<int> v, int sum)
-      {
-          unordered_set<int> s;
-          for (int i = 0; i < v.size(); ++i)
+      vector<int> twoSum(vector<int>& nums, int target) {
+              vector<int> ans;
+              unordered_map<int, int> map;
+          for (int i = 0; i < nums.size(); i++)
           {
-              int temp = sum-v[i];
-              if(s.find(temp) != s.end())
-                  cout << temp << " " << v[i] << endl;
-              s.insert(v[i]);
-          }
-      }
+              int temp = target - nums[i];
 
-      int main()
-      {
-         std::vector<int> v = {1, 4, 45, 6, 10, 8};
-         int sum = 16;
-         findpair(v, sum);
-         return 0;
-      }
+              if (map.find(temp) != map.end())
+              {   ans.push_back(map[temp]);
+                  ans.push_back(i);
+                  return ans;
+              }
+              map[nums[i]] = i;
+          }
+              return ans;
+          }

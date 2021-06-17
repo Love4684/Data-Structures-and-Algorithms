@@ -39,7 +39,7 @@ output
 
      retyws
 
-  `Two Sum <https://leetcode.com/problems/two-sum/>`_
+`Two Sum <https://leetcode.com/problems/two-sum/>`_
 =========================================================================
 
 .. code:: c++

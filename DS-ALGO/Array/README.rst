@@ -335,8 +335,43 @@ python code
       n = len(arr)
       Quicksort(arr, 0, n-1)
       print(arr)
+      
+0. find the nth Prime Number
+----------------------------------------------------
 
-!. Segregate Even and Odd numbers
+.. code:: c++
+
+      #include<bits/stdc++.h>
+      using namespace std;
+
+      int main()
+       {     
+           int j, n = 5, count = 0;
+           for (int i = 2; i > 0; ++i)
+           {  int  flag = 0;
+               for ( j = 2; j < i; ++j)
+               {
+                   if(i%j == 0)
+                   {
+                      flag = 1;
+                      break;
+                   }
+               }
+               if(i == j)
+               {
+                  count++;
+               }
+               if(count == n)
+               {
+                  cout << i;
+                  break;
+               }
+           }
+           return 0;
+      }
+
+
+1. Segregate Even and Odd numbers
 ===============================================================================
 
 cpp code

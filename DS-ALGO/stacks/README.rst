@@ -51,10 +51,58 @@ output
 
       boy good a is RAM 
       
-Check for Balanced Brackets in an expression (well-formedness) using Stack
+`Balanced Brackets <https://leetcode.com/problems/two-sum/>`_
 ===============================================================================
 
 .. code:: c++
+
+
+      #include <bits/stdc++.h>
+      using namespace std;
+      unordered_map<char, int> m = {{'(', -1}, {'{', -2}, {'[', -3}, {')', 1}, {'}', 2}, {']', 3}};
+      string isBalanced(string s) {
+      stack<char> st;
+      for(char Bracket : s)
+      {
+          if(m[Bracket] < 0)
+          st.push(Bracket);
+          else
+          {
+              if(st.empty() || ((m[st.top()] + m[Bracket]) != 0)) return "NO";
+              st.pop();
+          }
+      }
+      if(st.empty()) return "YES";
+      return "NO";
+      }
+      int main()
+      {
+        int t;
+        cin >>  t;
+        while(t--)
+        {
+          string s; 
+          cin >> s;
+          cout << isBalanced(s) << endl;
+        }
+        return 0;
+      }
       
-      
+input
+
+.. code:: c++
+
+      3
+      {[()]}
+      {[(])}
+      {{[[(())]]}}
+
+output
+
+.. code:: c++
+
+      YES
+      NO
+      YES
+
       

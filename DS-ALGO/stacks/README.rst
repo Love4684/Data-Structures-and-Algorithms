@@ -51,7 +51,7 @@ output
 
       boy good a is RAM 
       
-`Balanced Brackets <https://leetcode.com/problems/two-sum/>`_
+`Balanced Brackets <https://www.hackerrank.com/challenges/balanced-brackets/problem>`_
 ===============================================================================
 
 .. code:: c++

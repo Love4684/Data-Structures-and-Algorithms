@@ -127,7 +127,25 @@ output
 
    6
 
-`Find the Winner of the Circular Game <https://leetcode.com/problems/find-the-winner-of-the-circular-game/>`_
-===============================================================================   
+`Find the Winner of the Circular Game(Josephus Problem) <https://leetcode.com/problems/find-the-winner-of-the-circular-game/>`_
+===============================================================================
+
+0-indexing
 
 .. code:: c++
+
+    int findTheWinner(int n, int k) {
+        if(n==1)
+            return 0;
+        return (findTheWinner(n-1, k) + k) % n;
+    }
+    
+1-base-indexing
+
+.. code:: c++
+
+    int findTheWinner(int n, int k) {
+        if(n==1)
+            return 1;
+        return (findTheWinner(n-1, k) + k-1) % n +1;
+    }    

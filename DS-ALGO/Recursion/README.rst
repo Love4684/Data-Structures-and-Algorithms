@@ -99,7 +99,7 @@ Write a program to print all permutations of a given string
       CBA
       CAB
 
-`Count all possible paths from top left to bottom right of a mXn matrix <https://www.hackerrank.com/challenges/balanced-brackets/problem>`_
+`Count all possible paths from top left to bottom right of a mXn matrix <https://www.geeksforgeeks.org/count-possible-paths-top-left-bottom-right-nxm-matrix/>`_
 ===============================================================================   
 
 .. code:: c++
@@ -125,3 +125,8 @@ output
 .. code:: c++
 
    6
+
+`Find the Winner of the Circular Game <https://leetcode.com/problems/find-the-winner-of-the-circular-game/>`_
+===============================================================================   
+
+.. code:: c++

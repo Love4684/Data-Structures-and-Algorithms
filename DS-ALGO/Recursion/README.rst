@@ -99,4 +99,28 @@ Write a program to print all permutations of a given string
       CBA
       CAB
 
+`Count all possible paths from top left to bottom right of a mXn matrix <https://www.hackerrank.com/challenges/balanced-brackets/problem>`_
+===============================================================================   
+
+.. code:: c++
+
+      #include <bits/stdc++.h>
+      using namespace std;
+      int numberofways(int m, int n)
+      {
+          if(m == 1 || n == 1)
+              return 1;
+          return numberofways(m-1, n) + numberofways(m, n-1);
+      }
+      int main()
+      {int m, n;
+          cin >> m >> n;
+          int x = numberofways(m, n);
+          cout << x;
+          return 0;
+      }
       
+output
+
+.. code:: c++
+   6

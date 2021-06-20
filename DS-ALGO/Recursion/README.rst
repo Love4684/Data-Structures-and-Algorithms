@@ -26,7 +26,8 @@ Program to Check if a Given String is Palindrome
         return 0;
     }
 
-Print all subsequences of a string
+
+`Print all subsequences of a string <https://www.geeksforgeeks.org/print-subsequences-string/>`_
 ===============================================================================
 
 .. code:: c++
@@ -61,7 +62,7 @@ output
       b
       c
 
-Write a program to print all permutations of a given string
+`print all permutations of a given string <https://www.geeksforgeeks.org/write-a-c-program-to-print-all-permutations-of-a-given-string/>`_
 ===============================================================================
 
 .. code:: c++

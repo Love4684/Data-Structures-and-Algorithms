@@ -335,7 +335,28 @@ python code
       n = len(arr)
       Quicksort(arr, 0, n-1)
       print(arr)
-      
+  
+
+`Maximum Subarray(Kadane's Algorithm) <https://leetcode.com/problems/maximum-subarray/>`_
+=========================================
+
+.. code:: c++
+
+    int maxSubArray(vector<int>& nums) {
+        int maxsum = INT_MIN;
+        int currsum = 0;
+        for(int i = 0 ; i < nums.size() ; i++)
+        {
+            currsum += nums[i];
+            if(currsum > maxsum)
+                maxsum = currsum;
+            if(currsum < 0)
+                currsum = 0;
+        }
+        return maxsum;
+    }
+
+
 1. find the nth Prime Number
 ===============================================================================
 

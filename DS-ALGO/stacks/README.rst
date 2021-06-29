@@ -105,4 +105,66 @@ output
       NO
       YES
 
+`Next Greater Element <https://www.hackerrank.com/contests/second/challenges/next-greater-element/problem>`_
+===============================================================================
+
+.. code:: c++      
+
+      #include <bits/stdc++.h>
+      using namespace std;
+
+      vector<int> printNGE(vector<int> arr)
+      {
+          vector<int> v(arr.size());
+          stack<int> st;
+          for (int i = 0; i < arr.size(); i++)
+          {
+              while((!st.empty()) && (arr[i] > arr[st.top()]))
+              {
+                  v[st.top()] = i;
+                  st.pop();
+              }
+              st.push(i);
+          }
+
+          while(!st.empty())
+          {   
+              v[st.top()] = -1;
+                  st.pop();
+          }
+         return v;
+      }
+      int main()
+      {       int n;
+              cin >> n;
+              vector<int> arr(n);
+              for (int i = 0; i < n; ++i)
+              {
+                  cin >> arr[i];
+              }
+              vector<int> ans = printNGE(arr);
+              for (int i = 0; i < arr.size(); ++i)
+              {
+                 cout << arr[i] << " " << (ans[i] == -1  ? -1 : arr[ans[i]]) << endl;
+              }
+          return 0;
+      }
+      
+input
+
+.. code:: c++
+
+      6
+      4 5 2 25 7 8
+      
+output
+
+.. code:: c++
+
+      4 5
+      5 25
+      2 25
+      25 -1
+      7 8
+      8 -1
       

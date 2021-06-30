@@ -44,7 +44,7 @@ reverse a string
 ===============================================================================
 
 swap function
-------------
+
 .. code:: c++
 
     #include <bits/stdc++.h> 
@@ -65,7 +65,7 @@ swap function
     } 
     
 reverse() function
-------------
+
 .. code:: c++
 
   #include <bits/stdc++.h> 
@@ -79,7 +79,7 @@ reverse() function
   } 
 
 .push_back () function
-------------
+
 .. code:: c++
 
    #include <bits/stdc++.h> 

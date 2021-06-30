@@ -43,7 +43,7 @@ palindromic string
 reverse a string
 ===============================================================================
 
-METHOD 1. swap function
+swap function
 ------------
 .. code:: c++
 
@@ -64,7 +64,7 @@ METHOD 1. swap function
       return 0; 
     } 
     
-METHOD 2. reverse() function
+reverse() function
 ------------
 .. code:: c++
 
@@ -78,7 +78,7 @@ METHOD 2. reverse() function
     return 0; 
   } 
 
-METHOD 3. .push_back () function
+.push_back () function
 ------------
 .. code:: c++
 

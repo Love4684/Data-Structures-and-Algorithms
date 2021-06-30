@@ -248,7 +248,7 @@ next palindrome
           return 0;
       }
  
- 2. using Sorting O(nLogn)
+2. using Sorting O(nLogn)
 
 .. code:: c++
 

@@ -266,8 +266,10 @@ next palindrome
           return true;
       }
 
- 3. using hashing O(n)
+3. using hashing O(n)
  
+.. code:: c++
+
        bool isanagram(string s1 , string s2)
       {   
           if(s1.size() != s2.size())

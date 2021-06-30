@@ -238,8 +238,8 @@ next palindrome
       }
       int main()
       {
-          string s1 = "aab";
-          string s2 = "abc";
+          string s1 = "aa#$123b";
+          string s2 = "aba#$321";
           bool anagram = isanagram(s1, s2);
           if(anagram)
               cout << "anagram";

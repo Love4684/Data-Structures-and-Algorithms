@@ -266,7 +266,23 @@ next palindrome
           return true;
       }
 
-      
+ 3. using hashing O(n)
+ 
+       bool isanagram(string s1 , string s2)
+      {   
+          if(s1.size() != s2.size())
+              return false;
+          map<char, int> map;
+          for (int i = 0; i < s1.size(); ++i)
+          {
+             map[s1[i]]++;
+             map[s2[i]]--;
+          }
+          for(auto it : map)
+              if(it.second != 0)
+                  return false;
+          return true;
+      }
       
 Length of the longest substring without repeating characters
 ===============================================================================

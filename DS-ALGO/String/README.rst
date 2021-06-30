@@ -202,6 +202,14 @@ Given a number, find the next smallest palindrome
           return 0;
       }
 
+Anagram of a String
+===============================================================================
+
+1. using 2 loop(n²)
+
+.. code:: c++
+
+
 Length of the longest substring without repeating characters
 ===============================================================================
 

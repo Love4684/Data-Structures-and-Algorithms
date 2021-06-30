@@ -4,8 +4,7 @@
    :local:
    :depth: 2
    
-   
-program to check whether the entered string is palindrome or not.
+palindromic string
 ===============================================================================
 
 .. code:: c++
@@ -41,10 +40,10 @@ program to check whether the entered string is palindrome or not.
  
  
  
-Different methods to reverse a string in C/C++
+reverse a string
 ===============================================================================
 
-METHOD 1. using swap function
+METHOD 1. swap function
 ------------
 .. code:: c++
 
@@ -65,7 +64,7 @@ METHOD 1. using swap function
       return 0; 
     } 
     
-METHOD 2. using reverse() function
+METHOD 2. reverse() function
 ------------
 .. code:: c++
 
@@ -79,7 +78,7 @@ METHOD 2. using reverse() function
     return 0; 
   } 
 
-METHOD 3. using .push_back () function
+METHOD 3. .push_back () function
 ------------
 .. code:: c++
 
@@ -145,7 +144,7 @@ printing-pattern
     }
 
 
-Given a number, find the next smallest palindrome
+next palindrome
 ===============================================================================
 
 

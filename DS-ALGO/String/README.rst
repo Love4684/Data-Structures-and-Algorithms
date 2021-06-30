@@ -201,14 +201,61 @@ next palindrome
           return 0;
       }
 
-Anagram of a String
+
+`Anagram of a String <https://www.geeksforgeeks.org/check-whether-two-strings-are-anagram-of-each-other/>`_
 ===============================================================================
 
 1. using 2 loop(n²)
 
 .. code:: c++
 
+      #include<bits/stdc++.h>
+      using namespace std;
+      bool isanagram(string s1 , string s2)
+      {   bool anagram;
+          bool visited[s1.size()];
+          if(s1.size() == s2.size())
+          {
+              for (int i = 0; i < s1.size(); ++i)
+              {char x = s1[i];
+                  anagram = false;
+                  for (int j = 0; j < s2.size(); ++j)
+                  {
+                      if((x == s2[j]) && !visited[j])
+                      {   visited[j] = true;
+                          anagram = true;
+                          break;
+                      }
+                  }
+                  if(!anagram)
+                      return false;
+              }
+          }
+          if(!anagram)
+              return false;
+          else
+              return true;
+      }
+      int main()
+      {
+          string s1 = "aab";
+          string s2 = "abc";
+          bool anagram = isanagram(s1, s2);
+          if(anagram)
+              cout << "anagram";
+          else
+              cout << "not anagram";
+          return 0;
+      }
+ 
+ 2. using Sorting O(nLogn)
 
+.. code:: c++
+
+
+
+      
+      
 Length of the longest substring without repeating characters
 ===============================================================================
 

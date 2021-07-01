@@ -290,7 +290,7 @@ next palindrome
 `Reverse Words in a String <https://leetcode.com/problems/reverse-words-in-a-string/>`_
 ===============================================================================
 
-`using stack<https://github.com/Love4684/Data-Structures-and-Algorithms/tree/master/DS-ALGO/stacks#id1>`_
+`using stack <https://github.com/Love4684/Data-Structures-and-Algorithms/tree/master/DS-ALGO/stacks#id1>`_
 
 .. code:: c++
 

@@ -285,7 +285,35 @@ next palindrome
                   return false;
           return true;
       }
-      
+ 
+
+`Reverse Words in a String <https://leetcode.com/problems/reverse-words-in-a-string/>`_
+===============================================================================
+
+`using stack<https://github.com/Love4684/Data-Structures-and-Algorithms/tree/master/DS-ALGO/stacks#id1>`_
+
+.. code:: c++
+
+    string reverseWords(string s) {
+        string ans ;
+        int i = 0;
+        int n = s.length();
+        while(i<n)
+        {
+            while(i < n && s[i] == ' ') i++;
+            if(i >= n) break;
+            int j = i+1;
+            while(j < n && s[j] != ' ') j++;
+            string sub = s.substr(i, j-i);
+            if(ans.length() == 0) 
+                ans = sub;
+            else 
+                ans = sub + " " + ans;
+            i = j+1;
+        }
+        return ans;
+    }
+
 Length of the longest substring without repeating characters
 ===============================================================================
 

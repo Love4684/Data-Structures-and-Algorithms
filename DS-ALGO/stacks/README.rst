@@ -6,50 +6,34 @@
 STACKS
 ===============================================================================
 
-Reverse a Sentence using Stacks
+`Reverse Words in a String <https://leetcode.com/problems/reverse-words-in-a-string/>`_
 ===============================================================================
 
 .. code:: c++
 
-      #include<bits/stdc++.h>
-      using namespace std;
+    string reverseWords(string s) {
+        stack <string> st;
+        string ans = "";
+     for (int i = 0; i < s.length(); ++i)
+     {  string w = "";
+         while(s[i]!=' ' && i < s.length() )
+         {
+            w += s[i];
+            i++;
+         }
+      if(w.size() > 0)
+          st.push(w);
+     }
+     while(!st.empty())
+     {
+        ans = ans + " " + st.top();
+         st.pop();
+     }
+    if(ans.length() != 0 && ans[0] == ' ')
+          ans =  ans.substr(1);
+        return ans;
+    }
 
-      int main()
-       {      
-           string s;
-           getline(cin, s);
-           stack <string> st;
-           for (int i = 0; i < s.length(); ++i)
-           {  string w = "";
-               while(s[i]!=' ' && i < s.length() )
-               {
-                  w += s[i];
-                  i++;
-               }
-               st.push(w);
-           }
-
-           while(!st.empty())
-           {
-              cout << st.top() << " ";
-              st.pop();
-           }
-
-          return 0;
-      }
-
-input
-
-.. code:: c++
-
-      RAM is a good boy
-
-
-output
-
-.. code:: c++
-
-      boy good a is RAM 
       
 `Balanced Brackets <https://www.hackerrank.com/challenges/balanced-brackets/problem>`_
 ===============================================================================

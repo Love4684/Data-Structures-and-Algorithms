@@ -3,7 +3,7 @@
    :local:
    :depth: 3
 
-Program to Check if a Given String is Palindrome
+Check Palindrome 
 ===============================================================================
 
 .. code:: c++

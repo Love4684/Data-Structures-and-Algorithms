@@ -1,4 +1,5 @@
 
+
 .. contents::
    :local:
    :depth: 3
@@ -107,4 +108,25 @@ Inserting a node
 
           return 0;
       }
+
+`Remove Nth Node From End of List <https://leetcode.com/problems/remove-nth-node-from-end-of-list/>`_
+===============================================================================
+
+.. code:: c++
+
+
+`Swap Nodes in Pairs <https://leetcode.com/problems/swap-nodes-in-pairs/>`_
+===============================================================================
+
+.. code:: c++
+
+`Partition List <https://leetcode.com/problems/partition-list/>`_
+===============================================================================
+
+.. code:: c++
+
+`Linked List Cycle II <https://leetcode.com/problems/linked-list-cycle-ii/>`_
+===============================================================================
+
+.. code:: c++
 

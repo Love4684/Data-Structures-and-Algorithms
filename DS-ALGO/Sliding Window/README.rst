@@ -3,6 +3,16 @@
    :local:
    :depth: 3
 
+`Minimum Size Subarray Sum <https://leetcode.com/problems/minimum-size-subarray-sum/>`_
+===============================================================================
+
+.. code:: c++
+
+`Longest Substring Without Repeating Characters <https://leetcode.com/problems/longest-substring-without-repeating-characters/>`_
+===============================================================================
+
+.. code:: c++
+
 `Find All Anagrams in a String #Leetcode 438 <https://leetcode.com/problems/find-all-anagrams-in-a-string/>`_
 ===============================================================================
 
@@ -29,3 +39,4 @@
         }        
         return result;
     }
+

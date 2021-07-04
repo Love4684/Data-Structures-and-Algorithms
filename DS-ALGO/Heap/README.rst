@@ -71,3 +71,20 @@ output
 .. code:: c++
 
       4 5 6 
+
+`Top K Frequent Elements <https://leetcode.com/problems/top-k-frequent-elements/>`_
+===============================================================================
+
+.. code:: c++
+
+`Merge k Sorted Lists <https://leetcode.com/problems/merge-k-sorted-lists/>`_
+===============================================================================
+
+.. code:: c++
+
+
+`Find Median from Data Stream <https://leetcode.com/problems/find-median-from-data-stream/>`_
+===============================================================================
+
+.. code:: c++
+

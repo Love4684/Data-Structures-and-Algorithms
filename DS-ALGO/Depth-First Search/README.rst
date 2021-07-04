@@ -17,7 +17,7 @@ DFS
 .. code:: c++
 
 
-`N-Queens<https://leetcode.com/problems/n-queens/>`_
+`N-Queens <https://leetcode.com/problems/n-queens/>`_
 ===============================================================================
 
 .. code:: c++

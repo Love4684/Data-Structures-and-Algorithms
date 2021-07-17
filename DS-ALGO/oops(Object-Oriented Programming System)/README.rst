@@ -225,6 +225,48 @@ output
       2 Dispalying Base class variable var_base 1
       2 Dispalying Derived class variable var_derived 2
 
+Abstract Class and Pure Virtual Function
+....................
+
+.. code:: c++
+
+      Abstract Class is a class which contains atleast one Pure Virtual function in it.
+      A class is abstract if it has at least one pure virtual function. 
+      Classes inheriting an Abstract Class must provide definition to the pure virtual function, otherwise they will also become abstract class.
+
+.. code:: c++
+
+      #include<iostream>
+      using namespace std;
+
+      class Base
+      {
+      int x;
+      public:
+         virtual void fun() = 0;
+         int getX() { return x; }
+      };
+
+      // This class inherits from Base and implements fun()
+      class Derived: public Base
+      {
+         int y;
+      public:
+         void fun() { cout << "fun() called"; }
+      };
+
+      int main(void)
+      {
+         Derived d;
+         d.fun();
+         return 0;
+      }
+
+output
+
+.. code:: c++
+
+      fun() called
 
 3. Abstraction
 ------------

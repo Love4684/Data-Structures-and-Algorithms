@@ -81,4 +81,61 @@ output
       array([[1, 2, 3, 4, 5],
              [2, 3, 4, 5, 6],
              [9, 7, 6, 8, 9]])
-    
+  
+Iterators and Generators  
+===============================================================================
+
+
+To create a Python iterator object, you will need to implement two methods in your iterator class.
+
+__iter__: This returns the iterator object itself and is used while using the "for" and "in" keywords.
+
+__next__: This returns the next value. This would return the StopIteration error once all the objects have been looped through.
+
+Iterator uses iter() and next() functions
+
+Every iterator is not a generator
+
+.. code:: python
+
+      iter_list = iter(['Geeks', 'For', 'Geeks'])
+      print(next(iter_list))
+      print(next(iter_list))
+      print(next(iter_list))
+
+output
+
+.. code:: python
+
+   Geeks
+   For
+   Geeks  
+
+Generator functions are ordinary functions defined using yield instead of return. When called, a generator function returns a generator object
+  
+Generator uses yield keyword
+
+Every generator is an iterator
+
+.. code:: python
+
+      def sq_numbers(n):
+          for i in range(1, n+1):
+              yield i*i
+
+
+      a = sq_numbers(3)
+  
+      print("The square of numbers 1,2,3 are : ")
+      print(next(a))
+      print(next(a))
+      print(next(a))
+
+output
+
+.. code:: python
+
+      The square of numbers 1,2,3 are :  
+      1
+      4
+      9

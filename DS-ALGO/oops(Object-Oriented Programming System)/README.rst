@@ -19,12 +19,15 @@ Class
 
 A class is like a blueprint for an object. It is a user-defined data type, which holds its own data members and member functions.
 
-Inheritance
+Four pillars of OOP
+===============================================================================
+
+1. Inheritance
 ------------
 
 When one object acquires all the properties and behaviours of parent object i.e. known as inheritance. It provides code reusability. It is used to achieve runtime polymorphism.
 
-Polymorphism
+2. Polymorphism
 ------------
 
 When one task is performed by different ways i.e. known as polymorphism. For example: to convince the customer differently, to draw something e.g. shape or rectangle etc.
@@ -223,20 +226,20 @@ output
       2 Dispalying Derived class variable var_derived 2
 
 
-Abstraction
+3. Abstraction
 ------------
 
 Hiding internal details and showing functionality is known as abstraction. For example: phone call, we don't know the internal processing.
 
 In C++, we use abstract class and interface to achieve abstraction.
 
-Encapsulation
+4. Encapsulation
 ------------
 
 Binding code and data together into a single unit is known as encapsulation. For example: capsule, it is wrapped with different medicines.
 
 Advantage of OOPs
-------------
+==========================================
 
 OOPs makes development and maintenance easier.
 

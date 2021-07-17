@@ -10,18 +10,19 @@ Remove duplicates from a given string
       #include<bits/stdc++.h>
       using namespace std;
       int main()
-      {int hash[123] = {0};
+      {
          string s, result = "";
          cin >> s;
+         map<char, int> map;
          for (int i = 0; i < s.size(); ++i)
          {
-            if(hash[s[i]] == 0)
-            {
-               hash[s[i]] = 1;
-               result += s[i];
-            }
+             if(map[s[i]] == 0)
+             {
+              result += s[i];
+              map[s[i]] = 1;
+             }
          }
-         cout << result;
+         cout<<result;
       }
       
       

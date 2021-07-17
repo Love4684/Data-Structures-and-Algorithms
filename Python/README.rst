@@ -60,8 +60,25 @@ collection which is ordered and unchangeable.
     my_tuple=(" Krish " , "Ankur" , " John " )
     
     
+Numpy
+===============================================================================
 
-    
-    
-    
+NumPy is a Python library used for working with arrays.It provides a high-performance multidimensional array object, and tools for working with these arrays.
+  
+.. code:: python
+
+      import numpy as np
+      my_lst1=[1,2,3,4,5]
+      my_lst2=[2,3,4,5,6]
+      my_lst3=[9,7,6,8,9]
+      arr=np.array([my_lst1,my_lst2,my_lst3])
+      print(arr)
+  
+output
+
+.. code:: python
+
+      array([[1, 2, 3, 4, 5],
+             [2, 3, 4, 5, 6],
+             [9, 7, 6, 8, 9]])
     

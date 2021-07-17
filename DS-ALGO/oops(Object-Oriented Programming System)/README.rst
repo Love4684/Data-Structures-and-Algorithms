@@ -58,6 +58,8 @@ In C++, we use Function overloading and Function overriding to achieve polymorph
 Function overloading
 --------------------------------
  
+ Function overloading is a feature of object oriented programming where two or more functions can have the same name but different parameters.
+ 
 .. code:: c++
 
       #include<iostream>
@@ -140,8 +142,41 @@ Following is the list of operators that cannot be overloaded.
          c3.print();
       }
 
+Function Overriding
+------------
 
- 
+If derived class defines same function as defined in its base class, it is known as function overriding in C++. It is used to achieve runtime polymorphism.
+
+
+.. code:: c++
+
+      #include <iostream>  
+      using namespace std;  
+      class Animal {  
+          public:  
+      void eat(){    
+      cout<<"Eating...";    
+          }      
+      };   
+      class Dog: public Animal    
+      {    
+       public:  
+       void eat()    
+          {    
+             cout<<"Eating bread...";    
+          }    
+      };  
+      int main(void) {  
+         Dog d = Dog();    
+         d.eat();  
+         return 0;  
+      }  
+
+output
+
+.. code:: c++
+
+      Eating bread...
 
 Abstraction
 ------------

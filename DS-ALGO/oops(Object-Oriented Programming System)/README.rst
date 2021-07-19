@@ -295,6 +295,18 @@ OOPs makes development and maintenance easier.
 
 OOPs provide data hiding whereas in Procedure-oriented programming language a global data can be accessed from anywhere.
 
+‘this’ Pointer :
+------------
+
+.. code:: c++
+
+      this is a keyword that refers to the current instance of the
+      class. There can be 3 main uses of ‘this’ keyword:
+      1. It can be used to pass the current object as a parameter to
+      another method
+      2. It can be used to refer to the current class instance variable.
+      3. It can be used to declare indexers.
+
 Why we need OOPs in Programming language?
 ------------
 

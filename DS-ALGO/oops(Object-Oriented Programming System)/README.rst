@@ -7,17 +7,25 @@ C++ OOPs Concepts
 ===============================================================================
 
 
-oops is about creating objects that contain both data and functions.
+Object-Oriented Programming is a methodology or paradigm to design a
+program using classes and objects. It simplifies the software development
+and maintenance by providing some concepts defined below :
 
 Object
 ------------
-
-Any entity that has state and behavior is known as an object. For example: chair, pen, table, keyboard, bike etc. It can be physical and logical.
+Object is a run-time entity. It is an instance of the class. An object can
+represent a person, place or any other item. An object can operate on
+both data members and member functions.
 
 Class
 ------------
 
 A class is like a blueprint for an object. It is a user-defined data type, which holds its own data members and member functions.
+For
+example, Human being is a class. The body parts of a human being are its
+properties, and the actions performed by the body parts are known as
+functions. The class does not occupy any memory space till the time an
+object is instantiated.
 
 Four pillars of OOP
 ===============================================================================

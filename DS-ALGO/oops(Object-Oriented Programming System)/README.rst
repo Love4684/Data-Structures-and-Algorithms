@@ -54,11 +54,11 @@ In C++, we use Function overloading and Function overriding to achieve polymorph
           //  - eg. Virtual Functions
           /*
           Polymorphism in C++ can be of two types:
-          1. Compile time polymorphism
+          1. Compile time polymorphism -> Static Polymorphism implies that the call to a function is resolved at compile time.
              Compile time polymorphism in C++ is acheived using:
               1.1 - Function overloading
               1.2 - Operator Overloading
-          2. Run time polymorphism
+          2. Run time polymorphism -> Runtime polymorphism is also known as dynamic polymorphism or late binding.
              Run time polymorphism in C++ is acheived using:
               2.1 - Virtual functions
 
@@ -288,12 +288,28 @@ In C++, we use abstract class and interface to achieve abstraction.
 
 Binding code and data together into a single unit is known as encapsulation. For example: capsule, it is wrapped with different medicines.
 
+Generic Functions using Template
+==========================================
+
 Advantage of OOPs
 ==========================================
 
 OOPs makes development and maintenance easier.
 
 OOPs provide data hiding whereas in Procedure-oriented programming language a global data can be accessed from anywhere.
+
+Difference between Private and Protected
+------------
+Private
+.......
+
+Only the member functions or the friend functions are allowed to access the private data members of a class.
+
+Protected
+.......
+
+The class member declared as Protected are inaccessible outside the class but they can be accessed by any subclass(derived class) of that class.
+
 
 ‘this’ Pointer :
 ------------
@@ -306,6 +322,23 @@ OOPs provide data hiding whereas in Procedure-oriented programming language a gl
       another method
       2. It can be used to refer to the current class instance variable.
       3. It can be used to declare indexers.
+
+Global variables
+------------
+Global variables are created when the program starts, and destroyed when it ends.
+
+`Differences between pointers and references in C++ <https://www.educative.io/edpresso/differences-between-pointers-and-references-in-cpp>`_
+------------
+
+pointer
+.......
+
+A pointer in C++ is a variable that holds the memory address of another variable.
+
+reference
+.......
+
+A reference is an alias for an already existing variable. Once a reference is initialized to a variable, it cannot be changed to refer to another variable. Hence, a reference is similar to a const pointer.
 
 Why we need OOPs in Programming language?
 ------------
@@ -405,25 +438,68 @@ These are the basic member function, which doesn’t have any special keyword li
       function body;
       }
       
-2) Static functions:
+2) Static Function Members & Static Variables 
 ....................
 
-Static is a keyword which can be used with data members as well as the member functions. These functions work for the class as whole rather than for a particular object of a class.
-
-It can be called using the object and the direct member access . operator. But, its more typical to call a static member function by itself, using class name and scope resolution :: operator.
+Static Function Members :- By declaring a function member as static, you make it independent of any particular object of the class. A static member function can be called even if no objects of the class exist and the static functions are accessed using only the class name and the scope resolution operator ::.
 
 .. code:: c++
 
-      class X
-      {
-       public:
-       static void f(){};
+      #include <iostream>
+
+      using namespace std;
+
+      class Box {
+         public:
+            static int objectCount;
+
+            // Constructor definition
+            Box(double l = 2.0, double b = 2.0, double h = 2.0) {
+               cout <<"Constructor called." << endl;
+               length = l;
+               breadth = b;
+               height = h;
+
+               // Increase every time object is created
+               objectCount++;
+            }
+            double Volume() {
+               return length * breadth * height;
+            }
+            static int getCount() {
+               return objectCount;
+            }
+
+         private:
+            double length;     // Length of a box
+            double breadth;    // Breadth of a box
+            double height;     // Height of a box
       };
 
-      int main()
-      {
-       X::f();   // calling member function directly with class name
+      // Initialize static member of class Box
+      int Box::objectCount = 0;
+
+      int main(void) {
+         // Print total number of objects before creating object.
+         cout << "Inital Stage Count: " << Box::getCount() << endl;
+
+         Box Box1(3.3, 1.2, 1.5);    // Declare box1
+         Box Box2(8.5, 6.0, 2.0);    // Declare box2
+
+         // Print total number of objects after creating object.
+         cout << "Final Stage Count: " << Box::getCount() << endl;
+
+         return 0;
       }
+
+output
+
+.. code:: c++
+
+      Inital Stage Count: 0
+      Constructor called.
+      Constructor called.
+      Final Stage Count: 2
       
 3) Const functions: 
 ...................

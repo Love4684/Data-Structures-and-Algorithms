@@ -236,6 +236,10 @@ output
 Abstract Class and Pure Virtual Function
 ....................
 
+An interface describes the behavior or capabilities of a C++ class without committing to a particular implementation of that class.
+
+The C++ interfaces are implemented using abstract classes.
+
 .. code:: c++
 
       Abstract Class is a class which contains atleast one Pure Virtual function in it.

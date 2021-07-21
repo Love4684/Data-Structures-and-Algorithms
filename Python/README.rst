@@ -159,5 +159,9 @@ Remove Duplicates from a List
 
       duplicate = [2, 4, 10, 20, 5, 2, 20, 4]
       print(list(set(duplicate)))
-      
+     
+Pass
+============
+     
+In Python, the pass keyword is used to execute nothing;      
       

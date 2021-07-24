@@ -64,7 +64,7 @@ Image of binary tree
           }
       };
 
-Image of binary tree
+check bst or not
 =====================
 
       {

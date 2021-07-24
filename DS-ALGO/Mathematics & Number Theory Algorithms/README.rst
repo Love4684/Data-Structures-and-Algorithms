@@ -164,6 +164,32 @@ output
       The reverse of the number is: 336543
       not palindrom
 
+check Prime Number
+------------------
+
+.. code:: c++
+
+      #include <bits/stdc++.h>  
+      using namespace std;  
+      int main()  
+      {  
+        int n, i, m=0, flag=0;  
+
+        cin >> n;   
+        for(i = 2; i <= sqrt(n); i++)  
+        {  
+            if(n % i == 0)  
+            {  
+                cout<<"Number is not Prime."<<endl;  
+                flag=1;  
+                break;  
+            }  
+        }  
+        if (flag==0)  
+            cout << "Number is Prime."<<endl;  
+        return 0;  
+      }  
+
 
 Sieve of Eratosthenes Given a number n, print all primes smaller than or equal to n.
 -------------------------

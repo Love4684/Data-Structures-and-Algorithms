@@ -196,8 +196,8 @@ Sieve of Eratosthenes Given a number n, print all primes smaller than or equal t
 
 .. code:: c++
 
-#include<bits/stdc++.h>
-using namespace std;
+      #include<bits/stdc++.h>
+      using namespace std;
 
       int main()
        {

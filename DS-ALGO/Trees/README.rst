@@ -45,6 +45,8 @@ Trees
 Image of binary tree
 =====================
 
+.. code:: c++
+
       class Solution {
           void swap(TreeNode *curr)
           {
@@ -66,6 +68,8 @@ Image of binary tree
 
 check bst or not
 =====================
+
+.. code:: c++
 
       {
       #include <bits/stdc++.h>

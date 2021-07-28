@@ -58,7 +58,7 @@ C++ Adjacency List Representation
 Breadth First Search
 ==================================
 
-.. image:: https://github.com/Love4684/practice/blob/main/media/3.jpg
+.. image:: https://github.com/Love4684/Data-Structures-and-Algorithms/blob/master/DS-ALGO/Graphs/media/1.png
 
 
 .. code:: c++

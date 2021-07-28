@@ -109,6 +109,13 @@ Inserting a node
           return 0;
       }
 
+`Next greater element in the Linked List <https://www.geeksforgeeks.org/next-greater-element-in-the-linked-list/>`_
+===============================================================================
+
+.. code:: c++
+
+
+
 `Remove Nth Node From End of List <https://leetcode.com/problems/remove-nth-node-from-end-of-list/>`_
 ===============================================================================
 

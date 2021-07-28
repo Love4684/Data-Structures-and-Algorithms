@@ -356,6 +356,10 @@ python code
         return maxsum;
     }
 
+`Maximum Sum Circular Subarray <https://leetcode.com/problems/maximum-sum-circular-subarray/>`_
+=========================================
+
+.. code:: c++
 
 1. find the nth Prime Number
 ===============================================================================

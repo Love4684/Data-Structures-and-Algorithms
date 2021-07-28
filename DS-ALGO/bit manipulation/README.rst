@@ -77,7 +77,7 @@ Conversion
       +------------------+------------------+
       
       
-Now, write these resultant integer part, this will be 0.11010 which is equivalent binary fractional number of decimal fractional 0.8125.
+      Now, write these resultant integer part, this will be 0.11010 which is equivalent binary fractional number of decimal fractional 0.8125.
 
 Subtraction of two Binary Numbers(2 - 3)
 --------------------

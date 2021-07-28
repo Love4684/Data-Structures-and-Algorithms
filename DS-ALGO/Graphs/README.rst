@@ -55,6 +55,81 @@ C++ Adjacency List Representation
          return 0;
       }
 
+Breadth First Search
+==================================
+
+.. image:: https://github.com/Love4684/practice/blob/main/media/3.jpg
+
+
+.. code:: c++
+
+      #include<bits/stdc++.h>
+      using namespace std;
+      class Solution {
+      public:
+          vector<int>bfsOfGraph(int V, vector<int> adj[]){
+              vector<int> bfs; 
+              vector<int> vis(V, 0); 
+              queue<int> q; 
+              q.push(2); // start traversal from vertex 2
+              vis[2] = 1; 
+              while(!q.empty()) {
+                  int node = q.front();
+                  q.pop(); 
+                  bfs.push_back(node);             
+                  for(auto it : adj[node]) {
+                      if(!vis[it]) {
+                          q.push(it); 
+                          vis[it] = 1; 
+                      }
+                  }
+              }        
+              return bfs; 
+          }
+      };
+
+      // { Driver Code Starts.
+      int main(){
+
+              int V, E;
+              cin >> V >> E;
+              vector<int> adj[V];
+
+              for(int i = 0; i < E; i++)
+              {
+                  int u, v;
+                  cin >> u >> v;
+                  adj[u].push_back(v);
+          //      adj[v].push_back(u); // uncomment this for undirected graoh 
+              }
+              Solution obj;
+              vector<int>ans=obj.bfsOfGraph(V, adj);
+              for(int i=0;i<ans.size();i++){
+                  cout<<ans[i]<<" ";
+              }
+          return 0;
+      }  
+
+input
+
+.. code:: c++
+
+      4 6
+      0 1
+      0 2
+      1 2
+      2 0
+      2 3
+      3 3
+      
+output
+
+.. code:: c++
+
+      2 0 3 1 
+      
+
+
 `number-of-connected-components-in-an-undirected-graph <https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/>`_
 ===============================================================================
 

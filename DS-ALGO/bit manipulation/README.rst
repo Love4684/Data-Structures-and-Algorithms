@@ -55,8 +55,8 @@ Conversion
       |       1 / 2 = 0	 |  1               |
       +------------------+------------------+
       
-Now, write remainder from bottom to up (in reverse order), this will be
-1110000 which is equivalent binary number of decimal integer 112.
+      Now, write remainder from bottom to up (in reverse order), this will be
+      1110000 which is equivalent binary number of decimal integer 112.
 
    * Ex 2. Convert decimal fractional number 0.8125 into binary number.
  

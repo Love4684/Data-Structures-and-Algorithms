@@ -29,6 +29,8 @@ in binary
 Conversion 
 --------------------
 
+.. code:: math
+
    * Decimal to Binary: Performing Division by Two with Remainder (For integer part)
    
    

@@ -129,6 +129,73 @@ output
       2 0 3 1 
       
 
+`Depth First Search <https://practice.geeksforgeeks.org/problems/depth-first-traversal-for-a-graph/1#>`_
+==================================
+
+.. code:: c++
+
+      #include<bits/stdc++.h>
+      using namespace std;
+      class Solution 
+      {
+          void dfs(int node, vector<int> &vis, vector<int> adj[], vector<int> &storeDfs) 
+          {
+              storeDfs.push_back(node); 
+              vis[node] = 1; 
+              for(auto it : adj[node]) 
+              {
+                  if(!vis[it]) 
+                  {
+                      dfs(it, vis, adj, storeDfs); 
+                  }
+              }
+          }
+          public:
+          vector<int>dfsOfGraph(int V, vector<int> adj[])
+          {
+              vector<int> storeDfs; 
+              vector<int> vis(V, 0); 
+              dfs(0, vis, adj, storeDfs); 
+              return storeDfs; 
+          }
+      };
+
+      int main()
+      {
+              int V, E;
+              cin >> V >> E;
+              vector<int> adj[V];
+              for(int i = 0; i < E; i++)
+              {
+                  int u, v;
+                  cin >> u >> v;
+                  adj[u].push_back(v);
+                  adj[v].push_back(u);
+              }
+              Solution obj;
+              vector<int>ans=obj.dfsOfGraph(V, adj);
+              for(int i=0;i<ans.size();i++)
+              {
+                  cout<<ans[i]<<" ";
+              }
+          return 0;
+      } 
+
+input
+
+.. code:: c++
+
+      5 4
+      0 1 
+      0 2
+      0 3 
+      2 4
+
+output
+
+.. code:: c++
+
+      0 1 2 4 3 
 
 `number-of-connected-components-in-an-undirected-graph <https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/>`_
 ===============================================================================

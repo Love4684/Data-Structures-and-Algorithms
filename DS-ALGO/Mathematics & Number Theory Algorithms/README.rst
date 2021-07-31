@@ -226,3 +226,48 @@ output
 .. code:: c++
 
       2 3 5 7 11 13 17 19 23 29 
+      
+      
+
+`Count ways to distribute m items among n people <https://www.geeksforgeeks.org/count-ways-to-distribute-m-items-among-n-people/>`_
+===============================================================================
+
+.. code:: c++      
+
+      #include <bits/stdc++.h>
+      using namespace std;
+      int binomial_coefficient(int n, int r)
+      {
+          int res = 1;
+
+          if (r > n - r)
+              r = n - r;
+
+          for (int i = 0; i < r; ++i) {
+              res *= (n - i);
+              res /= (i + 1);
+          }
+
+          return res;
+      }
+      int calculate_ways(int m, int n)
+      {
+          if (m < n)
+              return 0;
+
+          // ways  -> (n+m-1)C(m-1)
+          int ways = binomial_coefficient(n + m - 1, n - 1);
+          return ways;
+      }
+
+      int main()
+      {
+          // m represents number of mangoes
+          // n represents number of people
+          int m = 7, n = 5;
+
+          int result = calculate_ways(m, n);
+          printf("%d\n", result);
+
+          return 0;
+      }

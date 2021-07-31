@@ -3,6 +3,19 @@
    :local:
    :depth: 3
 
+factorial of a number
+===============================================================================
+
+.. code:: c++
+
+      unsigned int factorial(unsigned int n)
+      {
+          if (n == 0)
+              return 1;
+          return n * factorial(n - 1);
+      }
+
+
 Check Palindrome 
 ===============================================================================
 

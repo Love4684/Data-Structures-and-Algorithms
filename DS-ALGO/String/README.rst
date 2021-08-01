@@ -317,5 +317,4 @@ next palindrome
 `Length of the longest substring without repeating characters <https://leetcode.com/problems/longest-substring-without-repeating-characters/>`_
 ===============================================================================
 
-`Distribute N candies among K people <https://leetcode.com/problems/distribute-candies-to-people/>`_
-===============================================================================
+

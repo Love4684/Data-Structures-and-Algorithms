@@ -230,7 +230,7 @@ output
       
 
 `Count ways to distribute m items among n people <https://www.geeksforgeeks.org/count-ways-to-distribute-m-items-among-n-people/>`_
-===============================================================================
+-------------------------
 
 .. code:: c++      
 
@@ -271,3 +271,7 @@ output
 
           return 0;
       }
+      
+`Distribute N candies among K people <https://leetcode.com/problems/distribute-candies-to-people/>`_
+-------------------------
+      

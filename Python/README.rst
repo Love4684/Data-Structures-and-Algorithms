@@ -488,5 +488,42 @@ output
 .. code:: python
 
       Geek1 False
-      Geek2 True
+      Geek2 True 
       
+length of a string without using len()
+=====================
+
+.. code:: python
+
+      a = "jhnfbdljfgf"
+      count = 0
+      for i in a:
+          count=count + 1
+      print(count)    
+
+Replace odd number with -1
+=====================
+
+.. code:: python
+
+      import numpy as np
+      arr = np.arange(0,10)
+      arr[arr%2 == 1] = -1
+      arr
+
+      otput
+
+      array([ 0, -1,  2, -1,  4, -1,  6, -1,  8, -1])
+      
+Common value of two array
+=====================
+
+.. code:: python
+
+      a = np.array([ 0, -1,  2, -1,  4, -1,  6, -1,  8, -1])
+      b = np.array([ 5, 78,  2, 89,  4, 56,  6, -1,  8, -1])
+      np.intersect1d(a, b)
+
+      output
+
+      array([-1,  2,  4,  6,  8])

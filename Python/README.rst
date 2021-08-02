@@ -109,9 +109,9 @@ A Pandas DataFrame is a 2 dimensional data structure, like a 2 dimensional array
       output
 
           Fruit_name	 count
-      0	  mango	         6
+      0	  mango	            6
       1	  apple    	   4
-      2	  guava	         8
+      2	  guava	            8
  
 Numpy
 ===============================================================================

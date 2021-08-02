@@ -192,6 +192,7 @@ Duplicates
 Data Correlations   
 ..........
 The corr() method calculates the relationship between each column in your data set.
+
 .. code:: python 
 
    df.corr()

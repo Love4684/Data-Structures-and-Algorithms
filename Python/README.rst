@@ -99,7 +99,21 @@ NumPy is a Python library used for working with arrays.It provides a high-perfor
        [0., 0., 0., 0.],
        [0., 0., 0., 0.],
        [0., 0., 0., 0.]])
+       
+.. code:: python
 
+      import numpy as np
+      lst1=[1,2,3]
+      lst2=[2,3,4]
+      a = np.sum((lst1, lst2), axis = 0)
+      b = np.sum((lst1, lst2), axis = 1)
+      print(a, b))
+      
+      output
+      
+      [3 5 7] [6 9]
+      
+     
 Multiplication of two Matrices
 ===============================================================================
 

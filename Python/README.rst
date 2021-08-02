@@ -280,5 +280,37 @@ output
 
       5000
 
+Inheritance
+============
 
+When one object acquires all the properties and behaviours of parent object i.e. known as inheritance. It provides code reusability.
+
+It is used to achieve runtime polymorphism.
+
+.. code:: python
+
+      class Person(object):
+          def __init__(self, name):
+              self.name = name
+          def getName(self):
+              return self.name
+          def isEmployee(self):
+              return False
+
+      class Employee(Person):
+          def isEmployee(self):
+              return True
+
+      emp = Person("Geek1")
+      print(emp.getName(), emp.isEmployee())
+
+      emp = Employee("Geek2")
+      print(emp.getName(), emp.isEmployee())
+      
+output
+
+.. code:: python
+
+      Geek1 False
+      Geek2 True
       

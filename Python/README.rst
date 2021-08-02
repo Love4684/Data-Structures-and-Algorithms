@@ -162,18 +162,24 @@ Remove Duplicates from a List
      
 Pass
 ============
+
+.. code:: python
      
-In Python, the pass keyword is used to execute nothing;      
+   In Python, the pass keyword is used to execute nothing;      
       
 
 Python Keywords
 ============
-     
+
+.. code:: python
+
       Python has a set of keywords that are reserved words that cannot be used as variable names, function names, or any other identifiers.
       In Python, keywords are case sensitive. There are 33 keywords in Python 3.7.
       
 literals
 ============
+
+.. code:: python
 
    literals is value which is given to a variable.
 

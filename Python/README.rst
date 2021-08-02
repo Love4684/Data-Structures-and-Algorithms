@@ -87,19 +87,43 @@ NumPy is a Python library used for working with arrays.It provides a high-perfor
 .. code:: python
 
       import numpy as np
-      my_lst1=[1,2,3,4,5]
-      my_lst2=[2,3,4,5,6]
-      my_lst3=[9,7,6,8,9]
-      arr=np.array([my_lst1,my_lst2,my_lst3])
-      print(arr)
-  
-output
+      mt = np.array([[1, 2, 3, 4], [3, 4, 5, 6], [1, 2, 3, 4], [3, 4, 5, 6]])
+      mt_mul = np.dot(mt, mt)
+      mt_dia = np.diagonal(mt)
+      
+      a = np.zeros((4, 4))
+      
+      output
+      
+      array([[0., 0., 0., 0.],
+       [0., 0., 0., 0.],
+       [0., 0., 0., 0.],
+       [0., 0., 0., 0.]])
+
+Multiplication of two Matrices
+===============================================================================
 
 .. code:: python
 
-      array([[1, 2, 3, 4, 5],
-             [2, 3, 4, 5, 6],
-             [9, 7, 6, 8, 9]])
+      matrix1 = [[12,7,3], [4 ,5,6],[7 ,8,9]]
+      matrix2 = [[5,8,1], [6,7,3], [4,5,9]]
+
+
+      ans = np.zeros((3, 3))
+
+      for i in range(3):
+          for j in range(3):
+              for k in range(3):
+                  ans[i][j] += matrix1[i][k] * matrix2[k][j]
+
+      print (ans)
+
+      
+      output
+      
+      [[114. 160.  60.]
+      [ 74.  97.  73.]
+      [119. 157. 112.]]
   
 Iterators and Generators  
 ===============================================================================

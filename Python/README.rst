@@ -112,7 +112,92 @@ A Pandas DataFrame is a 2 dimensional data structure, like a 2 dimensional array
       0	  mango	            6
       1	  apple    	    4
       2	  guava	            8
- 
+
+Pandas Read CSV
+.................
+
+.. code:: python 
+
+      import pandas as pd
+      df = pd.read_csv('data.csv')
+      print(df.to_string()) 
+
+      #use to_string() to print the entire DataFrame.
+      
+Pandas Read JSON 
+................
+
+.. code:: python 
+
+      import pandas as pd
+      df = pd.read_json('data.json')
+      print(df.to_string()) 
+
+      #JSON = Python Dictionary JSON objects have the same format as Python dictionaries.
+
+Viewing the Data
+...............
+
+.. code:: python 
+
+      import pandas as pd
+      df = pd.read_csv('data.csv')
+      print(df.head())
+      
+Info About the Data
+...............
+
+.. code:: python 
+
+      print(df.info()) 
+      
+Cleaning Data
+===============================================================================
+
+Data cleaning means fixing bad data in our data set. Bad data could be:
+
+Cleaning Empty cells
+.............
+
+.. code:: python 
+
+      1. Remove all rows with NULL values:
+
+      import pandas as pd
+      df = pd.read_csv('data.csv')
+      df.dropna(inplace = True)
+      print(df.to_string())
+
+      2. Replace Empty Values
+
+      df.fillna(130, inplace = True)
+
+Cleaning Data of Wrong Format
+.............................
+
+Cells with data of wrong format can make it difficult, or even impossible, to analyze data.
+To fix it, you have two options: remove the rows, or convert all cells in the columns into the same format.
+
+Wrong data
+....................
+
+"Wrong data" does not have to be "empty cells" or "wrong format", it can just be wrong, like if someone registered "199" instead of "1.99".
+
+Duplicates
+............
+
+.. code:: python 
+
+   df.drop_duplicates(inplace = True)
+   
+datetime   
+===============================================================================
+.. code:: python 
+   from datetime import date
+   my_date = date(1996, 12, 11)
+   today = date.today()
+   print("Date components", today.year, today.month, today.day)
+
 Numpy
 ===============================================================================
 

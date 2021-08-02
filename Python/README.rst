@@ -62,7 +62,7 @@ values.
    for x in dict:
     print(x, dict[x])
     
-    Car1  Audi
+   Car1  Audi
    Car2  BMW
    Car3   M e r ci di e s Benz 
    

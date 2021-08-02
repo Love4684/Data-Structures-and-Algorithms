@@ -207,3 +207,26 @@ literals
    Numeric Literals
 
    Boolean Literals
+
+Self
+============
+
+.. code:: python
+
+      class Employee:
+          def printdetails(self):
+              return f"The Name is {self.name}. Salary is {self.salary} and role is {self.role}"
+
+      harry = Employee()
+      harry.name = "Harry"
+      harry.salary = 455
+      harry.role = "Instructor"
+      print(harry.printdetails())
+      
+output
+
+.. code:: python
+
+      The Name is Harry. Salary is 455 and role is Instructor
+
+      

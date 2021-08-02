@@ -189,6 +189,14 @@ Duplicates
 .. code:: python 
 
    df.drop_duplicates(inplace = True)
+Data Correlations   
+..........
+The corr() method calculates the relationship between each column in your data set.
+.. code:: python 
+
+   df.corr()
+
+   
    
 datetime   
 ===============================================================================

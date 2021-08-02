@@ -211,6 +211,8 @@ literals
 Self
 ============
 
+The self keyword is used in the method to refer to the instance of the current class we are using.
+
 .. code:: python
 
       class Employee:
@@ -228,5 +230,28 @@ output
 .. code:: python
 
       The Name is Harry. Salary is 455 and role is Instructor
+
+__init__() (Constructors)
+============
+
+Constructor in Python is used to assign values to the variables or data members of a class when an object is created.
+
+.. code:: python
+
+      class Employee:
+          def __init__(self, aname, asalary, arole):
+              self.name = aname
+              self.salary = asalary
+              self.role = arole
+
+      harry = Employee("HARRY", 5000, "Instructor")
+      print(harry.salary)
+      
+output
+
+.. code:: python
+
+      5000
+
 
       

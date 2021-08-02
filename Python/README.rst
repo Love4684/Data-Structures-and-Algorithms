@@ -165,3 +165,20 @@ Pass
      
 In Python, the pass keyword is used to execute nothing;      
       
+
+Python Keywords
+============
+     
+      Python has a set of keywords that are reserved words that cannot be used as variable names, function names, or any other identifiers.
+      In Python, keywords are case sensitive. There are 33 keywords in Python 3.7.
+      
+What do you mean by Python literals? 
+============
+
+   literals is value which is given to a variable.
+
+   String Literals
+
+   Numeric Literals
+
+   Boolean Literals

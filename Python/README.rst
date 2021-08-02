@@ -208,6 +208,33 @@ literals
 
    Boolean Literals
 
+class
+============
+
+.. code:: python
+
+      class human:
+          name = None
+          def get_name(self):
+              print("enter the name")
+              self.name = input()
+          def put_name(self):
+              print(self.name)
+
+      h1 = human()
+      h1.get_name()
+      h1.put_name()
+      print(h1.name)
+      
+output
+
+.. code:: python
+
+      enter the name
+      ram
+      ram
+      ram
+
 Self
 ============
 

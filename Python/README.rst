@@ -40,13 +40,32 @@ values.
 
 .. code:: python
 
-    di c ={}
-    my_dict={"Car1 " : "Audi"  , "Car2 " : "BMW" , "Car3 " : " M e r ci di e s Benz "}
-    for x in my_dict :
-    print ( x )
-    Car1
-    Car2
-    Car3
+   my_dict = {"fruits" : ("mango", "apple", "guava")} 
+   
+   my_dict
+   {'fruits': ('mango', 'apple', 'guava')}
+   
+   my_dict.keys()
+   dict_keys(['fruits'])
+   
+   my_dict.values()
+   dict_values([('mango', 'apple', 'guava')])
+   
+   my_dict["fruits"]
+   ('mango', 'apple', 'guava')
+   
+   tup = my_dict["fruits"]
+   tup[0:2]
+   ('mango', 'apple')
+   
+   dict = {"Car1 " : "Audi"  , "Car2 " : "BMW" , "Car3 " : " M e r ci di e s Benz "}
+   for x in dict:
+    print(x, dict[x])
+    
+    Car1  Audi
+   Car2  BMW
+   Car3   M e r ci di e s Benz 
+   
 
 Tuples
 ===============================================================================

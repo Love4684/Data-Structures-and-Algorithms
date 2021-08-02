@@ -78,7 +78,41 @@ collection which is ordered and unchangeable.
     my_tuple=tuple ( )
     my_tuple=(" Krish " , "Ankur" , " John " )
     
-    
+Pandas
+===============================================================================
+
+Pandas is a Python library. Pandas is used to analyze data.
+
+.. code:: python
+
+      Is there a correlation between two or more columns?
+      What is average value?
+      Max value?
+      Min value?
+
+Series
+.........
+
+A Pandas Series is like a column in a table. It is a one-dimensional array holding data of any type.
+
+DataFrames
+...........
+
+A Pandas DataFrame is a 2 dimensional data structure, like a 2 dimensional array, or a table with rows and columns.
+
+.. code:: python 
+
+      import pandas as pd
+      dt1 = {"Fruit_name" : ["mango", "apple", "guava"], "count" : [6, 4, 8]}
+      pd.DataFrame(dt1)
+
+      output
+
+          Fruit_name	 count
+      0	  mango	      6
+      1	  apple    	   4
+      2	  guava	      8
+ 
 Numpy
 ===============================================================================
 

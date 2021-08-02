@@ -197,7 +197,16 @@ The corr() method calculates the relationship between each column in your data s
 
    df.corr()
 
-   
+Pandas - Plotting
+...............
+
+.. code:: python 
+
+   import pandas as pd
+   import matplotlib.pyplot as plt
+   df = pd.read_csv('data.csv')
+   df["Duration"].plot(kind = 'hist')
+   plt.show()
    
 datetime   
 ===============================================================================

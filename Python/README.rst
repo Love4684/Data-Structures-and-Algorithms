@@ -192,8 +192,8 @@ Duplicates
    
 datetime   
 ===============================================================================
-
 .. code:: python 
+
    from datetime import date
    my_date = date(1996, 12, 11)
    today = date.today()

@@ -3,7 +3,29 @@
 .. contents::
    :local:
    :depth: 2
-   
+
+Python Keywords
+============
+
+.. code:: python
+
+      Python has a set of keywords that are reserved words that cannot be used as variable names, function names, or any other identifiers.
+      In Python, keywords are case sensitive. There are 33 keywords in Python 3.7.
+      
+literals
+============
+
+.. code:: python
+
+   literals is value which is given to a variable.
+
+   String Literals
+
+   Numeric Literals
+
+   Boolean Literals
+
+
 Lists
 ===============================================================================
 
@@ -77,7 +99,241 @@ collection which is ordered and unchangeable.
 
     my_tuple=tuple ( )
     my_tuple=(" Krish " , "Ankur" , " John " )
-    
+
+datetime   
+===============================================================================
+.. code:: python 
+
+   from datetime import date
+   my_date = date(1996, 12, 11)
+   today = date.today()
+   print("Date components", today.year, today.month, today.day)
+
+Iterators and Generators  
+===============================================================================
+
+
+To create a Python iterator object, you will need to implement two methods in your iterator class.
+
+__iter__: This returns the iterator object itself and is used while using the "for" and "in" keywords.
+
+__next__: This returns the next value. This would return the StopIteration error once all the objects have been looped through.
+
+Iterator uses iter() and next() functions
+
+Every iterator is not a generator
+
+.. code:: python
+
+      iter_list = iter(['Geeks', 'For', 'Geeks'])
+      print(next(iter_list))
+      print(next(iter_list))
+      print(next(iter_list))
+
+output
+
+.. code:: python
+
+   Geeks
+   For
+   Geeks  
+
+Generator functions are ordinary functions defined using yield instead of return. When called, a generator function returns a generator object
+  
+Generator uses yield keyword
+
+Every generator is an iterator
+
+.. code:: python
+
+      def sq_numbers(n):
+          for i in range(1, n+1):
+              yield i*i
+
+
+      a = sq_numbers(3)
+  
+      print("The square of numbers 1,2,3 are : ")
+      print(next(a))
+      print(next(a))
+      print(next(a))
+
+output
+
+.. code:: python
+
+      The square of numbers 1,2,3 are :  
+      1
+      4
+      9
+
+class
+============
+
+.. code:: python
+
+      class human:
+          name = None
+          def get_name(self):
+              print("enter the name")
+              self.name = input()
+          def put_name(self):
+              print(self.name)
+
+      h1 = human()
+      h1.get_name()
+      h1.put_name()
+      print(h1.name)
+      
+output
+
+.. code:: python
+
+      enter the name
+      ram
+      ram
+      ram
+      
+Pass
+........
+
+.. code:: python
+     
+   In Python, the pass keyword is used to execute nothing;     
+
+Self
+.........
+
+The self keyword is used in the method to refer to the instance of the current class we are using.
+
+.. code:: python
+
+      class Employee:
+          def printdetails(self):
+              return f"The Name is {self.name}. Salary is {self.salary} and role is {self.role}"
+
+      harry = Employee()
+      harry.name = "Harry"
+      harry.salary = 455
+      harry.role = "Instructor"
+      print(harry.printdetails())
+      
+output
+
+.. code:: python
+
+      The Name is Harry. Salary is 455 and role is Instructor
+
+__init__() (Constructors)
+.............................
+
+Constructor in Python is used to assign values to the variables or data members of a class when an object is created.
+
+.. code:: python
+
+      class Employee:
+          def __init__(self, aname, asalary, arole):
+              self.name = aname
+              self.salary = asalary
+              self.role = arole
+
+      harry = Employee("HARRY", 5000, "Instructor")
+      print(harry.salary)
+      
+output
+
+.. code:: python
+
+      5000
+
+Inheritance
+..................
+
+When one object acquires all the properties and behaviours of parent object i.e. known as inheritance. It provides code reusability.
+
+It is used to achieve runtime polymorphism.
+
+.. code:: python
+
+      class Person(object):
+          def __init__(self, name):
+              self.name = name
+          def getName(self):
+              return self.name
+          def isEmployee(self):
+              return False
+
+      class Employee(Person):
+          def isEmployee(self):
+              return True
+
+      emp = Person("Geek1")
+      print(emp.getName(), emp.isEmployee())
+
+      emp = Employee("Geek2")
+      print(emp.getName(), emp.isEmployee())
+      
+output
+
+.. code:: python
+
+      Geek1 False
+      Geek2 True 
+
+map():
+============
+
+A map function executes certain instructions or functionality provided to it on every item of an iterable.
+
+.. code:: python
+
+      syntax
+
+      map(function, iterable) 
+
+      Ex
+
+      items = [1, 2, 3, 4, 5]
+      a=list(map((lambda x: x **3), items))
+      print(a)
+      #Output: [1, 8, 27, 64, 125]
+      
+filter():
+============
+
+A filter function in Python tests a specific user-defined condition for a function and returns an iterable for the elements and values that satisfy the condition or, in other words, return true.
+
+.. code:: python
+
+      syntax
+
+      filter(function, iterable)
+
+      Ex
+
+      a = [1,2,3,4,5,6]
+      b = [2,5,0,7,3]
+      c= list(filter(lambda x: x in a, b))
+      print(c) # prints out [2, 5, 3]
+      
+reduce():
+============
+
+Reduce functions apply a function to every item of an iterable and gives back a single value as a resultant
+
+.. code:: python
+
+      syntax
+
+      reduce(function, iterable)
+
+      Ex
+
+      from functools import reduce
+      a=reduce( (lambda x, y: x * y), [1, 2, 3, 4] )
+      print(a) 
+      #Output: 24     
+
 Pandas
 ===============================================================================
 
@@ -208,14 +464,6 @@ Pandas - Plotting
    df["Duration"].plot(kind = 'hist')
    plt.show()
    
-datetime   
-===============================================================================
-.. code:: python 
-
-   from datetime import date
-   my_date = date(1996, 12, 11)
-   today = date.today()
-   print("Date components", today.year, today.month, today.day)
 
 Numpy
 ===============================================================================
@@ -277,63 +525,7 @@ Multiplication of two Matrices
       [ 74.  97.  73.]
       [119. 157. 112.]]
   
-Iterators and Generators  
-===============================================================================
 
-
-To create a Python iterator object, you will need to implement two methods in your iterator class.
-
-__iter__: This returns the iterator object itself and is used while using the "for" and "in" keywords.
-
-__next__: This returns the next value. This would return the StopIteration error once all the objects have been looped through.
-
-Iterator uses iter() and next() functions
-
-Every iterator is not a generator
-
-.. code:: python
-
-      iter_list = iter(['Geeks', 'For', 'Geeks'])
-      print(next(iter_list))
-      print(next(iter_list))
-      print(next(iter_list))
-
-output
-
-.. code:: python
-
-   Geeks
-   For
-   Geeks  
-
-Generator functions are ordinary functions defined using yield instead of return. When called, a generator function returns a generator object
-  
-Generator uses yield keyword
-
-Every generator is an iterator
-
-.. code:: python
-
-      def sq_numbers(n):
-          for i in range(1, n+1):
-              yield i*i
-
-
-      a = sq_numbers(3)
-  
-      print("The square of numbers 1,2,3 are : ")
-      print(next(a))
-      print(next(a))
-      print(next(a))
-
-output
-
-.. code:: python
-
-      The square of numbers 1,2,3 are :  
-      1
-      4
-      9
       
 Remove Duplicates from a List
 ===============================================================================
@@ -354,195 +546,7 @@ Remove Duplicates from a List
 
       duplicate = [2, 4, 10, 20, 5, 2, 20, 4]
       print(list(set(duplicate)))
-     
-Pass
-============
 
-.. code:: python
-     
-   In Python, the pass keyword is used to execute nothing;      
-      
-
-Python Keywords
-============
-
-.. code:: python
-
-      Python has a set of keywords that are reserved words that cannot be used as variable names, function names, or any other identifiers.
-      In Python, keywords are case sensitive. There are 33 keywords in Python 3.7.
-      
-literals
-============
-
-.. code:: python
-
-   literals is value which is given to a variable.
-
-   String Literals
-
-   Numeric Literals
-
-   Boolean Literals
-
-class
-============
-
-.. code:: python
-
-      class human:
-          name = None
-          def get_name(self):
-              print("enter the name")
-              self.name = input()
-          def put_name(self):
-              print(self.name)
-
-      h1 = human()
-      h1.get_name()
-      h1.put_name()
-      print(h1.name)
-      
-output
-
-.. code:: python
-
-      enter the name
-      ram
-      ram
-      ram
-
-Self
-============
-
-The self keyword is used in the method to refer to the instance of the current class we are using.
-
-.. code:: python
-
-      class Employee:
-          def printdetails(self):
-              return f"The Name is {self.name}. Salary is {self.salary} and role is {self.role}"
-
-      harry = Employee()
-      harry.name = "Harry"
-      harry.salary = 455
-      harry.role = "Instructor"
-      print(harry.printdetails())
-      
-output
-
-.. code:: python
-
-      The Name is Harry. Salary is 455 and role is Instructor
-
-__init__() (Constructors)
-============
-
-Constructor in Python is used to assign values to the variables or data members of a class when an object is created.
-
-.. code:: python
-
-      class Employee:
-          def __init__(self, aname, asalary, arole):
-              self.name = aname
-              self.salary = asalary
-              self.role = arole
-
-      harry = Employee("HARRY", 5000, "Instructor")
-      print(harry.salary)
-      
-output
-
-.. code:: python
-
-      5000
-
-Inheritance
-============
-
-When one object acquires all the properties and behaviours of parent object i.e. known as inheritance. It provides code reusability.
-
-It is used to achieve runtime polymorphism.
-
-.. code:: python
-
-      class Person(object):
-          def __init__(self, name):
-              self.name = name
-          def getName(self):
-              return self.name
-          def isEmployee(self):
-              return False
-
-      class Employee(Person):
-          def isEmployee(self):
-              return True
-
-      emp = Person("Geek1")
-      print(emp.getName(), emp.isEmployee())
-
-      emp = Employee("Geek2")
-      print(emp.getName(), emp.isEmployee())
-      
-output
-
-.. code:: python
-
-      Geek1 False
-      Geek2 True 
-      
-map():
-============
-
-A map function executes certain instructions or functionality provided to it on every item of an iterable.
-
-.. code:: python
-
-      syntax
-
-      map(function, iterable) 
-
-      Ex
-
-      items = [1, 2, 3, 4, 5]
-      a=list(map((lambda x: x **3), items))
-      print(a)
-      #Output: [1, 8, 27, 64, 125]
-      
-filter():
-============
-
-A filter function in Python tests a specific user-defined condition for a function and returns an iterable for the elements and values that satisfy the condition or, in other words, return true.
-
-.. code:: python
-
-      syntax
-
-      filter(function, iterable)
-
-      Ex
-
-      a = [1,2,3,4,5,6]
-      b = [2,5,0,7,3]
-      c= list(filter(lambda x: x in a, b))
-      print(c) # prints out [2, 5, 3]
-      
-reduce():
-============
-
-Reduce functions apply a function to every item of an iterable and gives back a single value as a resultant
-
-.. code:: python
-
-      syntax
-
-      reduce(function, iterable)
-
-      Ex
-
-      from functools import reduce
-      a=reduce( (lambda x, y: x * y), [1, 2, 3, 4] )
-      print(a) 
-      #Output: 24      
 
 length of a string without using len()
 =====================

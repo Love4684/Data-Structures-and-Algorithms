@@ -68,8 +68,7 @@ Factorial of a large number
          }      
       
       
-
-Count trailing zeroes in factorial of a number
+trailing zeroes in factorial
 -------------------------
 
 .. code:: c++

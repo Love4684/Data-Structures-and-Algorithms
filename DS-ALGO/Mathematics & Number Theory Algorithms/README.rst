@@ -7,7 +7,7 @@
 MATH
 ===============================================================================
 
-Factorial of a number
+Factorial
 -------------------------
 
 .. code:: c++
@@ -94,7 +94,7 @@ output
 
     2
 
-Check if a number is Palindrome 
+Palindrome 
 -------------------------
 
 using string
@@ -164,7 +164,7 @@ output
       The reverse of the number is: 336543
       not palindrom
 
-check Prime Number
+Prime
 ------------------
 
 .. code:: c++
@@ -190,9 +190,35 @@ check Prime Number
         return 0;  
       }  
 
+Armstrong
+------------------
 
-Sieve of Eratosthenes Given a number n, print all primes smaller than or equal to n.
+.. code:: c++
+
+      #include <bits/stdc++.h>
+      using namespace std;
+      int main()
+      {int n, d, r, sum=0, x;
+          cin >> x;
+          n = x;
+          d = log10(n) + 1;
+          for (int i = 0; i < d; ++i)
+          {
+             r = n%10;
+             sum += pow(r, d);
+             n /= 10;
+          }
+          if(sum == x)
+              cout << "amstrong";
+          else
+              cout << "not amastrong";
+      }
+
+
+Sieve of Eratosthenes.
 -------------------------
+
+Given a number n, print all primes smaller than or equal to n
 
 .. code:: c++
 

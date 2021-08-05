@@ -4,6 +4,12 @@
    :local:
    :depth: 2
 
+Python
+============
+
+Python is a general-purpose interpreted, interactive, object-oriented, and high-level programming language.
+
+
 Python Keywords
 ============
 
@@ -332,7 +338,14 @@ Reduce functions apply a function to every item of an iterable and gives back a 
       from functools import reduce
       a=reduce( (lambda x, y: x * y), [1, 2, 3, 4] )
       print(a) 
-      #Output: 24     
+      #Output: 24  
+      
+Dunder or magic methods
+=======================
+
+Dunder or magic methods in Python are the methods having two prefix and suffix underscores in the method name.
+
+
 
 Pandas
 ===============================================================================

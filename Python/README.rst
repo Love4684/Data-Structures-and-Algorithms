@@ -31,6 +31,7 @@ literals
 
    Boolean Literals
 
+.. image:: https://github.com/Love4684/Data-Structures-and-Algorithms/blob/master/Python/media/py.png
 
 Lists
 ===============================================================================

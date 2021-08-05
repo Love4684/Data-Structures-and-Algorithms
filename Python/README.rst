@@ -9,6 +9,10 @@ Python
 
 Python is a general-purpose interpreted, interactive, object-oriented, and high-level programming language.
 
+byte code.
+============
+
+Whenever the Python script compiles, it automatically generates a compiled code called as byte code.
 
 Python Keywords
 ============

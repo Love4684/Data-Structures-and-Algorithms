@@ -629,3 +629,45 @@ Training And Testing Available Data
       clf.score(X_test, y_test)
 
 
+Getting started with Machine Learning
+=====================
+
+.. code:: python
+
+      Supervised learning: 
+
+            Image Classification:
+            Market Prediction/Regression:
+
+      Unsupervised learning:
+
+            Clustering:
+
+      Classification: 
+
+         Inputs are divided into two or more classes, and the learner must produce a model
+         that assigns unseen inputs to one or more (multi-label classification) of these classes. This is 
+         typically tackled in a supervised way. Spam filtering is an example of classification, where the 
+         inputs are email (or other) messages and the classes are “spam” and “not spam”.
+
+      Regression:
+
+         It is also a supervised learning problem, but the outputs are continuous 
+         rather than discrete. For example, predicting the stock prices using historical data.
+
+      Linear Regression
+
+         Linear regression is used to predict the continuous dependent variable using a given
+         set of independent variables.
+
+         The output for Linear Regression must be a continuous value, such as price, age, etc.
+
+      Logistic Regression
+
+         Logistic Regression is used to predict the categorical dependent variable using a 
+         given set of independent variables.
+
+         The output of Logistic Regression must be a Categorical value such as 0 or 1, Yes or No, etc.
+
+
+

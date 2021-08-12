@@ -603,3 +603,29 @@ Common value of two array
       output
 
       array([-1,  2,  4,  6,  8])
+      
+      
+Training And Testing Available Data
+=====================
+
+.. code:: python      
+
+      import pandas as pd
+      import numpy as np
+      from sklearn import linear_model
+      import matplotlib.pyplot as plt
+
+      from sklearn.model_selection import train_test_split
+      X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.3)
+
+      from sklearn.linear_model import LinearRegression
+      clf = LinearRegression()
+      clf.fit(X_train, y_train)
+
+      clf.predict(X_test)
+
+      y_test
+
+      clf.score(X_test, y_test)
+
+

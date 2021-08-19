@@ -27,6 +27,45 @@ properties, and the actions performed by the body parts are known as
 functions. The class does not occupy any memory space till the time an
 object is instantiated.
 
+Constructors
+------------
+
+A constructor in C++ is a special method that is automatically called when an object of a class is created.
+
+Copy Constructor
+------------
+
+A copy constructor is a member function that initializes an object using another object of the same class.
+
+.. code:: c++
+
+      #include <iostream>  
+      using namespace std;  
+      class A  
+      {  
+         public:  
+          int x;  
+          A(int a)                // parameterized constructor.  
+          {  
+            x=a;  
+          }  
+          A(A &i)               // copy constructor  
+          {  
+              x = i.x;  
+          }  
+      };  
+      int main()  
+      {  
+        A a1(20);               // Calling the parameterized constructor.  
+       A a2(a1);                //  Calling the copy constructor.  
+       cout<<a2.x;  
+        return 0;  
+      }  
+      #outpu 20
+      
+      
+
+
 Four pillars of OOP
 ===============================================================================
 

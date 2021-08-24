@@ -34,3 +34,9 @@ kernel
 
       A kernel is the central component of an operating system that manages the operations of computers and hardware.
 
+Difference between Multiprocessing and Multithreading
+===============================================================================
+
+Thread
+===============================================================================
+

@@ -116,3 +116,90 @@ Bank Management System
 
 
     }
+    
+Bank Management System
+===============================================================================
+
+// Design a Data Structure SpecialStack that supports
+// all the stack operations like push(), pop(), isEmpty(), 
+// isFull() and an additional operation getMin() which 
+// should return minimum element from the SpecialStack. 
+// All these operations of SpecialStack must be O(1)
+
+  
+Bank Management System
+===============================================================================
+
+C/C++ Test: Set #5
+Q1.Develop an application that does the following:
+ 
+Continuously maintains prices (for each product) in ascending order based on supplied inputs.
+Each input contains the following type of record:
+struct Book {
+char Product[5];            	/* E.g. “P1”, “P2”, etc. */
+int Price;             	/* E.g. 2000, 3000, etc */
+int SeqNum;        	/* Positive number, e.g. 1, 2, 3 */
+};
+ 
+In order to demonstrate the working of this application, prepare the following methods/functions:
+1. 	Book* Load()
+From the given inputs, create and store data as Book records in a list (in the same sequence as given) and return this list.
+2. 	void Process(const Book* newBook)
+Use the information inside newBook to maintain topmost 5 prices in ascending order for this input product – in appropriate data structure(s).
+Display this product’s processed information in the specified output format.
+NOTE: For output purposes – assume topmost default values of Price to be zero.
+ 
+Given the above specifications, the application is expected to execute as follows:
+1. 	Create/initialize the required data storage(s).
+2. 	Call Load() and iterate through the returned list.
+3. 	For each element iterated in the above list - call Process() for that element.
+ 
+Guidelines
+1.     Make suitable assumptions and decisions regarding data types, data structures and their relationships.
+2.     Error & boundary conditions should be appropriately handled
+3.     Application output should clearly demonstrate the required functionality
+4.     Application code should be optimized for least memory usage and least processing time - during execution.
+ 
+
+The list of inputs for creating Book records is given below:
+P3, 3350, 1
+P1, 1500, 2
+P2, 2400, 3
+P1, 1300, 4
+P3, 50, 5
+P1, 1450, 6
+P2, -1000, 7
+P3, -50, 8
+P1, 1350, 9
+P2, 2350, 10
+P1, 1400, 11
+P3, 3400, 12
+P1, 1300, 13
+P2, -2350, 14
+P1, 1250, 15
+P3, 3350, 16
+ 
+The format of expected output is given below (Price values separated by commas):
+<SeqNum>: <Product> || <topmost 5 Price values ascending from left to right> ||
+ 
+Input example (for reference only) is given below:
+K7, 100, 1
+K7, 90, 2
+K7, 110, 3
+K5, 80, 4
+K7, -10, 5
+K7, 80, 6
+K7, 95, 7
+K7, 80, 8
+ 
+Output example (for reference only) is given below:
+1: K7 || 100, 0, 0, 0, 0 ||
+2: K7 || 90, 100, 0, 0, 0 ||
+3: K7 || 90, 100, 110, 0, 0 ||
+4: K5 || 80, 0, 0, 0, 0 ||
+5: K7 || -10, 90, 100, 110, 0 ||
+6: K7 || -10, 80, 90, 100,110 ||
+7: K7 || -10, 80, 90, 95, 100 ||
+8: K7 || -10, 80, 90, 95, 100 ||
+
+    

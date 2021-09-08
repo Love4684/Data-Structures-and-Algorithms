@@ -3,8 +3,75 @@
    :local:
    :depth: 3
 
-STACKS
+Implement stack using array
 ===============================================================================
+
+.. code:: c++
+
+
+      #include <bits/stdc++.h>
+      using namespace std;
+      #define n 5
+      class Stack {
+          int top;
+          int *arr;
+      public:
+          Stack()
+          {
+              arr = new int[n];
+              top = -1;
+          }
+          void push(int x)
+          {
+              if(top == n-1)
+              {
+                  cout << "Stack overflow" << endl;
+                  return;
+              }
+              top++;
+
+              arr[top] = x;
+          }
+          void pop()
+          {
+              if(top == -1)
+              {
+                  cout << "no elrment to delete" << endl;
+                  return;
+              }
+              top--;
+          }
+          int peek()
+          {
+              if(top == -1)
+              {
+                  cout << "no elrment in Stack" << endl;
+                  return -1;
+              }
+              return arr[top];
+          }
+          bool isEmpty()
+          {
+              return top==-1;
+          }
+      };
+      int main()
+      {
+          Stack st;
+          st.push(3);
+          st.push(8);
+          st.push(5);
+          cout << st.peek() << endl;
+          st.pop();
+          cout << st.peek() << endl;
+          st.pop();
+          st.pop();
+          st.pop();
+          cout << st.isEmpty() << endl;
+          return 0;
+      }
+
+
 
 `Reverse Words in a String <https://leetcode.com/problems/reverse-words-in-a-string/>`_
 ===============================================================================

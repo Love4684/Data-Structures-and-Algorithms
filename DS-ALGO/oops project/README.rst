@@ -111,12 +111,88 @@ Bank Management System
 
      getch();
      return 0;
-
-
-
-
     }
     
+Clipboard 
+===============================================================================
+
+.. code:: c++
+
+
+      #include <bits/stdc++.h>
+      using namespace std;
+      #define n 5
+      class Stack {
+          int top;
+          string *arr;
+      public:
+          Stack()
+          {
+              arr = new string[n];
+              top = -1;
+          }
+          void copy(string x)
+          {
+              if(top == n-1)
+              {
+                  cout << "Stack overflow" << endl;
+                  return;
+              }
+              top++;
+
+              arr[top] = x;
+          }
+          string past()
+          {
+              if(top == -1)
+              {
+                  cout << "no elrment in Stack" << endl;
+                  return "-1";
+              }
+              return arr[top];
+          }
+          string spast(int y)
+          {
+              if(y > 0 && y <= 5)
+              {
+
+                  return arr[n-y];
+              }
+              return "error";
+          }
+
+      };
+      int main()
+      {
+          Stack st;
+          st.copy("Blue");
+          cout << st.past() << endl;
+          st.copy("Red");
+          cout << st.past() << endl;
+          st.copy("Orange");
+          cout << st.past() << endl;
+          st.copy("yellow");
+          cout << st.past() << endl;
+          st.copy("green");
+          cout << st.past() << endl;
+          cout << st.spast(3) << endl;
+          cout << st.spast(6) << endl;
+          return 0;
+      }
+
+
+output
+
+.. code:: c++
+
+      Blue
+      Red
+      Orange
+      yellow
+      green
+      Orange
+      error
+
 Bank Management System
 ===============================================================================
 

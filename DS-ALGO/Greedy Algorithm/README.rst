@@ -2,7 +2,7 @@
    :local:
    :depth: 3
 
-Indian Coin Change
+`Indian Coin Change <https://www.geeksforgeeks.org/greedy-algorithm-to-find-minimum-number-of-coins/>`_
 ===============================================================================
 
 .. code:: c++
@@ -40,7 +40,7 @@ Indian Coin Change
     // output : Following is minimal number of change for 93: 50 20 20 2 1 
     
 
-Fractional Knapsack
+`Fractional Knapsack <https://www.geeksforgeeks.org/fractional-knapsack-problem/>`_
 ===============================================================================    
     
 .. code:: c++

@@ -42,7 +42,16 @@
 
 `Fractional Knapsack <https://www.geeksforgeeks.org/fractional-knapsack-problem/>`_
 ===============================================================================    
-    
+
+.. image:: https://github.com/Love4684/Data-Structures-and-Algorithms/blob/master/DS-ALGO/Greedy%20Algorithm/media/1.png
+
+.. image:: https://github.com/Love4684/Data-Structures-and-Algorithms/blob/master/DS-ALGO/Greedy%20Algorithm/media/2.png
+
+.. image:: https://github.com/Love4684/Data-Structures-and-Algorithms/blob/master/DS-ALGO/Greedy%20Algorithm/media/3.png
+
+.. image:: https://github.com/Love4684/Data-Structures-and-Algorithms/blob/master/DS-ALGO/Greedy%20Algorithm/media/4.png
+
+
 .. code:: c++
 
 

@@ -354,11 +354,12 @@ Protected
 The class member declared as Protected are inaccessible outside the class but they can be accessed by any subclass(derived class) of that class.
 
 
-‘this’ Pointer :
+‘this’ Pointer and super  :
 ------------
 
 .. code:: c++
 
+      super can be used to refer immediate parent class instance variable.
       this is a keyword that refers to the current instance of the
       class. There can be 3 main uses of ‘this’ keyword:
       1. It can be used to pass the current object as a parameter to

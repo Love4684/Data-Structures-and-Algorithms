@@ -109,6 +109,12 @@ Inserting a node
           return 0;
       }
 
+`Copy List with Random Pointer <https://leetcode.com/problems/copy-list-with-random-pointer/>`_
+===============================================================================
+
+.. code:: c++
+
+
 `Next greater element in the Linked List <https://www.geeksforgeeks.org/next-greater-element-in-the-linked-list/>`_
 ===============================================================================
 

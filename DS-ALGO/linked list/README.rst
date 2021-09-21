@@ -114,6 +114,40 @@ Inserting a node
 
 .. code:: c++
 
+      Node* copyRandomList(Node* head) 
+      {
+          Node *curr=head,*front=head;
+
+          while(curr!=NULL)
+          {
+              front=curr->next;
+              Node *copy=new Node(curr->val);
+              curr->next=copy;
+              copy->next=front;
+              curr=front;
+          }
+          curr=head;
+          while(curr!=NULL)
+          {
+              if(curr->random!=NULL)
+              {
+                  curr->next->random=curr->random->next;
+              }
+              curr=curr->next->next;
+          }
+          curr=head;
+          Node *dummy=new Node(0);
+          Node *copy=dummy;
+          while(curr!=NULL)
+          {
+              front=curr->next->next;
+              copy->next=curr->next;
+              curr->next=front;
+              copy=copy->next;
+              curr=curr->next;
+          }
+          return dummy->next;
+      }
 
 `Next greater element in the Linked List <https://www.geeksforgeeks.org/next-greater-element-in-the-linked-list/>`_
 ===============================================================================

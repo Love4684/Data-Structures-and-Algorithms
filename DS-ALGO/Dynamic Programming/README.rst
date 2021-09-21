@@ -35,7 +35,7 @@ Recursion
       }
 
 
-`Counting Bits <https://leetcode.com/problems/coin-change/>`_
+`Counting Bits <https://leetcode.com/problems/counting-bits/>`_
 ===============================================================================
 
 .. code:: c++

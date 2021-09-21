@@ -94,3 +94,49 @@
       }
       // output 240
     
+`Largest Number <https://leetcode.com/problems/largest-number/>`_
+===============================================================================
+
+.. code:: c++
+
+class Solution {
+public:
+        static bool comp(string &a, string &b)
+    {
+        return a + b > b + a;
+    }
+    string largestNumber(vector<int>& nums) {
+        vector<string> vec;
+        for(auto i:nums) vec.push_back(to_string(i));
+        sort(vec.begin(), vec.end(), comp);
+        string str;
+        for(auto it:vec) str+=it;
+        if(str[0]=='0') return "0";
+        return  str;        
+    }
+};
+
+int main() {
+	//code
+	int tc;
+	cin>>tc;
+	while(tc--)
+	{
+	   int len;
+	   vector<int> arr;
+	   
+	   //Take Array inputs
+	   int i;
+	   int temp;
+	   cin>>len;
+	   for(i=0;i<len;++i)
+	   {
+	       cin>>temp;
+	       arr.push_back(temp);
+	   }
+	   
+      string ans = largestNumber(arr);
+      cout << ans;
+	}
+	return 0;
+}

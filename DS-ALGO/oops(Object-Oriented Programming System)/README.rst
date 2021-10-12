@@ -32,10 +32,6 @@ Constructors
 
 A constructor in C++ is a special method that is automatically called when an object of a class is created.
 
-Copy Constructor
-------------
-
-A copy constructor is a member function that initializes an object using another object of the same class.
 
 Destructor
 ------------
@@ -52,6 +48,11 @@ Pure virtual destructor
 
 A pure virtual function is a virtual function in C++ for which we need not to write any function definition and only 
 we have to declare it. It is declared by assigning 0 in the declaration.
+
+Copy Constructor
+------------
+
+A copy constructor is a member function that initializes an object using another object of the same class.
 
 .. code:: c++
 

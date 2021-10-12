@@ -37,6 +37,22 @@ Copy Constructor
 
 A copy constructor is a member function that initializes an object using another object of the same class.
 
+Destructor
+------------
+
+A destructor is the last function that is going to be called before an object is destroyed.
+
+Virtual Destructor
+------------
+
+deleting instances of the derived class using a base class pointer object.
+
+Pure virtual destructor
+------------
+
+A pure virtual function is a virtual function in C++ for which we need not to write any function definition and only 
+we have to declare it. It is declared by assigning 0 in the declaration.
+
 .. code:: c++
 
       #include <iostream>  

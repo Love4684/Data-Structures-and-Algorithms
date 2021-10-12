@@ -334,6 +334,37 @@ Binding code and data together into a single unit is known as encapsulation. For
 Generic Functions using Template
 ==========================================
 
+you can create a single function or single class to work with different data types using templates. 
+
+Templates can be represented in two ways:
+
+Function templates: We can define a template for a function. For example, if we have an add() function, we can create versions of 
+the add function for adding the int, float or double type values. C++ adds two new keywords to support templates: ‘template’ and 
+‘typename’. The second keyword can always be replaced by keyword ‘class’.
+
+.. code:: c++
+
+      #include <iostream>
+      using namespace std;
+
+      template <typename T>
+      T myMax(T x, T y)
+      {
+         return (x > y)? x: y;
+      }
+
+      int main()
+      {
+        cout << myMax<int>(3, 7) << endl; 
+        cout << myMax<double>(3.0, 7.0) << endl; 
+        cout << myMax<char>('g', 'e') << endl;   
+        return 0;
+      }#output 7 7 g
+
+Class templates: We can define a template for a class. For example, a class template can be created for the array class that 
+can accept the array of various types such as int array, float array or double array.
+
+
 Advantage of OOPs
 ==========================================
 

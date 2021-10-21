@@ -359,6 +359,26 @@ python code
 `Maximum Sum Circular Subarray <https://leetcode.com/problems/maximum-sum-circular-subarray/>`_
 =========================================
 
+
+`Merge two sorted arrays <https://www.geeksforgeeks.org/merge-two-sorted-arrays-o1-extra-space/>`_
+=========================================
+
+.. code:: c++
+
+      void merge(int arr1[], int arr2[], int n, int m) {
+              int i=0;
+              while(arr1[n-1]>arr2[0])
+              {
+                  if(arr1[i]>arr2[0])
+                  {
+                      swap(arr1[i],arr2[0]);
+                      sort(arr2,arr2+m);
+                  }
+                  i++;
+              }
+          }
+
+
 .. code:: c++
 
 1. find the nth Prime Number

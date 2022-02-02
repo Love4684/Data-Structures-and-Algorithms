@@ -61,9 +61,10 @@ Inserting a node
       
       node* reverse(node *&head)
       {
+          node *prev = NULL;
           node *current = head;
           node *nextp;
-          node *prev = NULL;
+          
           while(current != NULL)
           {
               nextp = current->next;

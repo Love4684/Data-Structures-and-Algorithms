@@ -108,8 +108,38 @@ Tree Traversals (Inorder, Preorder and Postorder)
           }
       };
 
+`Binary Tree Zigzag Level Order Traversal <https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/>`_
+===============================================================================
 
+.. code:: c++
 
+      class Solution {
+      public:
+      vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
+              if (!root) return {};
+              queue<TreeNode*> q;
+              vector<vector<int> > ans;
+              bool direction = false;
+              q.push(root);
+              while(!q.empty()) {
+                  int sz = q.size();
+                  vector<int> currLevel;
+                  for (int i = 0 ; i < sz ; i++) {
+                      TreeNode *currNode = q.front();
+                      q.pop();
+                      currLevel.push_back(currNode->val);
+                      if (currNode->left) q.push(currNode->left);
+                      if (currNode->right) q.push(currNode->right);
+                  }
+                  if (direction) {
+                          reverse(currLevel.begin(),currLevel.end());
+                  }
+                  direction = !direction;
+                  ans.push_back(currLevel);
+              }
+              return ans;
+          }
+      };
 
 `Path Sum II <https://leetcode.com/problems/path-sum-ii/>`_
 ===============================================================================

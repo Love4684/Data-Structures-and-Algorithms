@@ -110,6 +110,25 @@ Inserting a node
           return 0;
       }
 
+`Middle of the Linked List <https://leetcode.com/problems/middle-of-the-linked-list/>`_
+===============================================================================
+
+.. code:: c++
+
+      class Solution {
+      public:
+          ListNode* middleNode(ListNode* head) {
+             ListNode * slow = head, *fast = head;
+              while(fast!=NULL && fast->next!=NULL)
+              {
+                  fast = fast->next->next;
+                  slow = slow->next;
+              }
+              return slow;
+          }
+      };
+
+
 `Delete Node in a Linked List <https://leetcode.com/problems/delete-node-in-a-linked-list/>`_
 ===============================================================================
 

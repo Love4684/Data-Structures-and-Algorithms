@@ -1050,3 +1050,21 @@ Return the starting petrol pumps index if you can travel around the circuit once
           (start == -1)? cout<<"No solution": cout<<"Start = "<<start;  
           return 0; 
       }
+
+14. `Best Time to Buy and Sell Stock <https://leetcode.com/problems/best-time-to-buy-and-sell-stock/>`_
+===============================================================================
+
+.. code:: c++
+
+    int maxProfit(vector<int>& prices) {
+        int maxp = 0;
+        int mine = prices[0];
+        int n = prices.size();
+        for(int i = 1; i < n; i++)
+        {
+            mine = min(mine, prices[i]);
+            int profit = prices[i] - mine;
+            maxp = max(maxp, profit);
+        }
+        return maxp;
+    }

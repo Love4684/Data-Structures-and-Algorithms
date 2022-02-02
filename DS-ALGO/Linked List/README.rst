@@ -110,6 +110,23 @@ Inserting a node
           return 0;
       }
 
+`Delete Node in a Linked List <https://leetcode.com/problems/delete-node-in-a-linked-list/>`_
+===============================================================================
+
+.. code:: c++
+
+    void deleteNode(ListNode* node) {
+        node->val = node->next->val;
+        node->next = node->next->next;
+    }
+    
+`Remove Nth Node From End of List <https://leetcode.com/problems/remove-nth-node-from-end-of-list/>`_
+===============================================================================
+
+.. code:: c++    
+
+
+
 `Copy List with Random Pointer <https://leetcode.com/problems/copy-list-with-random-pointer/>`_
 ===============================================================================
 

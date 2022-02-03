@@ -37,6 +37,16 @@ kernel
 Difference between Multiprocessing and Multithreading
 ===============================================================================
 
+Multiprocessing : A multiprocessing system has more than two processors. The CPUs are added to the system 
+that helps to increase the computing speed of the system.
+
+Multithreading: Multi-threaded applications are applications that have two or more threads that run concurrently. 
+
+A multiprocessing system has more than two processors whereas Multithreading is a program execution technique that allows a single process to have multiple code segments
+
+Multiprocessing helps you to increase computing power whereas multithreading helps you create computing threads of a single process
+
 Thread
 ===============================================================================
 
+A thread is a path of execution within a process. A process can contain multiple threads.

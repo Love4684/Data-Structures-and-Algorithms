@@ -122,6 +122,8 @@ Recursion
 nlogn
 .............
 
+.. code:: c++
+
       #include<bits/stdc++.h>
       using namespace std;
 

@@ -96,6 +96,58 @@ Recursion
 
 .. code:: c++
 
+      class Solution {
+      public:
+          int lengthOfLIS(vector<int>& nums) {
+           vector<int> seq;
+           seq.push_back(nums[0]);
+
+           for (int i = 1; i < nums.size(); ++i)
+           {
+               if(nums[i] > seq.back())
+               {
+                  seq.push_back(nums[i]);
+               }
+               else
+               {
+                  int ind = lower_bound(seq.begin(), seq.end(), nums[i]) - seq.begin();
+                  seq[ind] = nums[i];
+               }
+           }
+              return seq.size();
+          }
+      };
+      
+nlogn      
+------
+
+      #include<bits/stdc++.h>
+      using namespace std;
+
+      int main()
+       {
+           vector<int> v = {3, 5, 9, 7, 8};
+           vector<int> dp(v.size(), 1);
+
+           for (int i = 0; i < v.size(); ++i)
+           {
+               for (int j = 0; j < i; ++j)
+               {
+                   if(v[j] < v[i])
+                   {
+                      dp[i] = max(dp[i], dp[j]+1);
+                   }
+               }
+           }
+           for (auto it : dp)
+           {
+               cout << it << " ";
+           }
+           cout << endl <<  *max_element(dp.begin(), dp.end()) << endl;
+
+           return 0;
+      }      
+      
 
 `Word Break <https://leetcode.com/problems/word-break/>`_
 ===============================================================================

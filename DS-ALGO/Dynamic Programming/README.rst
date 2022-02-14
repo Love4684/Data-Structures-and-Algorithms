@@ -92,7 +92,7 @@ Recursion
 .. code:: c++
 
 
-`Longest Increasing Subsequence <https://leetcode.com/problems/longest-increasing-subsequence/>`_
+`Longest Increasing Subsequence(nlogn) <https://leetcode.com/problems/longest-increasing-subsequence/>`_
 ===============================================================================
 
 .. code:: c++
@@ -119,7 +119,7 @@ Recursion
           }
       };
       
-nlogn
+n^2
 .............
 
 .. code:: c++

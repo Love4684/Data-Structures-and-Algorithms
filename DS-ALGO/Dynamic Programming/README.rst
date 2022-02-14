@@ -91,6 +91,7 @@ Recursion
 
 .. code:: c++
 
+
 `Longest Increasing Subsequence <https://leetcode.com/problems/longest-increasing-subsequence/>`_
 ===============================================================================
 
@@ -118,8 +119,7 @@ Recursion
           }
       };
       
-nlogn      
-------
+
 
       #include<bits/stdc++.h>
       using namespace std;

@@ -182,6 +182,35 @@ Inserting a node
               return false;
           }
       };
+      
+`Linked List Cycle II <https://leetcode.com/problems/linked-list-cycle-ii/>`_
+===============================================================================
+
+.. code:: c++
+
+      class Solution {
+      public:
+          ListNode *detectCycle(ListNode *head) {
+              ListNode* slow = head;
+              ListNode* fast = head;
+              ListNode* entry = head;
+              while(fast && fast->next) {
+                  slow = slow->next;
+                  fast = fast->next->next;
+                  if(fast == slow) 
+                  {
+                      while(slow != entry)
+                      {
+                      slow = slow->next;
+                      entry = entry->next;
+                      }
+                   return entry;
+                  }
+              }     
+              return NULL;
+          }
+      };
+      
 
 `Copy List with Random Pointer <https://leetcode.com/problems/copy-list-with-random-pointer/>`_
 ===============================================================================

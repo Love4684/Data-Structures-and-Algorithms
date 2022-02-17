@@ -68,9 +68,8 @@
       
       
 
- `Sort Colors <https://leetcode.com/problems/sort-colors/>`_
- ===============================================================================
-
+`Sort Colors <https://leetcode.com/problems/sort-colors/submissions/>`_
+===============================================================================
 
 .. code:: c++     
       

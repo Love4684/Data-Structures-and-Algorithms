@@ -314,6 +314,36 @@ next palindrome
         return ans;
     }
 
+`Implement strStr() <https://leetcode.com/problems/implement-strstr/>`_
+===============================================================================
+
+.. code:: c++
+
+
+      int strStr(string haystack, string needle)
+      {
+          int n = haystack.size();
+          int m = needle.size();
+
+          if (m == 0)
+              return 0;
+
+          int i = 0, j = 0;
+
+          for (i = 0; i < n; ++i)
+              if (haystack[i] == needle[0])
+              {
+                  for (j = 1; j < m; ++j)
+                      if (haystack[i + j] != needle[j])
+                          break;
+
+                  if (j == m)
+                      return i;
+              }
+
+          return -1;
+      }
+
 `Length of the longest substring without repeating characters <https://leetcode.com/problems/longest-substring-without-repeating-characters/>`_
 ===============================================================================
 

@@ -3,12 +3,10 @@
    :local:
    :depth: 3
    
-Bit Manipulation Algorithms
+Hotel Management System
 ===============================================================================
 
-Binary Number System
+use case diagram:
 --------------------
 
-in decimal 
-
-.. image:: https://github.com/Love4684/practice/blob/main/media/1.jpg
+.. image:: https://github.com/Love4684/Data-Structures-and-Algorithms/blob/master/DS-ALGO/Low%20Level%20Design/Image/1.png

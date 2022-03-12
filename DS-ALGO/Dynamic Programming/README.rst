@@ -63,6 +63,33 @@ Recursion
           cout << knapSack(W, wt, val, n);
           return 0;
       }
+      
+Memoize recursive code
+.............
+
+.. code:: c++
+
+      int knapSack(int w, int wt[], int val[], int n){
+              vector<vector<int> > t(n+1, vector<int>(w+1, -1));
+              return fun(w, wt, val, n, t);
+          }
+          int fun(int w, int wt[], int val[], int n, vector<vector<int>>& t) 
+          { 
+
+            if(n<=0 || w<=0) return 0;
+
+            if(t[n][w] != -1) return t[n][w];
+
+              if(wt[n-1] <= w){
+              return  t[n][w] = max(val[n-1] + fun(w-wt[n-1], wt, val, n-1, t), 0+fun(w,wt,val,n-1, t));
+              }
+
+              else if(wt[n-1] > w){
+              return  t[n][w] = 0 + fun(w,wt,val,n-1, t);
+              }
+
+          }
+
 
 
 `Counting Bits <https://leetcode.com/problems/counting-bits/>`_

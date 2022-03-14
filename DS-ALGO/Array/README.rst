@@ -1069,7 +1069,26 @@ Return the starting petrol pumps index if you can travel around the circuit once
         return maxp;
     }
     
-15. `Rotate Array <https://leetcode.com/problems/rotate-array/>`_
+15. `Best Time to Buy and Sell Stock II <https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/>`_
+===============================================================================
+
+.. code:: c++
+
+       int maxProfit(vector<int> &prices)
+              {
+                  int profit = 0;
+
+                  for (int i = prices.size() - 1; i > 0; i--)
+                  {
+                      if (prices[i] > prices[i - 1])
+                          profit += prices[i] - prices[i - 1];
+                  }
+                  return profit;
+              }   
+
+    
+    
+16. `Rotate Array <https://leetcode.com/problems/rotate-array/>`_
 ===============================================================================
 
 .. code:: c++    

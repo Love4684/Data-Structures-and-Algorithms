@@ -8,6 +8,27 @@ Indexing
 
 Indexes allow the database application to find data fast; without reading the whole table
 
+primary Index
+----------------
+
+If the index is based on the primary key, it is called the primary index.
+
+Secondary Index
+-------------
+
+The secondary index is an index type that helps to reduce the size of mapping by introducing another level of indexing.
+
+At the initial stage, it selects a range for the columns. Therefore, the mapping size of the first level becomes smaller.
+
+Conclusion    
+-----------
+
+The main difference between primary and secondary index is that the primary index is an index on a set of fields that 
+
+includes the primary key for the field and does not contain duplicates, while the secondary index is an index that is not 
+
+a primary index and which can contain duplicates.
+
 .. code:: SQL
 
       CREATE INDEX index_name

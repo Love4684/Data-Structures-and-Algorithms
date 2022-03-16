@@ -8,6 +8,23 @@ Indexing
 
 Indexes allow the database application to find data fast; without reading the whole table
 
+.. code:: SQL
+
+      CREATE INDEX index_name
+      on table_name (column1, column2);
+
+SQL Injection
+===============================================================================
+
+SQL injection is one of the most common web hacking techniques.
+
+.. code:: SQL
+
+   SELECT UserId, Name, Password FROM Users WHERE UserId = 105 or 1=1;
+   
+A hacker might get access to all the user names and passwords in a database, by simply inserting 105 OR 1=1 into the input field.
+
+
 DELETE command and TRUNCATE command
 ===============================================================================
 

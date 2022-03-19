@@ -9,67 +9,69 @@
 
 .. code:: c++
 
-    #include <bits/stdc++.h>
-    using namespace std;
-    const int N = 1e5 + 10;
-    int dp[N];
-    int h[N];
-    int fog(int n)
-    {
-      int cost = INT_MAX;
-    if(n == 1) return 0;
-    if(dp[n] != -1) return dp[n];
-    cost = min(cost, (fog(n-1) + abs(h[n-1] - h[n-2])));
-    if(n>2)
-      cost = min(cost, (fog(n-2) + abs(h[n-1] - h[n-3])));
+      #include<bits/stdc++.h>
 
-    return dp[n] = cost;
-    }
-    int main()
-    {
-      memset(dp, -1, sizeof(dp));
-      int n;
-      cin >> n;
-    for (int i = 0; i < n; ++i)
-    {
-      cin >> h[i];
-    }
-      int ans = fog(n);
-      cout << ans;
-    }
+      using namespace std;
+
+      int main()
+      {
+         int n;
+         cin>>n;
+         vector<int> dp(n+1);
+         dp[1]=0;
+         std::vector<int> v(n+1);
+         for(int i=1;i<=n;i++)
+         {
+            cin>>v[i];
+         }
+         dp[2]=abs(v[1]-v[2]);
+         for(int i=3;i<=n;i++)
+         {
+            dp[i]=min(dp[i-2]+abs(v[i-2]-v[i]),dp[i-1]+abs(v[i-1]-v[i]));
+         }
+         cout<<dp[n]<<endl;
+      }
     
 `B - Frog 2 <https://atcoder.jp/contests/dp/tasks/dp_b>`_
 ==================================
 
 .. code:: c++
 
-    #include <bits/stdc++.h>
-    using namespace std;
-    const int N = 1e5 + 10;
-    int dp[N];
-    int h[N];
-    int k;
-    int fog(int n)
-    {
-      int cost = INT_MAX;
-    if(n == 0) return 0;
-    if(dp[n] != -1) return dp[n];
-    for (int i = 1; i <= k; ++i)
-    {
-      if(n-i >= 0)
-    cost = min(cost, (fog(n-i) + abs(h[n] - h[n-i])));
-    }
-    return dp[n] = cost;
-    }
-    int main()
-    {
-      memset(dp, -1, sizeof(dp));
-      int n;
-      cin >> n >> k;
-    for (int i = 0; i < n; ++i)
-    {
-      cin >> h[i];
-    }
-      int ans = fog(n-1);
-      cout << ans;
-    }
+      #include<bits/stdc++.h>
+      using namespace std;
+
+      int util(int n,int k,vector<int>& heights,vector<int>& dp)
+      {
+        if(n==0)
+          return 0;
+        if(dp[n]!=-1)
+          return dp[n];
+
+        int mini = INT_MAX;
+        for(int j=1;j<=k;j++)
+        {
+          if(n-j>=0)
+          {
+            int cost = util(n-j,k,heights,dp) + abs(heights[n]-heights[n-j]);
+            mini = min(mini,cost);
+          }
+        }
+
+        return dp[n] = mini;
+
+      }
+
+      int main()
+      {
+        int n,k;
+        cin>>n>>k;
+        vector<int> heights(n);
+        for(int i=0;i<n;i++)
+         cin>>heights[i];
+
+        vector<int> dp(n,-1);
+        dp[0]=0;
+        cout<<util(n-1,k,heights,dp); //n-1 for index use
+
+        return 0;
+      }

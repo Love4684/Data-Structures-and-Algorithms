@@ -3,7 +3,7 @@
    :local:
    :depth: 3
    
-Variables JavaScript
+Variables in JavaScript
 ===============================================================================
 
 .. code:: JavaScript
@@ -22,3 +22,42 @@ Variables JavaScript
            show geeks is not defined */
         console.log(geeks);
     </script>
+
+Functions in JavaScript
+===============================================================================
+
+Function Declaration: 
+---------------
+
+.. code:: JavaScript
+
+   function add(a, b) {        
+       console.log(a + b);
+   }
+   add(2, 3);
+
+Function Expression:
+---------------
+
+.. code:: JavaScript
+
+   const add = function(a, b) {
+      console.log(a+b);
+   }
+   add(2, 3);
+
+Arrow Functions:
+---------------
+
+.. code:: JavaScript
+
+      const great = (a, b) => {
+          if (a > b)
+              return "a is greater";
+          else
+              return "b is greater";
+      }
+      console.log(great(3,5));
+
+
+

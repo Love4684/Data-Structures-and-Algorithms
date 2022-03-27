@@ -347,4 +347,7 @@ next palindrome
 `Length of the longest substring without repeating characters <https://leetcode.com/problems/longest-substring-without-repeating-characters/>`_
 ===============================================================================
 
+`Rotate String <https://leetcode.com/problems/rotate-string/>`_
+===============================================================================
 
+.. code:: c++

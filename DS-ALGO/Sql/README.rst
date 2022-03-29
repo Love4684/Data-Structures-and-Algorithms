@@ -75,6 +75,17 @@ Super key: The Super key is a set of attributes which can uniquely identify a tu
 
 Foreign key: The Foreign key is a primary key from one table, which has a relationship with another table. It acts as a cross-reference between tables.
 
+LIMIT
+===============================================================================
+
+MySQL supports the LIMIT clause to select a limited number of records
+
+.. code:: SQL
+
+      SELECT column_name(s)
+      FROM table_name
+      WHERE condition
+      LIMIT number;
 
 B-Tree
 ===============================================================================

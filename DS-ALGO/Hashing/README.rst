@@ -61,3 +61,32 @@ output
           }
               return ans;
           }
+
+`Longest Consecutive Sequence <https://leetcode.com/problems/longest-consecutive-sequence/>`_
+==================================
+
+.. code:: c++
+
+      class Solution {
+      public:
+          int longestConsecutive(vector<int>& nums) {
+              unordered_set<int> numsSet;
+              for (int el: nums) numsSet.insert(el);
+
+              int count = 0, maxCount = 0;
+              for (auto el: numsSet) {
+                  if (numsSet.count(el-1)== 0) 
+                  {
+                      int startEl = el;
+                      count = 1;
+
+                      while (numsSet.count(startEl + 1) > 0) {
+                          count++;
+                          startEl++;
+                      }
+                      maxCount = max(maxCount, count);
+                  }
+              }
+              return maxCount;
+          }
+      };

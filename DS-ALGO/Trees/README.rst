@@ -158,6 +158,27 @@ Tree Traversals (Inorder, Preorder and Postorder)
                        isSameTree( p->right, q->right )  );
           }
       };
+      
+`Subtree of Another Tree <https://leetcode.com/problems/subtree-of-another-tree/>`_
+===============================================================================
+
+.. code:: c++      
+      
+      public:
+          bool isSameTree(TreeNode* p, TreeNode* q) {
+              if(p==NULL && q==NULL)
+                  return true;
+              if(p==NULL || q==NULL)
+                  return false;
+              return ( p->val == q->val  &&
+                               isSameTree( p->left, q->left ) &&
+                               isSameTree( p->right, q->right )  );
+          }
+          bool isSubtree(TreeNode* root, TreeNode* subRoot) {
+              if (!root) return false; // assumption: root is not empty
+              return isSameTree(root,subRoot) || isSubtree(root->left,subRoot) || isSubtree(root->right,subRoot);
+          }
+    
 
 `Path Sum II <https://leetcode.com/problems/path-sum-ii/>`_
 ===============================================================================

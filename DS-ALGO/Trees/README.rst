@@ -80,6 +80,19 @@ Tree Traversals (Inorder, Preorder and Postorder)
          return 0;
       }
 
+`Maximum Depth of Binary Tree <https://leetcode.com/problems/maximum-depth-of-binary-tree/>`_
+===============================================================================
+
+.. code:: c++
+
+      int maxDepth(TreeNode* root) {
+              if(!root) return 0;
+              int maxLeft = maxDepth(root->left);
+              int maxRight = maxDepth(root->right);
+              return max(maxLeft, maxRight)+1;
+          }
+
+
 `Binary Tree Level Order Traversal <https://leetcode.com/problems/binary-tree-level-order-traversal/>`_
 ===============================================================================
 
@@ -212,6 +225,9 @@ Tree Traversals (Inorder, Preorder and Postorder)
               return paths;
           }
       };
+      
+      
+      
 
 `Binary Tree Longest Consecutive Sequence <https://leetcode.com/problems/binary-tree-longest-consecutive-sequence/>`_
 ===============================================================================
@@ -224,10 +240,6 @@ Tree Traversals (Inorder, Preorder and Postorder)
 
 .. code:: c++
 
-`Binary Tree Level Order Traversal <https://leetcode.com/problems/binary-tree-level-order-traversal/>`_
-===============================================================================
-
-.. code:: c++
 
 `Construct Binary Tree from Preorder and Inorder Traversal <https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/>`_
 ===============================================================================
@@ -272,102 +284,20 @@ check bst or not
 
 .. code:: c++
 
-      {
-      #include <bits/stdc++.h>
-      using namespace std;
-      /* A binary tree node has data, pointer to left child
-         and a pointer to right child */
-      struct Node {
-          int data;
-          Node* right;
-          Node* left;
-
-          Node(int x){
-              data = x;
-              right = NULL;
-              left = NULL;
-          }
-      };
-      /* Returns true if the given tree is a binary search tree
-       (efficient version). */
-      bool isBST(struct Node* node);
-      int isBSTUtil(struct Node* node, int min, int max);
-      /* Driver program to test size function*/
-      int main()
-      {
-        int t;
-        struct Node *child;
-        scanf("%d
-      ", &t);
-        while (t--)
-        {
-           map<int, Node*> m;
-           int n;
-           scanf("%d
-      ",&n);
-           struct Node *root = NULL;
-           while (n--)
-           {
-              Node *parent;
-              char lr;
-              int n1, n2;
-              scanf("%d %d %c", &n1, &n2, &lr);
-            //  cout << n1 << " " << n2 << " " << (char)lr << endl;
-              if (m.find(n1) == m.end())
-              {
-                 parent = new Node(n1);
-                 m[n1] = parent;
-                 if (root == NULL)
-                   root = parent;
-              }
-              else
-                 parent = m[n1];
-              child = new Node(n2);
-              if (lr == 'L')
-                parent->left = child;
-              else
-                parent->right = child;
-              m[n2]  = child;
-           }
-           cout << isBST(root) << endl;
-        }
-        return 0;
-      }
-
-      }
-      /*This is a function problem.You only need to complete the function given below*/
-      /* A binary tree node has data, pointer to left child
-         and a pointer to right child  
-      struct Node {
-          int data;
-          Node* right;
-          Node* left;
-
-          Node(int x){
-              data = x;
-              right = NULL;
-              left = NULL;
-          }
-      }; */
-      bool checkBST(Node *root,int min,int max)
-      {
-          if(!root)
-              return true;    //NULL is not a node to be checked. So, return true always
-          if(root->data>min && root->data<max)
-              return (checkBST(root->left,min,root->data) && checkBST(root->right,root->data,max));
-
-          return false;
-      }
-
-      bool isBST(Node* root) {
-          // Your code here
-          if(!root)
+          public:
+          bool check(TreeNode*root,long min,long max){
+          if(root==NULL){
               return true;
-          if(checkBST(root->left,0,root->data) && checkBST(root->right,root->data,1001))
-              return true;
-          return false;
-      }
+          }
+          if(root->val<=min or root->val>=max){
+              return false;
+          }
+          return check(root->left,min,root->val) and check(root->right,root->val,max);
+         }
 
+          bool isValidBST(TreeNode* root) {
+           return check(root,LONG_MIN,LONG_MAX);
+          }
 
 
 

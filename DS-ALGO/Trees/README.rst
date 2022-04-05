@@ -286,17 +286,17 @@ check bst or not
 
           public:
           bool check(TreeNode*root,long min,long max){
-          if(root==NULL){
-              return true;
-          }
-          if(root->val<=min or root->val>=max){
-              return false;
-          }
-          return check(root->left,min,root->val) and check(root->right,root->val,max);
+                if(root==NULL){
+                    return true;
+                }
+                if(root->val<=min or root->val>=max){
+                    return false;
+                }
+                return check(root->left,min,root->val) and check(root->right,root->val,max);
          }
 
           bool isValidBST(TreeNode* root) {
-           return check(root,LONG_MIN,LONG_MAX);
+                 return check(root,LONG_MIN,LONG_MAX);
           }
 
 

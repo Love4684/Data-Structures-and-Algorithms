@@ -38,3 +38,10 @@
         }
         return -1;
     }
+
+
+`Nth Magical Number <https://leetcode.com/problems/nth-magical-number/>`_
+===============================================================================
+
+.. code:: c++
+

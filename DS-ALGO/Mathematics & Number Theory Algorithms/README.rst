@@ -355,3 +355,22 @@ output
         }
         return result;
     }
+
+`Nth Natural Number <https://practice.geeksforgeeks.org/problems/nth-natural-number/1#>`_
+-------------------------
+
+Given a positive integer N. You have to find Nth natural number after removing all the numbers containing digit 9.
+      
+.. code:: c++  
+
+      long long findNth(long long N)
+          {
+              // code here.
+             long long B9 = 0, pos = 1;
+             while(N>0)
+             {
+                 B9 += pos*(N%9);
+                 N /= 9;
+                 pos *=10;
+             }return B9;
+          }

@@ -294,4 +294,7 @@ check bst or not
           }
 
 
+`Time Needed to Inform All Employees <https://leetcode.com/problems/time-needed-to-inform-all-employees/>`_
+=====================
 
+.. code:: c++

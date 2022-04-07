@@ -59,5 +59,11 @@ Arrow Functions:
       }
       console.log(great(3,5));
 
+difference between the HTTP and HTTPS
+--------------------------------
 
+.. code:: JavaScript
+
+      The major difference between the HTTP and HTTPS is the SSL(Secure Sockets Layer) certificate. The HTTPS protocol is an 
+      extended version of the HTTP protocol with an additional feature of security.
 

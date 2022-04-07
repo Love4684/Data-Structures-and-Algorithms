@@ -260,3 +260,8 @@ n^2
 
 .. code:: c++
 
+`Decode Ways <https://leetcode.com/problems/decode-ways/>`_
+===============================================================================
+
+.. code:: c++
+

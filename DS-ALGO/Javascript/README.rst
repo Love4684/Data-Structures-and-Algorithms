@@ -8,8 +8,8 @@ Variables in JavaScript
 
 .. code:: JavaScript
 
-    var variableName = "Variable-Value;"
-    let variableName = "Variable-Value;"  //accessible locally and it is changeable
+    var variableName = "Variable-Value;"   // function scoped
+    let variableName = "Variable-Value;"  //accessible locally and it is changeable and block scoped
     const variableName = "Variable-Value;" //can’t be reassigned
 
     <script>

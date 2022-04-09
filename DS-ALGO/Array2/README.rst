@@ -150,3 +150,29 @@
 ===============================================================================
 
 .. code:: c++ 
+
+
+    vector<vector<int>> intervalIntersection(vector<vector<int>>& firstList, vector<vector<int>>& secondList) {
+        vector<vector<int>> ans;
+        int l1 = firstList.size();
+        int l2 = secondList.size();
+        int i = 0, j = 0;
+        while(i<l1 && j<l2)
+        {
+            if(firstList[i][1]>=secondList[j][0] && firstList[i][0]<=secondList[j][1])
+            {
+                int x = max(firstList[i][0], secondList[j][0]);
+                int y = min(firstList[i][1], secondList[j][1]);
+                ans.push_back({x, y});
+            }
+            if(firstList[i][1]<secondList[j][1])
+                i++;
+            else if(firstList[i][1]>secondList[j][1])
+                j++;
+            else
+            {
+                i++; j++;
+            }
+        }
+        return ans;
+    }

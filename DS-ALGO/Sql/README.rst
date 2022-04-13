@@ -223,3 +223,60 @@ Find Duplicate Values in a SQL
       FROM users
       GROUP BY username, email
       HAVING COUNT(*) > 1
+      
+group by on two tables and apply aggregate functions (blood req)
+===============================================================================
+
+.. code:: SQL      
+
+      /*
+      Question 1 : 
+      There is a blood bank which maintains two tables
+
+      Donor: the people who are willing to donate blood
+      Acceptor: the people who are in need of blood.
+      Bank needs to query their database and get the blood groups whose total amount
+      that donors can give is less than the total amount of blood the acceptors need.
+
+      */
+      create table donor(id int,name varchar(255),amount int, bg varchar(5));
+      create table acceptor(id int,name varchar(255),amount int, bg varchar(5));
+
+      insert into donor values(1,'pallavi',50,'A');
+      insert into donor values(2,'El',20,'AB');
+      insert into donor values(3,'Shinchan',100,'AB');
+
+      insert into acceptor values(1,'monika',80,'A');
+      insert into acceptor values(2,'Phoebe',10,'AB');
+      insert into acceptor values(3,'damon',500,'B');
+
+      select * from donor;
+      select * from acceptor;
+
+      select a.bg, a.acceptor_amount - COALESCE(b.donor_amount,0) as BloodNeeded
+      from
+      (
+          select bg,sum(amount) as acceptor_amount from acceptor
+          group by bg
+      )a
+      left join
+      (
+          select bg,sum(amount) as donor_amount from donor
+          group by bg
+      )b
+      on a.bg = b.bg
+      where (a.acceptor_amount - COALESCE(b.donor_amount,0)) > 0
+      
+      --output
+      id	name	amount	bg
+      1	pallavi	50	A
+      2	El	20	AB
+      3	Shinchan	100	AB
+      id	name	amount	bg
+      1	monika	80	A
+      2	Phoebe	10	AB
+      3	damon	500	B
+      bg	BloodNeeded
+      A	30
+      B	500
+      

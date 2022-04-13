@@ -224,7 +224,8 @@ Find Duplicate Values in a SQL
       GROUP BY username, email
       HAVING COUNT(*) > 1
       
-group by on two tables and apply aggregate functions (blood req)
+
+`group by on two tables and apply aggregate functions (blood req) <https://onecompiler.com/mysql/3xebztaqv>`_
 ===============================================================================
 
 .. code:: SQL      

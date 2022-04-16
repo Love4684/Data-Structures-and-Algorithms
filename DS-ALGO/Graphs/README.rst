@@ -154,8 +154,10 @@ output
           vector<int>dfsOfGraph(int V, vector<int> adj[])
           {
               vector<int> storeDfs; 
-              vector<int> vis(V, 0); 
-              dfs(0, vis, adj, storeDfs); 
+              vector<int> vis(V, 0);
+              for(int i = 1;i<=V;i++) {
+               if(!vis[i]) dfs(i, vis, adj, storeDfs); 
+          }
               return storeDfs; 
           }
       };

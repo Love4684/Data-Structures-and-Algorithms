@@ -198,6 +198,43 @@ output
 .. code:: c++
 
       0 1 2 4 3 
+      
+      
+`Detect cycle in an undirected graph <https://practice.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1#>`_
+==================================
+
+.. code:: c++
+
+      class Solution {
+
+      public:
+          bool checkForCycle(int node, int parent, vector<int> &vis, vector<int> adj[]) {
+              vis[node] = 1; 
+              for(auto it: adj[node]) {
+                  if(!vis[it]) {
+                      if(checkForCycle(it, node, vis, adj)) 
+                          return true; 
+                  }
+                  else if(it!=parent) 
+                      return true; 
+              }
+
+              return false; 
+          }
+      public:
+         bool isCycle(int V, vector<int>adj[]){
+             vector<int> vis(V+1, 0); 
+             for(int i = 0;i<V;i++) {
+                 if(!vis[i]) {
+                     if(checkForCycle(i, -1, vis, adj)) return true; 
+                 }
+             }
+
+             return false; 
+         }
+      };
+
+
 
 `number-of-connected-components-in-an-undirected-graph <https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/>`_
 ===============================================================================

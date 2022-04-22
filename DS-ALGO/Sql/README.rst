@@ -281,11 +281,18 @@ Find Duplicate Values in a SQL
       A	30
       B	500
       
-S.E
+SQL
 ===============================================================================
+
+The result should print the ids and the names of the customers , sorted by CUSTOMER.NAME in descending order. 
+If two or more customers have the same CUSTOMER.NAME , then sort these by CUSTOMER.ID in ascending order 
 
 Q.1
 ----------
 
-.. image:: https://github.com/Love4684/Prepare-Interview-with-Love-Kumar/blob/main/bytedance/S.E/1.png
+.. image:: https://github.com/Love4684/Data-Structures-and-Algorithms/blob/master/DS-ALGO/Sql/Image/1.png
+.. image:: https://github.com/Love4684/Data-Structures-and-Algorithms/blob/master/DS-ALGO/Sql/Image/2.png
+.. image:: https://github.com/Love4684/Data-Structures-and-Algorithms/blob/master/DS-ALGO/Sql/Image/3.png
+.. image:: https://github.com/Love4684/Data-Structures-and-Algorithms/blob/master/DS-ALGO/Sql/Image/4.png
+
       

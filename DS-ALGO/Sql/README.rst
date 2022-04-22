@@ -281,3 +281,11 @@ Find Duplicate Values in a SQL
       A	30
       B	500
       
+S.E
+===============================================================================
+
+Q.1
+----------
+
+.. image:: https://github.com/Love4684/Prepare-Interview-with-Love-Kumar/blob/main/bytedance/S.E/1.png
+      

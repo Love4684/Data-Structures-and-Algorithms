@@ -293,6 +293,5 @@ Q.1
 .. image:: https://github.com/Love4684/Data-Structures-and-Algorithms/blob/master/DS-ALGO/Sql/Image/1.png
 .. image:: https://github.com/Love4684/Data-Structures-and-Algorithms/blob/master/DS-ALGO/Sql/Image/2.png
 .. image:: https://github.com/Love4684/Data-Structures-and-Algorithms/blob/master/DS-ALGO/Sql/Image/3.png
-.. image:: https://github.com/Love4684/Data-Structures-and-Algorithms/blob/master/DS-ALGO/Sql/Image/4.png
-
+.. image:: https://github.com/Love4684/Data-Structures-and-Algorithms/blob/master/DS-ALGO/Sql/Image/4.jpeg
       

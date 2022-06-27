@@ -157,7 +157,17 @@ The HAVING clause was added to SQL because the WHERE keyword cannot be used with
       FROM Customers
       GROUP BY Country
       HAVING COUNT(CustomerID) > 5;
-   
+      
+LIKE
+===============================================================================      
+
+selects all customers with a CustomerName starting with "a"
+
+.. code:: SQL
+
+      SELECT * FROM Customers
+      WHERE CustomerName LIKE 'a%';
+
 
 CREATE TABLE - Count the Number of Rows
 ===============================================================================

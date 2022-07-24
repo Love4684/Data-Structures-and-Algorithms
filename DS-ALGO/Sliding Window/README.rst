@@ -8,6 +8,27 @@
 
 .. code:: c++
 
+    int minSubArrayLen(int target, vector<int>& nums) {
+        int n=nums.size();
+        int sum = 0;           
+        int left = 0;          
+        int right = 0;          
+        int shortest = n+1; 
+        
+        while(right<n){
+            sum += nums[right];
+            
+            if(sum >= target){
+                while(sum>=target){
+                    sum -= nums[left++];
+                }
+                shortest = min(shortest,right-left+2);
+            }
+            right++;
+        }
+        return shortest==n+1?0:shortest;
+    }
+
 `Longest Substring Without Repeating Characters <https://leetcode.com/problems/longest-substring-without-repeating-characters/>`_
 ===============================================================================
 

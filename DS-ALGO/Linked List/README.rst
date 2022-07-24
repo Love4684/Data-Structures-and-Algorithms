@@ -251,15 +251,39 @@ Inserting a node
           }
           return dummy->next;
       }
-
-`Next greater element in the Linked List <https://www.geeksforgeeks.org/next-greater-element-in-the-linked-list/>`_
+      
+`Add Two Numbers <https://leetcode.com/problems/add-two-numbers/>`_
 ===============================================================================
 
-.. code:: c++
+.. code:: c++      
 
+    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+        ListNode *dummy = new ListNode(); 
+        ListNode *temp = dummy; 
+        int carry = 0;
+        while( (l1 != NULL || l2 != NULL) || carry) {
+            int sum = 0; 
+            if(l1 != NULL) {
+                sum += l1->val; 
+                l1 = l1 -> next; 
+            }
+            
+            if(l2 != NULL) {
+                sum += l2 -> val; 
+                l2 = l2 -> next; 
+            }
+            
+            sum += carry; 
+            carry = sum / 10; 
+            ListNode *node = new ListNode(sum % 10); 
+            temp -> next = node; 
+            temp = temp -> next; 
+        }
+        return dummy -> next;    
+    }
+      
 
-
-`Remove Nth Node From End of List <https://leetcode.com/problems/remove-nth-node-from-end-of-list/>`_
+`Next greater element in the Linked List <https://www.geeksforgeeks.org/next-greater-element-in-the-linked-list/>`_
 ===============================================================================
 
 .. code:: c++
@@ -275,8 +299,5 @@ Inserting a node
 
 .. code:: c++
 
-`Linked List Cycle II <https://leetcode.com/problems/linked-list-cycle-ii/>`_
-===============================================================================
 
-.. code:: c++
 

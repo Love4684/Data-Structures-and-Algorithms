@@ -80,8 +80,17 @@ A copy constructor is a member function that initializes an object using another
       }  
       #outpu 20
       
-      
+malloc() vs new     
+------------
 
+.. code:: c++
+
+      new                                          malloc()
+      calls constructor	                           does not calls constructors              
+      It is an operator	                           It is a function
+      Returns exact data                           type	Returns void *
+      on failure, Throws bad_alloc exception     	On failure, returns NULL
+      size is calculated by compiler	            size is calculated manually
 
 Four pillars of OOP
 ===============================================================================

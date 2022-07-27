@@ -89,7 +89,7 @@ malloc() vs new
       calls constructor	                           does not calls constructors              
       It is an operator	                           It is a function
       Returns exact data                           type	Returns void *
-      on failure, Throws bad_alloc exception     On failure, returns NULL
+      on failure, Throws bad_alloc exception       On failure, returns NULL
       size is calculated by compiler	            size is calculated manually
 
 Four pillars of OOP

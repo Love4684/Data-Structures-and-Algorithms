@@ -38,7 +38,69 @@
         }
         return -1;
     }
+    
+    
+`Find Minimum in Rotated Sorted Array <https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/>`_
+===============================================================================
 
+.. code:: c++
+
+    int findMin(vector<int>& nums) {
+        
+        int l = 0, r = nums.size()-1;
+        int mid = (l+r)/2;
+        while(l<r)
+        {   
+            if(nums[r]<nums[mid])
+                l = mid+1;
+            else
+                r = mid;
+            mid = (l+r)/2;
+            
+        }
+        return nums[l];
+    }
+    
+`Find Minimum in Rotated Sorted Array II <https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/>`_
+===============================================================================
+
+.. code:: c++
+
+    int findMin(vector<int>& nums) {
+        int l = 0, r = nums.size()-1;
+        int mid = (l+r)/2;
+        while(l<r)
+        {   
+            if(nums[mid]>nums[r])
+                l = mid+1;
+            else if(nums[mid]<nums[r])
+                r = mid;
+            else
+                r--;
+            mid = (l+r)/2;
+            
+        }
+        return nums[l];
+    }
+
+`Peak Index in a Mountain Array <https://leetcode.com/problems/peak-index-in-a-mountain-array/>`_
+===============================================================================
+
+.. code:: c++
+
+    public int peakIndexInMountainArray(int[] arr) {
+        int l = 0, r = arr.length-1;
+        int mid = (l+r)/2;
+        while(l<r)
+        {   mid = (l+r)/2;
+            if(arr[mid] < arr[mid+1])
+                l = mid+1;
+            else
+                r = mid;
+                
+        }
+        return l;
+    }
 
 `Nth Magical Number <https://leetcode.com/problems/nth-magical-number/>`_
 ===============================================================================

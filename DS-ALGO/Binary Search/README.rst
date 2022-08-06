@@ -131,7 +131,8 @@
     return nums[low];
     }
     
- `Sqrt(x) <https://leetcode.com/problems/sqrtx/>`_
+    
+`Sqrt(x) <https://leetcode.com/problems/sqrtx/>`_
 ===============================================================================
 
 .. code:: c++    

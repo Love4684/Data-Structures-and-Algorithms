@@ -90,3 +90,23 @@ output
               return maxCount;
           }
       };
+
+
+`Subarray Sum Equals K <https://leetcode.com/problems/subarray-sum-equals-k/>`_
+==================================
+
+.. code:: c++
+
+    int subarraySum(vector<int>& nums, int k) {
+        unordered_map<int,int> mp;
+        int sum=0,ans=0;
+        mp[sum] = 1;
+        for(auto it:nums){
+            sum += it;
+            if(mp.find(sum-k) != mp.end()){
+                ans += mp[sum-k];
+            }
+            mp[sum]++;
+        }
+        return ans;
+    }

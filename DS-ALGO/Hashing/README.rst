@@ -103,10 +103,29 @@ output
         mp[sum] = 1;
         for(auto it:nums){
             sum += it;
-            if(mp.find(sum-k) != mp.end()){
-                ans += mp[sum-k];
-            }
+            ans += mp[sum-k];
             mp[sum]++;
         }
         return ans;
     }
+    
+    
+`Subarray Sums Divisible by K <https://leetcode.com/problems/subarray-sums-divisible-by-k/>`_
+==================================
+
+.. code:: c++    
+    
+    int subarraysDivByK(vector<int>& nums, int k) {
+        unordered_map<int,int> mp;
+        mp[0]=1;
+        int sum=0,count=0;
+        for(int i=0;i<nums.size();i++)
+        {
+            sum=sum+nums[i];
+            int remaining =(sum%k + k)%k;
+            count=count+mp[remaining];
+            mp[remaining]++;
+        }
+        return count;  
+    }
+    

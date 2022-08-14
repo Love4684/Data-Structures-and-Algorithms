@@ -21,6 +21,36 @@
         return maxar;
     }
 
+`Subarray with given sum <https://practice.geeksforgeeks.org/problems/subarray-with-given-sum-1587115621/1>`_
+==================================
+
+.. code:: c++
+
+    vector<int> subarraySum(int arr[], int n, long long s)
+    {
+    vector<int>ans;
+       int sum=0;
+        int i=0,j=0;
+        while(j<n){
+            if(sum<s){
+                sum=sum+arr[i];
+                if(sum==s){
+                    ans.push_back(j+1);
+                    ans.push_back(i+1);
+                    return ans;
+                }
+                i++;
+            }
+            else{
+                sum=0;
+                j++;
+                i=j;
+            }
+        }
+
+        ans.push_back(-1);
+        return ans;
+    }
 
 
 

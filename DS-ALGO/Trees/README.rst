@@ -79,6 +79,35 @@ Tree Traversals (Inorder, Preorder and Postorder)
          postorder(root);
          return 0;
       }
+      
+`Search a node in Binary Tree <https://www.geeksforgeeks.org/search-a-node-in-binary-tree/>`_
+===============================================================================
+
+.. code:: c++
+
+      bool ifNodeExists(struct Node* node, int key)
+      {
+          if (node == NULL)
+              return false;
+
+          if (node->data == key)
+              return true;
+
+          bool res1 = ifNodeExists(node->left, key);
+          if(res1) return true;
+
+          bool res2 = ifNodeExists(node->right, key);
+
+          return res2;
+      }
+      
+`Find Level wise positions of given node in a given Binary Tree <https://www.geeksforgeeks.org/find-level-wise-positions-of-given-node-in-a-given-binary-tree/>`_
+===============================================================================
+
+.. code:: c++      
+
+
+      
 
 `Maximum Depth of Binary Tree <https://leetcode.com/problems/maximum-depth-of-binary-tree/>`_
 ===============================================================================

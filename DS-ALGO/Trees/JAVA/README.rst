@@ -5,59 +5,50 @@
    :depth: 3
    
    
-.. image:: https://github.com/Love4684/Prepare-Interview-with-Love-Kumar/blob/main/InnoGeeks/media/1.png
 
 
 Tree Traversals (Inorder, Preorder and Postorder)
 ===============================================================================
 
-.. code:: c++
+.. code:: JAVA
 
-      #include<bits/stdc++.h>
-      using namespace std;
-      struct node
-      {
-        struct node * left;
-        struct node * right;
-        int data;
-        node(int val)
-        {
-         left = NULL;
-         data = val;
-         right = NULL;
-        }
-      };
-
-      void preorder(struct node * root)
-      {
-         if(root == NULL)
-            return;
-      cout << root->data << " ";
-      preorder(root->left);
-      preorder(root->right);
-      }
-
-      void inorder(struct node * root)
-       {
-         if(root == NULL)
-            return;
-         inorder(root->left);
-         cout << root->data << " ";
-         inorder(root->right);
-       }
-
-       void postorder(struct node * root)
-       {    if(root == NULL)
-               return;
-            postorder(root->left);
-            postorder(root->right);
-            cout << root->data << " ";
-       }
-       
-
+import java.io.*;
+class JavaProgramming
+{	
+ static class Node
+{
+    int data;
+    Node left, right;
+    Node(int data)
+    {
+        this.data = data;
+        left = right = null;
+    }
+}
+	static void inOrder(Node root) {
+		if(root == null) return;
+		
+		inOrder(root.left);
+		System.out.print(root.data+" ");
+		inOrder(root.right);
+	}
+	
+	static void preOrder(Node root) {
+		if(root == null) return;
+		System.out.print(root.data+" ");
+		preOrder(root.left);
+		preOrder(root.right);
+	}
+	
+	static void postOrder(Node root) {
+		if(root == null) return;
+		
+		postOrder(root.left);
+		postOrder(root.right);
+		System.out.print(root.data+" ");
+	}
+	
       /*
-      
-      
              1
             /  \
            2     3
@@ -68,25 +59,28 @@ Tree Traversals (Inorder, Preorder and Postorder)
          ino = LNR = 4 2 5 1 6 3 7
          pos = LRN = 4 5 2 6 7 3 1
       */
+ 
+public static void main(String args[])
+{
+    Node root = new Node(1);
+    root.left = new Node(2);
+    root.left.left = new Node(4);
+    root.left.right = new Node(5);
+    root.right = new Node(3);
+    root.right.left = new Node(6);
+    root.right.right = new Node(7);
+ 
+        System.out.print("preorder : ");
+    	preOrder(root);
+    	System.out.print('\n' + "inOrder : ");
+    	inOrder(root);
+        System.out.print('\n' +"postOrder : ");
+    	postOrder(root);      
+}					
+}
 
-      int main()
-      {
-         struct node * root = new node(1);
-         root->left = new node(2);
-         root->right = new node(3);
-         root->left->left = new node(4);
-         root->left->right = new node(5);
-         root->right->left = new node(6);
-         root->right->right = new node(7);
-         cout << "preorder" << endl;
-         preorder(root);
-         cout<< endl << "inorder" << endl;
-         inorder(root);
-         cout<< endl << "postorder" << endl;
-         postorder(root);
-         return 0;
-      }
-      
+
+
 `Search a node in Binary Tree <https://www.geeksforgeeks.org/search-a-node-in-binary-tree/>`_
 ===============================================================================
 

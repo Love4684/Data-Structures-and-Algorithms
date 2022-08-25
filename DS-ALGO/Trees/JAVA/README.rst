@@ -51,6 +51,8 @@ Tree Traversals (Inorder, Preorder and Postorder)
        }
 
       /*
+      .. image:: https://github.com/Love4684/Prepare-Interview-with-Love-Kumar/blob/main/InnoGeeks/media/1.png
+      
              1
             /  \
            2     3

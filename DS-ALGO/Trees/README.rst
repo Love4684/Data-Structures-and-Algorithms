@@ -107,6 +107,65 @@ Tree Traversals (Inorder, Preorder and Postorder)
 .. code:: c++      
 
 
+
+      #include <bits/stdc++.h>
+      using namespace std;
+
+      struct node
+      {
+        struct node * left;
+        struct node * right;
+        int data;
+        node(int val)
+        {
+         left = NULL;
+         data = val;
+         right = NULL;
+        }
+      };
+
+      void printLevelandPosition(struct node * root, int X)
+      {
+         if (root == NULL)
+            return;
+         queue<node*> q;
+         q.push(root);
+         int currLevel = 1, position = 1;
+         while (q.empty() == false) {
+            int size = q.size();
+            while (size--) {
+               node* temp = q.front();	
+               if (temp->data == X)
+                  cout << "(" << currLevel
+                     << " " << position
+                     << "), ";
+               q.pop();
+               position++;
+               if (temp->left != NULL)
+                  q.push(temp->left);
+               if (temp->right != NULL)
+                  q.push(temp->right);
+            }
+            currLevel++;
+            position = 1;
+         }
+      }
+      int main()
+      {
+         struct node * root = new node(1);
+         root->left = new node(2);
+         root->right = new node(3);
+         root->left->left = new node(4);
+         root->left->right = new node(2);
+
+         int X = 2;
+
+         printLevelandPosition(root, X);
+         return 0;
+      }
+
+
+
       
 
 `Maximum Depth of Binary Tree <https://leetcode.com/problems/maximum-depth-of-binary-tree/>`_

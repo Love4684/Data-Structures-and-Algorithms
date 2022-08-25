@@ -229,6 +229,24 @@ n^2
 
 .. code:: c++
 
+    bool wordBreak(string s, vector<string>& wordDict) {
+        vector<bool> v(s.length()+1, 0);
+        v[0] = 1;
+        
+        for(int i=0; i<=s.length(); i++){
+            if(v[i]){
+                for(int j=0; j<wordDict.size(); j++){
+                    string word = wordDict[j];
+                    if(s.substr(i, word.length()) == word){
+                        v[i+word.length()] = true;
+                    }
+                }
+            }
+        }
+        
+        return v[s.length()];
+    }
+
 `Longest Common Subsequence <https://leetcode.com/problems/longest-common-subsequence/>`_
 ===============================================================================
 

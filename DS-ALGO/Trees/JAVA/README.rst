@@ -146,12 +146,12 @@ Tree Traversals (Inorder, Preorder and Postorder)
 
 .. code:: c++
 
-      int maxDepth(TreeNode* root) {
-              if(!root) return 0;
-              int maxLeft = maxDepth(root->left);
-              int maxRight = maxDepth(root->right);
-              return max(maxLeft, maxRight)+1;
-          }
+    public int maxDepth(TreeNode root) {
+        if(root==null) return 0;
+        int maxLeft = maxDepth(root.left);
+        int maxRight = maxDepth(root.right);
+        return Math.max(maxLeft, maxRight)+1;
+    }
 
 
 `Binary Tree Level Order Traversal <https://leetcode.com/problems/binary-tree-level-order-traversal/>`_

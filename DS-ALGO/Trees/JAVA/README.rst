@@ -49,9 +49,11 @@ Tree Traversals (Inorder, Preorder and Postorder)
             postorder(root->right);
             cout << root->data << " ";
        }
+       
+       .. image:: https://github.com/Love4684/Prepare-Interview-with-Love-Kumar/blob/main/InnoGeeks/media/1.png
 
       /*
-      .. image:: https://github.com/Love4684/Prepare-Interview-with-Love-Kumar/blob/main/InnoGeeks/media/1.png
+      
       
              1
             /  \

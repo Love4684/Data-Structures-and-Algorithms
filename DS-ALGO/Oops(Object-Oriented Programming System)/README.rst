@@ -38,6 +38,31 @@ Destructor
 
 A destructor is the last function that is going to be called before an object is destroyed.
 
+.. code:: c++
+
+      public class DestructorExample  
+      {  
+      public static void main(String[] args)  
+      {  
+      DestructorExample de = new DestructorExample ();  
+      de.finalize();  
+      de = null;  
+      System.gc();  
+      System.out.println("Inside the main() method");  
+      }  
+      protected void finalize()  
+      {  
+      System.out.println("Object is destroyed by the Garbage Collector");  
+      }  
+      }   
+
+      Output
+
+      Object is destroyed by the Garbage Collector 
+      Inside the main() method
+      Object is destroyed by the Garbage Collector 
+
+
 Virtual Destructor
 ------------
 

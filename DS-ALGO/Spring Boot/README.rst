@@ -47,6 +47,14 @@ Spring Boot Auto-configuration
 
 Spring Boot auto-configuration automatically configures the Spring application based on the jar dependencies that we have added.
 
+Bean Scopes
+------------
+
+singleton
+prototype
+request
+session
+global-session
 
 Difference Between @Controller and @RestController 
 ------------

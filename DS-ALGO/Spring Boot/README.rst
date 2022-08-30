@@ -41,6 +41,16 @@ It only supports get() method to pass the value of the object.
 
 The essentials for creating an immutable class are final class, private fields, final mutable objects.
 
+Explain about java features.
+------------
+
+Detail discussion on Collections.
+------------
+Difference between ArraysList and primitive Array.
+Q4. HashMap Internal Working.
+Q5. Multithreading concepts.
+After the interview was over, I received a positive feedback
+
 Spring Boot:
 ===============================================================================
 

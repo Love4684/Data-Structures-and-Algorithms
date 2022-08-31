@@ -41,15 +41,24 @@ It only supports get() method to pass the value of the object.
 
 The essentials for creating an immutable class are final class, private fields, final mutable objects.
 
-Explain about java features.
+Explain about java8 features.
 ------------
 
 Detail discussion on Collections.
 ------------
+
 Difference between ArraysList and primitive Array.
-Q4. HashMap Internal Working.
-Q5. Multithreading concepts.
-After the interview was over, I received a positive feedback
+------------
+
+HashMap Internal Working.
+------------
+
+It uses an array and LinkedList data structure internally for storing Key and Value.
+HashMap is faster than TreeMap because it provides constant-time performance that is O(1) for the basic operations like get() and put().
+
+Multithreading concepts.
+------------
+
 
 Spring Boot:
 ===============================================================================

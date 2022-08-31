@@ -10,12 +10,19 @@ Explain about java8 features.
 ------------
 
 forEach() method in Iterable interface
+
 default and static methods in Interfaces
+
 Functional Interfaces and Lambda Expressions
+
 Java Stream API for Bulk Data Operations on Collections
+
 Java Time API
+
 Collection API improvements
+
 Concurrency API improvements
+
 Java IO improvements
 
 Copy Constructor
@@ -62,6 +69,7 @@ Array vs ArrayList in Java
 ------------
 
 Array is a fixed length data structure whereas ArrayList is a variable length Collection class.
+
 We cannot change length of array once created in Java but ArrayList can be changed.
 
 We cannot store primitives in ArrayList, it can only store objects. But array can contain both primitives and objects in Java.
@@ -70,6 +78,7 @@ HashMap Internal Working.
 ------------
 
 It uses an array and LinkedList data structure internally for storing Key and Value.
+
 HashMap is faster than TreeMap because it provides constant-time performance that is O(1) for the basic operations like get() and put().
 
 Multithreading
@@ -78,7 +87,9 @@ Multithreading
 It is a process of executing multiple threads simultaneously.
 
 Threads can be created by using two mechanisms : 
+
 Extending the Thread class 
+
 Implementing the Runnable Interface
 
 
@@ -103,9 +114,13 @@ Bean Scopes
 ------------
 
 singleton
+
 prototype
+
 request
+
 session
+
 global-session
 
 Difference Between @Controller and @RestController 

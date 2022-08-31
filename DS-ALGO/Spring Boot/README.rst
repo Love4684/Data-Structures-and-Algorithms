@@ -126,6 +126,19 @@ global-session
 Difference Between @Controller and @RestController 
 ------------
 
+@Controller is used to mark classes as Spring MVC Controller.
+
+@RestController is a convenience annotation that does nothing more than adding the @Controller and @ResponseBody annotations
+
+.. code:: c++
+
+      @Controller
+      @ResponseBody
+      public class MyController { }
+
+      @RestController
+      public class MyRestController { }
+
 DispatcherServlet
 ------------
 

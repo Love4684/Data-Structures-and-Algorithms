@@ -6,6 +6,18 @@
 JAVA:
 ===============================================================================
 
+Explain about java8 features.
+------------
+
+forEach() method in Iterable interface
+default and static methods in Interfaces
+Functional Interfaces and Lambda Expressions
+Java Stream API for Bulk Data Operations on Collections
+Java Time API
+Collection API improvements
+Concurrency API improvements
+Java IO improvements
+
 Copy Constructor
 ------------
 
@@ -42,9 +54,6 @@ Once an immutable object is initiated; We can not change its values.
 It only supports get() method to pass the value of the object.
 
 The essentials for creating an immutable class are final class, private fields, final mutable objects.
-
-Explain about java8 features.
-------------
 
 Detail discussion on Collections.
 ------------
@@ -83,6 +92,13 @@ Spring Boot Auto-configuration
 
 Spring Boot auto-configuration automatically configures the Spring application based on the jar dependencies that we have added.
 
+Spring bean:
+------------
+
+an instance of a class managed by the Spring Container
+
+Spring (IoC) Container: the core part of Spring that is responsible for managing all the beans
+
 Bean Scopes
 ------------
 
@@ -103,12 +119,10 @@ The DispatcherServlet is the front controller in Spring web applications. It's u
 DispatcherServlet receives all of the HTTP requests and delegates them to controller classes.
 
 
-Spring bean:
+Spring Dependency Injection
 ------------
 
-an instance of a class managed by the Spring Container
-
-Spring (IoC) Container: the core part of Spring that is responsible for managing all the beans
+Dependency Injection is a fundamental aspect of the Spring framework, through which the Spring container “injects” objects into other objects or “dependencies”.
 
 Types of controller in web MVC i.e
 ------------
@@ -120,5 +134,7 @@ Types of controller in web MVC i.e
 5. Abstract Command Controller
 
 
+CRUD Operations Using Hibernate
+------------
 
 .. code:: c++

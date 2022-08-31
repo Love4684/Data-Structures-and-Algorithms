@@ -9,6 +9,8 @@ JAVA:
 Copy Constructor
 ------------
 
+A copy constructor is a member function that initializes an object using another object of the same class.
+
 Shallow Copy
 ------------
 
@@ -47,8 +49,13 @@ Explain about java8 features.
 Detail discussion on Collections.
 ------------
 
-Difference between ArraysList and primitive Array.
+Array vs ArrayList in Java
 ------------
+
+Array is a fixed length data structure whereas ArrayList is a variable length Collection class.
+We cannot change length of array once created in Java but ArrayList can be changed.
+
+We cannot store primitives in ArrayList, it can only store objects. But array can contain both primitives and objects in Java.
 
 HashMap Internal Working.
 ------------
@@ -56,8 +63,15 @@ HashMap Internal Working.
 It uses an array and LinkedList data structure internally for storing Key and Value.
 HashMap is faster than TreeMap because it provides constant-time performance that is O(1) for the basic operations like get() and put().
 
-Multithreading concepts.
+Multithreading
 ------------
+
+It is a process of executing multiple threads simultaneously.
+
+Threads can be created by using two mechanisms : 
+Extending the Thread class 
+Implementing the Runnable Interface
+
 
 
 Spring Boot:

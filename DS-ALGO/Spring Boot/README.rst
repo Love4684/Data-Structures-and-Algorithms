@@ -39,6 +39,10 @@ Deep Copy
 Object Cloning in Java
 ------------
 
+The object cloning is a way to create exact copy of an object. The clone() method of Object class is used to clone an object.
+
+The java.lang.Cloneable interface must be implemented by the class whose object clone we want to create. If we don't implement Cloneable interface, clone() method generates CloneNotSupportedException.
+
 Java Garbage Collection
 ------------
 

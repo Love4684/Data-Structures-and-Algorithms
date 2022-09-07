@@ -258,6 +258,12 @@ Spring Dependency Injection
 
 Dependency Injection is a fundamental aspect of the Spring framework, through which the Spring container “injects” objects into other objects or “dependencies”.
 
+Spring framework provides two ways to inject dependency
+
+By Constructor
+
+By Setter method
+
 Types of controller in web MVC i.e
 ------------
 
@@ -267,6 +273,12 @@ Types of controller in web MVC i.e
 4. Wizard Form Controller
 5. Abstract Command Controller
 
+Spring Boot to the database using JPA
+------------
+
+Spring Boot provides spring-boot-starter-data-jpa starter to connect Spring application with relational database efficiently.
+
+we can use it into project POM (Project Object Model) file.
 
 CRUD Operations Using Hibernate
 ------------

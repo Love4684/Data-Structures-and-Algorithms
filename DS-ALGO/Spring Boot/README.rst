@@ -212,7 +212,9 @@ Spring Boot auto-configuration automatically configures the Spring application b
 Spring bean:
 ------------
 
-an instance of a class managed by the Spring Container
+In Spring, the objects are the backbone of our application,
+
+an instance of a class managed by the Spring IoC container are called beans.
 
 Spring (IoC) Container: the core part of Spring that is responsible for managing all the beans
 

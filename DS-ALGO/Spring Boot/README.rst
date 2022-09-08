@@ -3,6 +3,47 @@
    :local:
    :depth: 3
    
+   
+Project:
+===============================================================================
+
+.. code:: c++
+------------
+
+      @Entity
+      public class Product {
+          @Id
+          @GeneratedValue(strategy = GenerationType.AUTO)
+          private Long productId;
+          private String productImage;
+          private String productTitle;
+          private String productDescription;
+          private Integer productPrice;
+          private Date createdAt;
+          private Date updatedAt;
+
+      @PostMapping("/products")
+      public ProductResponse createProduct(@Validated @RequestBody ProductForm productForm) {
+          Product product = productForm.asProduct();
+          Product createdProduct = productRepository.save(product);
+          return new ProductResponse(createdProduct, "Product created");
+      }
+
+      @MappedSuperclass
+      @EntityListeners(AuditingEntityListener.class)
+      public abstract class DateAudit implements Serializable {
+          @CreatedDate
+          @Column(name = "created_at", nullable = false, updatable = false)
+          private Date createdAt;
+
+          @LastModifiedDate
+          @Column(name = "updated_at")
+          private LocalDateTime updatedAt;
+      }
+    
+    
+
+   
 JAVA:
 ===============================================================================
 

@@ -238,6 +238,13 @@ Extending the Thread class
 
 Implementing the Runnable Interface
 
+Serialization
+------------
+
+Serialization in Java is a mechanism of writing the state of an object into a byte-stream.
+
+For serializing the object, we call the writeObject() method of ObjectOutputStream class.
+
 
 
 Spring Boot:

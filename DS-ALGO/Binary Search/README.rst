@@ -208,6 +208,32 @@
         return bs(x);
     }
    
+`Nth Root of a Number using Binary Search <https://takeuforward.org/data-structure/nth-root-of-a-number-using-binary-search/>`_
+===============================================================================
+
+.. code:: c++
+
+      #include <bits/stdc++.h>
+      using namespace std;
+      void getNthRoot(int n, int m) {
+          double low = 1;
+          double high = m;
+          double eps = 1e-7; 
+
+          while((high - low) > eps) {
+              double mid = (low + high) / 2.0; 
+              if(pow(mid, n) < m) {
+                  low = mid; 
+              }
+              else {
+                  high = mid; 
+              }
+          }
+
+          cout <<n<<"th root of "<<m<<" is "<<low<<endl; 
+
+      }
+
 
 `Nth Magical Number <https://leetcode.com/problems/nth-magical-number/>`_
 ===============================================================================

@@ -285,7 +285,50 @@ next palindrome
                   return false;
           return true;
       }
- 
+      
+`Group Anagrams <https://leetcode.com/problems/group-anagrams/>`_
+===============================================================================
+
+C++
+
+.. code:: c++      
+
+    vector<vector<string>> groupAnagrams(vector<string>& strs) {
+        vector<vector<string>> ans;
+        unordered_map<string,vector<string>> mp;
+        
+        for(auto x: strs)
+        {
+            string temp = x;
+            sort(x.begin(),x.end());
+            mp[x].push_back(temp);
+        }
+        for(auto x: mp)
+        {
+            ans.push_back(x.second);
+        }
+        return ans;
+    }
+    
+JAVA
+
+.. code:: c++
+
+    public List<List<String>> groupAnagrams(String[] strs) {
+    HashMap<String, List<String>> hm = new HashMap<>();
+    List<List<String>> list = new LinkedList<>();
+        for(int i = 0; i < strs.length; i++) {
+        char[] sw = strs[i].toCharArray();
+        Arrays.sort(sw);
+        String word = new String(sw);
+        if (!hm.containsKey(word)) 
+            hm.put(word, new ArrayList<>());
+        hm.get(word).add(strs[i]);
+
+    }
+    return new ArrayList<>(hm.values());
+    }
+
 
 `Reverse Words in a String <https://leetcode.com/problems/reverse-words-in-a-string/>`_
 ===============================================================================

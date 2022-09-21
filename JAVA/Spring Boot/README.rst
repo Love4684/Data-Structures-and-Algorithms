@@ -76,19 +76,65 @@ An Interface that contains exactly one abstract method is known as functional in
 
 
 Lambda Expressions
+------------
 
-Java Stream API for Bulk Data Operations on Collections
+.. code:: c++
+
+      import java.util.*;  
+      public class LambdaExpressionExample7{  
+          public static void main(String[] args) {  
+
+              List<String> list=new ArrayList<String>();  
+              list.add("ankit");  
+              list.add("mayank");  
+              list.add("irfan");  
+              list.add("jai");  
+
+              list.forEach(  
+                  (n)->System.out.println(n)  
+              );  
+          }  
+      }  
+
 
 Java Time API
+------------
 
-Collection API improvements
+Java StringJoiner
+------------
 
-Concurrency API improvements
+StringJoiner Example: Merge Two StringJoiner
 
-Java IO improvements
+.. code:: c++
+
+      // importing StringJoiner class  
+      import java.util.StringJoiner;  
+      public class StringJoinerExample {  
+          public static void main(String[] args) {  
+
+              StringJoiner joinNames = new StringJoiner(",", "[", "]");   // passing comma(,) and square-brackets as delimiter   
+
+              // Adding values to StringJoiner  
+              joinNames.add("Rahul");  
+              joinNames.add("Raju");  
+
+              // Creating StringJoiner with :(colon) delimiter  
+              StringJoiner joinNames2 = new StringJoiner(":", "[", "]");  // passing colon(:) and square-brackets as delimiter   
+
+              // Adding values to StringJoiner  
+              joinNames2.add("Peter");  
+              joinNames2.add("Raheem");  
+
+              // Merging two StringJoiner  
+              StringJoiner merge = joinNames.merge(joinNames2);   
+              System.out.println(merge);  
+          }  
+      }  
+
+
 
 Copy Constructor
-------------
+===============================================================================
 
 A copy constructor is a member function that initializes an object using another object of the same class.
 

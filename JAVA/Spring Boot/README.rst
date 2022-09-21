@@ -201,6 +201,55 @@ abstract and interface calss example
       a.c();  
       a.d();  
       }}  
+      
+Exemple 2
+
+.. code:: c++
+
+
+      // Java program to demonstrate How Diamond Problem
+      // Is Handled in case of Default Methods
+
+      // Interface 1
+      interface GPI {
+
+         // Default method
+         default void show()
+         {
+
+            // Print statement
+            System.out.println("Default GPI");
+         }
+      }
+
+      // Interface 2
+      // Extending the above interface
+      interface PI1 extends GPI {
+      }
+
+      // Interface 3
+      // Extending the above interface
+      interface PI2 extends GPI {
+      }
+
+      // Main class
+      // Implementation class code
+      class TestClass implements PI1, PI2 {
+
+         // Main driver method
+         public static void main(String args[])
+         {
+
+            // Creating object of this class
+            // in main() method
+            TestClass d = new TestClass();
+
+            // Now calling the function defined in interface 1
+            // from whom Interface 2and 3 are deriving
+            d.show();
+         }
+      }
+
 
 
 
@@ -462,9 +511,57 @@ Java Stream Example: Find Max and Min Product Price
       }    
 
 
+operating system
+===============================================================================
+
+.. code:: c++
+
+
+      The operating system is a software program that facilitates computer hardware to communicate and operate with the 
+      computer software. It is the most important part of a computer system without it computer is just like a box.
+
+process
+------------
+
+.. code:: c++
+
+      An executing program is known as process.
+      For example, a Web Browser is a process, a shell (or command prompt) is a process.
+
+      1. Start : This is the initial state when a process is first started/created.
+      2. Ready : The process is waiting to be assigned to a processor.
+      3. Runing : The process is chosen by CPU for execution.
+      4. Waiting : Process moves into the waiting state if it needs to wait for a resource.
+      5. Completion or termination : When a process finishes its execution, it comes in the termination state.
+
+kernel
+------------
+
+.. code:: c++
+
+
+      A kernel is the central component of an operating system that manages the operations of computers and hardware.
+
+Difference between Multiprocessing and Multithreading
+------------
+
+Multiprocessing : A multiprocessing system has more than two processors. The CPUs are added to the system 
+that helps to increase the computing speed of the system.
+
+Multithreading: Multi-threaded applications are applications that have two or more threads that run concurrently. 
+
+A multiprocessing system has more than two processors whereas Multithreading is a program execution technique that allows a single process to have multiple code segments
+
+Multiprocessing helps you to increase computing power whereas multithreading helps you create computing threads of a single process
+
+Thread
+------------
+
+A thread is a path of execution within a process. A process can contain multiple threads.
+
 
 Multithreading
-===============================================================================
+------------
 
 It is a process of executing multiple threads simultaneously.
 
@@ -472,7 +569,75 @@ Threads can be created by using two mechanisms :
 
 Extending the Thread class 
 
+.. code:: c++
+
+      // Java code for thread creation by extending
+      // the Thread class
+      class MultithreadingDemo extends Thread {
+         public void run()
+         {
+            try {
+               // Displaying the thread that is running
+               System.out.println(
+                  "Thread " + Thread.currentThread().getId()
+                  + " is running");
+            }
+            catch (Exception e) {
+               // Throwing an exception
+               System.out.println("Exception is caught");
+            }
+         }
+      }
+
+      // Main Class
+      public class Multithread {
+         public static void main(String[] args)
+         {
+            int n = 8; // Number of threads
+            for (int i = 0; i < n; i++) {
+               MultithreadingDemo object
+                  = new MultithreadingDemo();
+               object.start();
+            }
+         }
+      }
+
+
 Implementing the Runnable Interface
+
+.. code:: c++
+
+      // Java code for thread creation by implementing
+      // the Runnable Interface
+      class MultithreadingDemo implements Runnable {
+         public void run()
+         {
+            try {
+               // Displaying the thread that is running
+               System.out.println(
+                  "Thread " + Thread.currentThread().getId()
+                  + " is running");
+            }
+            catch (Exception e) {
+               // Throwing an exception
+               System.out.println("Exception is caught");
+            }
+         }
+      }
+
+      // Main Class
+      class Multithread {
+         public static void main(String[] args)
+         {
+            int n = 8; // Number of threads
+            for (int i = 0; i < n; i++) {
+               Thread object
+                  = new Thread(new MultithreadingDemo());
+               object.start();
+            }
+         }
+      }
+
 
 Serialization
 ===============================================================================

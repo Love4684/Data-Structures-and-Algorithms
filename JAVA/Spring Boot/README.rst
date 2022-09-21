@@ -337,6 +337,39 @@ It uses an array and LinkedList data structure internally for storing Key and Va
 
 HashMap is faster than TreeMap because it provides constant-time performance that is O(1) for the basic operations like get() and put().
 
+.. code:: c++
+
+      // Java Program to illustrate the Hashmap Class
+
+      // Importing required classes
+      import java.util.*;
+
+      // Main class
+      public class GFG {
+
+         // Main driver method
+         public static void main(String[] args)
+         {
+
+            // Creating an empty HashMap
+            Map<String, Integer> map = new HashMap<>();
+
+            // Inserting entries in the Map
+            // using put() method
+            map.put("vishal", 10);
+            map.put("sachin", 30);
+            map.put("vaibhav", 20);
+
+            // Iterating over Map
+            for (Map.Entry<String, Integer> e : map.entrySet())
+
+               // Printing key-value pairs
+               System.out.println(e.getKey() + " "
+                           + e.getValue());
+         }
+      }
+
+
 Set in Java
 ------------
 

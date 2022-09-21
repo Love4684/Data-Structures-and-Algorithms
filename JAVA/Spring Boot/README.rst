@@ -138,6 +138,10 @@ Copy Constructor
 
 A copy constructor is a member function that initializes an object using another object of the same class.
 
+abstract & interface class
+===============================================================================
+
+
 abstract class
 ------------
 
@@ -201,28 +205,27 @@ abstract and interface calss example
 
 
 
-Shallow Copy
-------------
+Shallow & Deep Copy
+===============================================================================
 
-Deep Copy
-------------
+
 
 Object Cloning in Java
-------------
+===============================================================================
 
 The object cloning is a way to create exact copy of an object. The clone() method of Object class is used to clone an object.
 
 The java.lang.Cloneable interface must be implemented by the class whose object clone we want to create. If we don't implement Cloneable interface, clone() method generates CloneNotSupportedException.
 
 Java Garbage Collection
-------------
+===============================================================================
 
 In java, garbage means unreferenced objects. In other words, it is a way to destroy the unused objects.
 
 in java it is performed automatically. So, java provides better memory management.
 
 Mutable in Java
-------------
+===============================================================================
 
 We can change the value of mutable objects after initialization.
 
@@ -238,10 +241,10 @@ It only supports get() method to pass the value of the object.
 The essentials for creating an immutable class are final class, private fields, final mutable objects.
 
 Detail discussion on Collections.
-------------
+===============================================================================
 
 Array vs ArrayList in Java
-------------
+===============================================================================
 
 Array is a fixed length data structure whereas ArrayList is a variable length Collection class.
 
@@ -249,15 +252,91 @@ We cannot change length of array once created in Java but ArrayList can be chang
 
 We cannot store primitives in ArrayList, it can only store objects. But array can contain both primitives and objects in Java.
 
+
+.. code:: c++
+
+      // Array
+      import java.util.Scanner;   
+      public class ArrayInputExample2  
+      {   
+      public static void main(String args[])   
+      {   
+      int m, n, i, j;   
+      Scanner sc=new Scanner(System.in);   
+      System.out.print("Enter the number of rows: ");   
+      //taking row as input  
+      m = sc.nextInt();   
+      System.out.print("Enter the number of columns: ");   
+      //taking column as input  
+      n = sc.nextInt();   
+      // Declaring the two-dimensional matrix   
+      int array[][] = new int[m][n];   
+      // Read the matrix values   
+      System.out.println("Enter the elements of the array: ");   
+      //loop for row  
+      for (i = 0; i < m; i++)   
+      //inner for loop for column  
+      for (j = 0; j < n; j++)   
+      array[i][j] = sc.nextInt();   
+      //accessing array elements   
+      System.out.println("Elements of the array are: ");   
+      for (i = 0; i < m; i++)   
+      {   
+      for (j = 0; j < n; j++)   
+      //prints the array elements  
+      System.out.print(array[i][j] + " ");   
+      //throws the cursor to the next line  
+      System.out.println();   
+      }   
+      }   
+      }  
+
+      // ArrayList
+
+      // Java Program to Change elements in ArrayList
+
+      // Importing all utility classes
+      import java.util.*;
+
+      // main class
+      class GFG {
+
+         // Main driver method
+         public static void main(String args[])
+         {
+            // Creating an Arraylist object of string type
+            ArrayList<String> al = new ArrayList<>();
+
+            // Adding elements to Arraylist
+            // Custom input elements
+            al.add("Geeks");
+            al.add("Geeks");
+
+            // Adding specifying the index to be added
+            al.add(1, "Geeks");
+
+            // Printing the Arraylist elements
+            System.out.println("Initial ArrayList " + al);
+
+            // Setting element at 1st index
+            al.set(1, "For");
+
+            // Printing the updated Arraylist
+            System.out.println("Updated ArrayList " + al);
+         }
+      }
+
+
+
 HashMap Internal Working.
-------------
+===============================================================================
 
 It uses an array and LinkedList data structure internally for storing Key and Value.
 
 HashMap is faster than TreeMap because it provides constant-time performance that is O(1) for the basic operations like get() and put().
 
 Java 8 Stream API
-------------
+===============================================================================
 
 Java Stream Example: Find Max and Min Product Price
 
@@ -296,7 +375,7 @@ Java Stream Example: Find Max and Min Product Price
 
 
 Multithreading
-------------
+===============================================================================
 
 It is a process of executing multiple threads simultaneously.
 
@@ -307,7 +386,7 @@ Extending the Thread class
 Implementing the Runnable Interface
 
 Serialization
-------------
+===============================================================================
 
 Serialization in Java is a mechanism of writing the state of an object into a byte-stream.
 

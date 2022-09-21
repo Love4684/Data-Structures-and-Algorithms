@@ -208,6 +208,37 @@ Tree Traversals (Inorder, Preorder and Postorder)
               return ans; 
           }
       };
+      
+Java
+
+.. code:: java  
+
+      class Solution {
+          public List<List<Integer>> levelOrder(TreeNode root) {
+              List<List<Integer>> ls=new ArrayList<>();
+              if(root==null){
+                  return ls;
+              }
+              Queue<TreeNode> q=new LinkedList<>();
+              q.add(root);
+              while(!q.isEmpty()){
+                  int size=q.size();
+                  List<Integer> l=new ArrayList<>();
+                  for(int i=0;i<size;i++){
+                      TreeNode temp=q.poll();
+                      l.add(temp.val);
+                      if(temp.left!=null){
+                          q.add(temp.left);
+                      }
+                      if(temp.right!=null){
+                          q.add(temp.right);
+                      }
+                  }
+                  ls.add(l);
+              }
+              return ls;
+          }
+      }
 
 `Binary Tree Zigzag Level Order Traversal <https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/>`_
 ===============================================================================

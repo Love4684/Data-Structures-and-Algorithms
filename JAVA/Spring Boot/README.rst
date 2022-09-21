@@ -327,9 +327,11 @@ We cannot store primitives in ArrayList, it can only store objects. But array ca
       }
 
 
+HashMap, LinkedHashMap and TreeMap
+===============================================================================
 
 HashMap Internal Working.
-===============================================================================
+------------
 
 It uses an array and LinkedList data structure internally for storing Key and Value.
 

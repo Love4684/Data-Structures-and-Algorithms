@@ -312,21 +312,35 @@ C++
     
 JAVA
 
-.. code:: c++
+.. code:: java
 
-    public List<List<String>> groupAnagrams(String[] strs) {
-    HashMap<String, List<String>> hm = new HashMap<>();
-        for(int i = 0; i < strs.length; i++) {
-        char[] sw = strs[i].toCharArray();
-        Arrays.sort(sw);
-        String word = new String(sw);
-        if (!hm.containsKey(word)) 
-            hm.put(word, new ArrayList<>());
-        hm.get(word).add(strs[i]);
+		import java.io.*;
+		import java.util.*;
+		class JavaProgramming
+		{	
+		 public static List<List<String>> groupAnagrams(String[] strs) {
+		HashMap<String, List<String>> hm = new HashMap<>();
+		    for(int i = 0; i < strs.length; i++) {
+		    char[] sw = strs[i].toCharArray();
+		    Arrays.sort(sw);
+		    String word = new String(sw);
+		    if (!hm.containsKey(word))
+			hm.put(word, new ArrayList<>());
+		    hm.get(word).add(strs[i]);
 
-    }
-    return new ArrayList<>(hm.values());
-    }
+		}
+		return new ArrayList<>(hm.values());
+		}
+		public static void main(String args[])
+		{
+		    String arr[] = { "cat", "dog", "tac", "god", "act" };
+			List<List<String>> ans = groupAnagrams(arr);
+			for (List<String> l1 : ans)
+		       System.out.println(l1); 
+
+		}					
+		}
+
 
 `Group Shifted String <https://www.geeksforgeeks.org/group-shifted-string/>`_
 ===============================================================================

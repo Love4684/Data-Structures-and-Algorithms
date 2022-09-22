@@ -339,8 +339,8 @@ JAVA
 		for(int i = 0 ;i < array.length ;i++) {
 			String codedString = generatecode(array[i]);
 			if (!map.containsKey(codedString))
-                map.put(codedString, new ArrayList<>());
-            map.get(codedString).add(array[i]);
+                		map.put(codedString, new ArrayList<>());
+            		map.get(codedString).add(array[i]);
 		}
 		return new ArrayList<>(map.values());
 	}

@@ -39,6 +39,42 @@
         return -1;
     }
     
+`Find the number of elements greater than k in a sorted array <https://www.geeksforgeeks.org/find-the-number-of-elements-greater-than-k-in-a-sorted-array/>`_
+===============================================================================
+
+.. code:: java
+
+      import java.io.*;
+      import java.util.*;
+      class JavaProgramming
+      {
+      static int countGreater(int arr[], int n, int k)
+      {
+         int l = 0;
+         int r = n - 1;
+         int leftGreater = n;
+         while (l <= r) {
+            int m = l + (r - l) / 2;
+            if (arr[m] > k) {
+               leftGreater = m;
+               r = m - 1;
+            }
+            else
+               l = m + 1;
+         }
+         return (n - leftGreater);
+      }
+      public static void main(String[] args)
+      {
+         int arr[] = { 3, 3, 4, 7, 7, 7, 11, 13, 13 };
+         int n = arr.length;
+         int k = 7;
+         System.out.println(countGreater(arr, n, k));
+      }
+      }
+
+    
+    
 `Find First and Last Position of Element in Sorted Array <https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/>`_
 ===============================================================================
 

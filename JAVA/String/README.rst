@@ -316,7 +316,6 @@ JAVA
 
     public List<List<String>> groupAnagrams(String[] strs) {
     HashMap<String, List<String>> hm = new HashMap<>();
-    List<List<String>> list = new LinkedList<>();
         for(int i = 0; i < strs.length; i++) {
         char[] sw = strs[i].toCharArray();
         Arrays.sort(sw);
@@ -328,6 +327,38 @@ JAVA
     }
     return new ArrayList<>(hm.values());
     }
+
+`Group Shifted String <https://www.geeksforgeeks.org/group-shifted-string/>`_
+===============================================================================
+
+.. code:: c++
+
+
+	public static ArrayList<ArrayList<String>> groupShiftedStrings(String[] array) {
+		HashMap<String, ArrayList<String>> map = new HashMap<String, ArrayList<String>>();
+		for(int i = 0 ;i < array.length ;i++) {
+			String codedString = generatecode(array[i]);
+			if (!map.containsKey(codedString))
+                map.put(codedString, new ArrayList<>());
+            map.get(codedString).add(array[i]);
+		}
+		return new ArrayList<>(map.values());
+	}
+	
+	  public static String generatecode(String str) {
+		String ans = "";
+		for(int i = 1; i < str.length() ; i++) {
+			char ch1 = str.charAt(i);
+			char ch2 = str.charAt(i - 1);
+			int diff = ch1 - ch2;
+			if(diff < 0) {
+				diff += 26;
+			}
+			ans += 'a' + diff;
+		}
+		
+		return ans;
+	}
 
 
 `Reverse Words in a String <https://leetcode.com/problems/reverse-words-in-a-string/>`_

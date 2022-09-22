@@ -401,6 +401,35 @@ JAVA
         }
         return ans;
     }
+    
+JAVA
+
+.. code:: java
+
+    //  Time Complexity = O(N)
+    //  Space Complexity = O(1)     Neglecting the required String answer space
+    
+    public String reverseWords(String s) {
+        //  Triming all the leading and trailing spaces with just one space in the end
+        s=s.trim()+" ";         
+        String answer = "", word = "";  //  Resultant String array "answer" and String "word" for each word
+        int flag=0;             //  Flag variable
+        
+        for(int i = 0 ; i < s.length() ; i++){
+            if(s.charAt(i) != ' '){
+                word += s.charAt(i);
+                flag=0;
+            }
+            else if(flag == 0){
+                answer = word +" "+ answer;
+                word = "";
+                flag = 1;
+            }
+        }
+        
+        return answer.trim();
+    }
+    
 
 `Implement strStr() <https://leetcode.com/problems/implement-strstr/>`_
 ===============================================================================

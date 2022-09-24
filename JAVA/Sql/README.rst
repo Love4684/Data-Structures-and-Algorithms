@@ -2,6 +2,18 @@
 .. contents::
    :local:
    :depth: 3
+   
+   
+Key
+===============================================================================
+
+Primary key: The Primary key is an attribute in a table that can uniquely identify each record in a table. It is compulsory for every table.
+
+Candidate key: The Candidate key is an attribute or set of an attribute which can uniquely identify a tuple. The Primary key can be selected from these attributes.
+
+Super key: The Super key is a set of attributes which can uniquely identify a tuple. Super key is a superset of the candidate key.
+
+Foreign key: The Foreign key is a primary key from one table, which has a relationship with another table. It acts as a cross-reference between tables.
 
 Indexing
 ===============================================================================
@@ -33,27 +45,82 @@ a primary index and which can contain duplicates.
 
       CREATE INDEX index_name
       on table_name (column1, column2);
+      
+B-Tree
+-----------
 
-SQL Injection and How to Prevent SQL Injection Attacks?
-===============================================================================
+Following is an example of B-Tree of minimum order 5.
 
-SQL injection is one of the most common web hacking techniques.
+.. image:: https://github.com/Love4684/Machine-Learning/blob/master/DBMS/media/output253.png
 
-.. code:: SQL
+ 
+The B+ tree is a balanced binary search tree. It follows a multi-level index format      
 
-   SELECT UserId, Name, Password FROM Users WHERE UserId = 105 or 1=1;
-   
-A hacker might get access to all the user names and passwords in a database, by simply inserting 105 OR 1=1 into the input field.
 
-What is Sharding?
+Key Word
 ===============================================================================
 
 DELETE command and TRUNCATE command
-===============================================================================
+-----------
 
 DELETE command: DELETE command is used to delete rows from a table based on the condition that we provide in a WHERE clause.
 
 TRUNCATE command: TRUNCATE command is used to remove all rows (complete data) from a table. It is similar to the DELETE command with no WHERE clause.
+
+
+DELETE
+-----------
+
+The DELETE statement is used to delete existing records in a table.
+
+.. code:: SQL
+
+   DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste'; 
+   
+GROUP BY
+-----------
+
+The GROUP BY statement groups rows that have the same values into summary rows, like "find the number of customers in each country".
+
+.. code:: SQL
+
+      SELECT COUNT(CustomerID), Country
+      FROM Customers
+      GROUP BY Country;
+      
+HAVING
+-----------      
+
+The HAVING clause was added to SQL because the WHERE keyword cannot be used with aggregate functions.
+
+.. code:: SQL
+
+      SELECT COUNT(CustomerID), Country
+      FROM Customers
+      GROUP BY Country
+      HAVING COUNT(CustomerID) > 5;
+
+LIMIT
+-----------
+
+MySQL supports the LIMIT clause to select a limited number of records
+
+.. code:: SQL
+
+      SELECT column_name(s)
+      FROM table_name
+      WHERE condition
+      LIMIT number;
+
+LIKE
+-----------      
+
+selects all customers with a CustomerName starting with "a"
+
+.. code:: SQL
+
+      SELECT * FROM Customers
+      WHERE CustomerName LIKE 'a%';
 
 database languages
 ===============================================================================
@@ -66,38 +133,6 @@ DATA Control Language (DCL) e.g., GRANT and REVOKE. These commands are used for 
 
 Transaction Control Language (TCL) e.g., COMMIT, ROLLBACK, and SAVEPOINT. These are the commands used for managing transactions in the database. TCL is used for managing the changes made by DML.
 
-Key
-===============================================================================
-
-Primary key: The Primary key is an attribute in a table that can uniquely identify each record in a table. It is compulsory for every table.
-
-Candidate key: The Candidate key is an attribute or set of an attribute which can uniquely identify a tuple. The Primary key can be selected from these attributes.
-
-Super key: The Super key is a set of attributes which can uniquely identify a tuple. Super key is a superset of the candidate key.
-
-Foreign key: The Foreign key is a primary key from one table, which has a relationship with another table. It acts as a cross-reference between tables.
-
-LIMIT
-===============================================================================
-
-MySQL supports the LIMIT clause to select a limited number of records
-
-.. code:: SQL
-
-      SELECT column_name(s)
-      FROM table_name
-      WHERE condition
-      LIMIT number;
-
-B-Tree
-===============================================================================
-
-Following is an example of B-Tree of minimum order 5.
-
-.. image:: https://github.com/Love4684/Machine-Learning/blob/master/DBMS/media/output253.png
-
- 
-The B+ tree is a balanced binary search tree. It follows a multi-level index format
 
 Transaction property(ACID properties)
 ===============================================================================
@@ -126,49 +161,21 @@ Redundancy in relation may cause insertion, deletion and updation anomalies. So,
       3NF	A relation will be in 3NF if it is in 2NF and no transition dependency exists.
       4NF	A relation will be in 4NF if it is in Boyce Codd normal form and has no multi-valued dependency.
       5NF	A relation is in 5NF if it is in 4NF and not contains any join dependency and joining should be lossless.
-
-
-DELETE
+      
+SQL Injection and How to Prevent SQL Injection Attacks?
 ===============================================================================
 
-The DELETE statement is used to delete existing records in a table.
+SQL injection is one of the most common web hacking techniques.
 
 .. code:: SQL
 
-   DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste'; 
+   SELECT UserId, Name, Password FROM Users WHERE UserId = 105 or 1=1;
    
-GROUP BY
-===============================================================================
+A hacker might get access to all the user names and passwords in a database, by simply inserting 105 OR 1=1 into the input field.
 
-The GROUP BY statement groups rows that have the same values into summary rows, like "find the number of customers in each country".
-
-.. code:: SQL
-
-      SELECT COUNT(CustomerID), Country
-      FROM Customers
-      GROUP BY Country;
-      
-HAVING
+What is Sharding?
 ===============================================================================      
 
-The HAVING clause was added to SQL because the WHERE keyword cannot be used with aggregate functions.
-
-.. code:: SQL
-
-      SELECT COUNT(CustomerID), Country
-      FROM Customers
-      GROUP BY Country
-      HAVING COUNT(CustomerID) > 5;
-      
-LIKE
-===============================================================================      
-
-selects all customers with a CustomerName starting with "a"
-
-.. code:: SQL
-
-      SELECT * FROM Customers
-      WHERE CustomerName LIKE 'a%';
 
 
 CREATE TABLE - Count the Number of Rows

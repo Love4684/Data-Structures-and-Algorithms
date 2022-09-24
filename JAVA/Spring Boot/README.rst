@@ -561,7 +561,8 @@ A thread is a path of execution within a process. A process can contain multiple
 
 
 Multithreading
-------------
+===============================================================================
+
 
 It is a process of executing multiple threads simultaneously.
 
@@ -637,6 +638,12 @@ Implementing the Runnable Interface
             }
          }
       }
+      
+What is the ExecutorService interface?
+------------
+
+synchronized
+------------
 
 
 Serialization

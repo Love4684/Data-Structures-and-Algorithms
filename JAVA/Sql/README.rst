@@ -45,6 +45,8 @@ SQL injection is one of the most common web hacking techniques.
    
 A hacker might get access to all the user names and passwords in a database, by simply inserting 105 OR 1=1 into the input field.
 
+What is Sharding?
+===============================================================================
 
 DELETE command and TRUNCATE command
 ===============================================================================

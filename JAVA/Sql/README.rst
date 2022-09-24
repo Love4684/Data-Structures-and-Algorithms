@@ -34,7 +34,7 @@ a primary index and which can contain duplicates.
       CREATE INDEX index_name
       on table_name (column1, column2);
 
-SQL Injection
+SQL Injection and How to Prevent SQL Injection Attacks?
 ===============================================================================
 
 SQL injection is one of the most common web hacking techniques.

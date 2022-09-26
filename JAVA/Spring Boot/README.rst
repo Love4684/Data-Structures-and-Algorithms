@@ -7,6 +7,23 @@
 Project:
 ===============================================================================
 
+L1 l2 l3
+
+The time when inspection was booked (scheduled) needs to be shown on the CRM. 
+
+Inspection Type I1
+Inspection Status cancelled
+Date of Inspection 10-Jun-22
+Inspector Name
+Scheduled Time
+Start Time
+Inspection Completion Time
+
+Milestone:
+Reschedule Cancelled Inspection
+
+
+
 .. code:: c++
 
       @Entity

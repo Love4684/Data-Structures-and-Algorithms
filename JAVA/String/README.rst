@@ -26,6 +26,26 @@ palindromic string
 		System.out.println(result);
 	}
 	}
+	
+.. code:: java
+
+		import java.io.*;
+		import java.util.*;
+
+		class JavaProgramming
+		{
+		public static void main(String args[])
+		{
+		 StringBuilder inputString = new StringBuilder(); 	
+		Scanner input = new Scanner(System.in);
+		inputString.append(input.nextLine());
+			if ((inputString.toString()).equals(inputString.reverse().toString())) {
+			    System.out.println("YES");
+			}else{
+			    System.out.println("NO");
+			}
+		}
+		}	
 
  
  

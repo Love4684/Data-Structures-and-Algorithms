@@ -430,6 +430,28 @@ JAVA
         return answer.trim();
     }
     
+.. code:: java
+
+	import java.io.*;
+	import java.util.*;
+	class JavaProgramming
+	{
+	    public static String reverseWords(String s) {
+	    String[] arr = s.replaceAll(" +", " ").split(" "); 
+
+	    String ans = "";
+	    for(String str : arr){
+		    ans = str +" "+ans;  
+	    }
+	    return ans.trim();
+	}
+	public static void main(String[] args)
+	{
+		String s = "TUF is great for interview preparation";
+		System.out.print(reverseWords(s));
+	 }
+	}
+    
 
 `Implement strStr() <https://leetcode.com/problems/implement-strstr/>`_
 ===============================================================================

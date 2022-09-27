@@ -3,64 +3,43 @@
    :local:
    :depth: 3
    
-Array in C++
-===============================================================================
 
-An Array is a data structure used to store blocks of information in contiguous
-memory allocation. The data can be integer, strings, characters, class objects, etc.
 
-Finding Max and Min element
+Find Second largest element in an array
 ------------
 
-cpp code
+.. code:: java
 
 
-.. code:: c++
+   import java.io.*;
+   import java.util.*;
 
-
-      using namespace std;
-      #include <bits/stdc++.h>
-
-            int main()
-            {
-               int arr[5] = {4, 7, 6, 3, 9};
-               int maxno = INT_MIN;
-               int minno = INT_MAX;
-               for(int i = 0; i < 5; i++)
-               {
-                  maxno = max(maxno, arr[i]);
-                  minno = min(minno, arr[i]);
-
-               }
-
-               cout<<"min = "<< minno << endl << "max = "<< maxno;
-               return 0;
+   class JavaProgramming {
+         static int print2largest(int arr[], int n) {
+            int i, first, second;
+         first = second = Integer.MIN_VALUE;
+         for (i = 0; i < n; i++) {
+            if (arr[i] > first) {
+               second = first;
+               first = arr[i];
             }
+            else if (arr[i] > second && arr[i] != first)
+               second = arr[i];
+         }
+         if (second == Integer.MIN_VALUE)
+            return -1;
+         else
+            return second;
+       }
 
-using STL
-
-.. code:: c++
-
-      using namespace std;
-      #include <bits/stdc++.h>
-
-      int main()
+      public static void main(String[] args)
       {
-         int arr[5] = {4, 7, 6, 3, 9};
-         int maxno = *max_element(arr, arr + 5);
-         int minno = *min_element(arr, arr + 5);
-
-         cout<<"min = "<< minno << endl << "max = "<< maxno;
-         return 0;
+         int arr[] = { 12, 35, 1, 10, 34, 1 };
+         int n = arr.length;
+         System.out.print(print2largest(arr, n));
       }
+   }
 
-using python
-
-.. code:: python
-
-      arr = [4, 7, 6, 3, 9]
-      min(arr)
-      max(arr)
 
 Searching Algorithms
 ===============================================================================

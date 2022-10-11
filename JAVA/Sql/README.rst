@@ -306,9 +306,9 @@ Find Duplicate Values in a SQL
 
 .. code:: SQL        
 
-SELECT firstName, lastName, city, state FROM Address
-RIGHT JOIN person
-ON Person.personId = Address.personId;
+      SELECT firstName, lastName, city, state FROM Address
+      RIGHT JOIN person
+      ON Person.personId = Address.personId;
       
 SQL
 ===============================================================================

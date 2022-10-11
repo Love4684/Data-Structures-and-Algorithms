@@ -310,6 +310,18 @@ Find Duplicate Values in a SQL
       RIGHT JOIN person
       ON Person.personId = Address.personId;
       
+      
+      SELECT subject_name,student_name 
+      from Student s 
+        inner join Mark m on s.student_id=m.student_id
+        inner join Subject su on m.subject_id=su.subject_id
+        inner join (select subject_id
+                          ,max(value) as maximum 
+                              from Mark ma group by subject_id
+                    ) highmarks 
+                        ON highmarks.subject_id=m.subject_id 
+                            AND highmarks.maximum=m.value
+            order by subject_name,student_name;
 SQL
 ===============================================================================
 

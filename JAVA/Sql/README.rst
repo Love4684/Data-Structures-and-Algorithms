@@ -300,6 +300,16 @@ Find Duplicate Values in a SQL
       A	30
       B	500
       
+      
+`175. Combine Two Tables <https://leetcode.com/problems/combine-two-tables/>`_
+===============================================================================
+
+.. code:: SQL        
+
+SELECT firstName, lastName, city, state FROM Address
+RIGHT JOIN person
+ON Person.personId = Address.personId;
+      
 SQL
 ===============================================================================
 

@@ -3,6 +3,17 @@
    :local:
    :depth: 3
 
+SQL JOINS
+===============================================================================
+
+.. code:: SQL
+
+      select a.email, b.project_id
+      from candidate a ,candidate_content_package_mapping b
+      where a.id =b.candidate
+      and b.content_package = 887
+      and b.status = 'COMPLETED'
+
 Indexing
 ===============================================================================
 

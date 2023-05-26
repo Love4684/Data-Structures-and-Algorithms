@@ -13,6 +13,13 @@ SQL JOINS
       where a.id =b.candidate
       and b.content_package = 887
       and b.status = 'COMPLETED'
+      
+      
+      SELECT Customers.CustomerName, Orders.OrderID
+      FROM Customers
+      LEFT JOIN Orders
+      ON Customers.CustomerID=Orders.CustomerID
+      ORDER BY Customers.CustomerName;
 
 Indexing
 ===============================================================================

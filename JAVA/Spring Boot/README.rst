@@ -180,7 +180,7 @@ Abstract class can have final, non-final, static and non-static variables.
 interface
 ------------
 
-Interface can have only abstract methods.
+In simple words, Interface is a blueprint of the class. It contains static constants and abstract methods.
 
 Interface supports multiple inheritance.
 

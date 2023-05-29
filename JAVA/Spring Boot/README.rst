@@ -97,6 +97,10 @@ An Interface that contains exactly one abstract method is known as functional in
 Lambda Expressions
 ------------
 
+A lambda expression is a short block of code which takes in parameters and returns a value.
+
+Syntax: parameter -> expression
+
 .. code:: c++
 
       import java.util.*;  

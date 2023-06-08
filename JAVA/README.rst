@@ -40,3 +40,35 @@ Find Second largest element in an array
       }
    }
 
+Find the first repeated word in a string
+------------
+
+.. code:: java
+
+      import java.util.HashMap;
+      import java.util.Map;
+      public class Main {
+          public static String firstRepeatedWord(String sentence)
+          {
+              String[] lis = sentence.split(" ");
+              Map<String, Integer> frequency = new HashMap<>();
+              for (int i = 0; i < lis.length; i++)
+              {
+                  String word = lis[i];
+                  if (!frequency.containsKey(word))
+                  {
+                      frequency.put(word, 1);
+                  }
+                  else
+                  {
+                      return word;
+                  }
+              }
+
+              return "No repeated word found";
+          }
+          public static void main(String[] args) {
+              String sentence = "hello hello word word hello";
+              System.out.println(firstRepeatedWord(sentence));
+          }
+      }

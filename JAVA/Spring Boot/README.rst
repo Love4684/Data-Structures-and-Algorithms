@@ -116,6 +116,15 @@ HashMap Java 8 implementation
 Java 8 introduced a new implementation of HashMap that uses a different data structure called a balanced tree (specifically, a red-black tree) to store key-value pairs within buckets, instead of linked lists.
 
 Java 8 also introduced the method forEach in HashMap, which allows iterating over the key-value pairs using lambda expressions or method references, making it more convenient to perform operations on the elements.
+
+Marker interface in Java
+===============================================================================
+
+In Java, a marker interface is an interface that does not declare any methods. 
+
+Serializable: The Serializable interface is a marker interface in Java used to indicate that a class can be serialized. Classes that implement Serializable can be converted into a byte stream and written to a file or transmitted over a network.
+
+Cloneable: The Cloneable interface is a marker interface that indicates that a class can be cloned using the clone() method. It allows objects to create a copy of themselves.
     
 Explain about java8 features.
 ===============================================================================

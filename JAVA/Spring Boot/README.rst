@@ -101,6 +101,15 @@ What is serializable interface
 ===============================================================================  
 
 Serialization is the process of converting an object into a byte stream, which can be transmitted over a network or saved in a file, and later deserialized to recreate the object.
+
+.. code:: c++
+
+      import java.io.Serializable;
+
+      public class MyClass implements Serializable {
+          // class implementation
+      }
+
     
     
 Explain about java8 features.

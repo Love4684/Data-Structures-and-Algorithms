@@ -97,6 +97,12 @@ Convert in Singleton and immutable class
         }
     }
     
+What is serializable interface
+===============================================================================  
+
+Serialization is the process of converting an object into a byte stream, which can be transmitted over a network or saved in a file, and later deserialized to recreate the object.
+    
+    
 Explain about java8 features.
 ===============================================================================
 

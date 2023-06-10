@@ -113,7 +113,7 @@ Serialization is the process of converting an object into a byte stream, which c
 HashMap Java 8 implementation
 ===============================================================================    
 
-HashMap in Java prior to Java 8 used an array of linked lists to store key-value pairs. Each element in the array is called a bucket, and collisions (multiple keys mapping to the same bucket) were resolved by chaining the elements using linked lists.
+Java 8 introduced a new implementation of HashMap that uses a different data structure called a balanced tree (specifically, a red-black tree) to store key-value pairs within buckets, instead of linked lists.
 
 Java 8 also introduced the method forEach in HashMap, which allows iterating over the key-value pairs using lambda expressions or method references, making it more convenient to perform operations on the elements.
     

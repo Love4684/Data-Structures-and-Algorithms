@@ -96,7 +96,13 @@ Convert in Singleton and immutable class
             this.dateOfBirth = dateOfBirth;
         }
     }
-    
+
+JPA Transient Annotation
+===============================================================================  
+
+@Transient annotation is used to mark a field to be transient for the mapping framework, which means the field marked with @Transient is ignored by mapping framework and the field not mapped to any database column (in RDBMS) or Document property (in NOSQL).
+
+
 What is serializable interface
 ===============================================================================  
 

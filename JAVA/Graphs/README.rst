@@ -86,34 +86,79 @@ Base Conditions
 - ``node already present in map`` → recursion stops
 
 DFS Code
-~~~~~~~~
+=================
 
 .. code:: java
 
-   import java.util.*;
+import java.util.*;
 
-   class Solution {
+class Node {
+    public int val;
+    public List<Node> neighbors;
 
-       private Map<Node, Node> map = new HashMap<>();
+    public Node(int val) {
+        this.val = val;
+        neighbors = new ArrayList<>();
+    }
+}
 
-       public Node cloneGraph(Node node) {
-           if (node == null) return null;
+public class CloneGraph {
 
-           // Base condition: already cloned
-           if (map.containsKey(node)) {
-               return map.get(node);
-           }
+    Map<Node, Node> map = new HashMap<>();
 
-           Node clone = new Node(node.val);
-           map.put(node, clone);
+    public Node cloneGraph(Node node) {
+        if (node == null) return null;
 
-           for (Node neighbor : node.neighbors) {
-               clone.neighbors.add(cloneGraph(neighbor));
-           }
+        // Agar pehle se cloned hai
+        if (map.containsKey(node)) {
+            return map.get(node);
+        }
 
-           return clone;
-       }
-   }
+        // New cloned node
+        Node clone = new Node(node.val);
+        map.put(node, clone);
+
+        // Clone neighbors
+        for (Node neighbor : node.neighbors) {
+            clone.neighbors.add(cloneGraph(neighbor));
+        }
+
+        return clone;
+    }
+
+    // ---------------- TEST EXAMPLE ----------------
+    public static void main(String[] args) {
+
+        // Graph:
+        // 1 -- 2
+        // |    |
+        // 4 -- 3
+
+        Node n1 = new Node(1);
+        Node n2 = new Node(2);
+        Node n3 = new Node(3);
+        Node n4 = new Node(4);
+
+        n1.neighbors.add(n2);
+        n1.neighbors.add(n4);
+
+        n2.neighbors.add(n1);
+        n2.neighbors.add(n3);
+
+        n3.neighbors.add(n2);
+        n3.neighbors.add(n4);
+
+        n4.neighbors.add(n1);
+        n4.neighbors.add(n3);
+
+        CloneGraph obj = new CloneGraph();
+        Node clonedGraph = obj.cloneGraph(n1);
+
+        System.out.println("Original Node: " + n1.val);
+        System.out.println("Cloned Node: " + clonedGraph.val);
+        System.out.println("Cloned Neighbors Count: " + clonedGraph.neighbors.size());
+    }
+}
 
 Time & Space Complexity
 ~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,488 +1,270 @@
-
-
-.. contents::
+ .. contents::
    :local:
    :depth: 3
 
 
-C++ Adjacency Matrix Representation
+Clone Graph
 ==================================
 
-.. code:: c++
-
-      #include <bits/stdc++.h>
-      using namespace std;
-
-      int main() {
-         int n, m;
-         cin >> n >> m; 
-
-         // declare the adjacent matrix 
-         int adj[n+1][n+1]; 
-
-         // take edges as input 
-         for(int i = 0;i<m;i++) {
-             int u, v; 
-             cin >> u >> v;
-             adj[u][v] = 1; 
-             adj[v][u] = 1; 
-         }
-         return 0;
-      }
-      
-C++ Adjacency List Representation
-==================================      
-
-.. code:: c++
-
-      #include <bits/stdc++.h>
-      using namespace std;
-
-      int main() {
-         int n, m;
-         cin >> n >> m; 
-
-         // declare the adjacent matrix 
-         vector<int> adj[n+1]; 
-
-         // take edges as input 
-         for(int i = 0;i<m;i++) {
-             int u, v; 
-             cin >> u >> v;
-             adj[u].push_back(v); 
-             adj[v].push_back(u); 
-         }
-         return 0;
-      }
-
-Breadth First Search
-==================================
-
-.. image:: https://github.com/Love4684/Data-Structures-and-Algorithms/blob/master/DS-ALGO/Graphs/media/1.png
-
-
-.. code:: c++
-
-      #include<bits/stdc++.h>
-      using namespace std;
-      class Solution {
-      public:
-          vector<int>bfsOfGraph(int V, vector<int> adj[]){
-              vector<int> bfs; 
-              vector<int> vis(V, 0); 
-              queue<int> q; 
-              q.push(2); // start traversal from vertex 2
-              vis[2] = 1; 
-              while(!q.empty()) {
-                  int node = q.front();
-                  q.pop(); 
-                  bfs.push_back(node);             
-                  for(auto it : adj[node]) {
-                      if(!vis[it]) {
-                          q.push(it); 
-                          vis[it] = 1; 
-                      }
-                  }
-              }        
-              return bfs; 
-          }
-      };
-
-      // { Driver Code Starts.
-      int main(){
-
-              int V, E;
-              cin >> V >> E;
-              vector<int> adj[V];
-
-              for(int i = 0; i < E; i++)
-              {
-                  int u, v;
-                  cin >> u >> v;
-                  adj[u].push_back(v);
-          //      adj[v].push_back(u); // uncomment this for undirected graoh 
-              }
-              Solution obj;
-              vector<int>ans=obj.bfsOfGraph(V, adj);
-              for(int i=0;i<ans.size();i++){
-                  cout<<ans[i]<<" ";
-              }
-          return 0;
-      }  
-
-input
-
-.. code:: c++
-
-      4 6
-      0 1
-      0 2
-      1 2
-      2 0
-      2 3
-      3 3
-      
-output
-
-.. code:: c++
-
-      2 0 3 1 
-      
-
-`Depth First Search <https://practice.geeksforgeeks.org/problems/depth-first-traversal-for-a-graph/1#>`_
-==================================
-
-.. code:: c++
-
-      #include<bits/stdc++.h>
-      using namespace std;
-      class Solution 
-      {
-          void dfs(int node, vector<int> &vis, vector<int> adj[], vector<int> &storeDfs) 
-          {
-              storeDfs.push_back(node); 
-              vis[node] = 1; 
-              for(auto it : adj[node]) 
-              {
-                  if(!vis[it]) 
-                  {
-                      dfs(it, vis, adj, storeDfs); 
-                  }
-              }
-          }
-          public:
-          vector<int>dfsOfGraph(int V, vector<int> adj[])
-          {
-              vector<int> storeDfs; 
-              vector<int> vis(V, 0);
-              for(int i = 1;i<=V;i++) {
-               if(!vis[i]) dfs(i, vis, adj, storeDfs); 
-          }
-              return storeDfs; 
-          }
-      };
-
-      int main()
-      {
-              int V, E;
-              cin >> V >> E;
-              vector<int> adj[V];
-              for(int i = 0; i < E; i++)
-              {
-                  int u, v;
-                  cin >> u >> v;
-                  adj[u].push_back(v);
-                  adj[v].push_back(u);
-              }
-              Solution obj;
-              vector<int>ans=obj.dfsOfGraph(V, adj);
-              for(int i=0;i<ans.size();i++)
-              {
-                  cout<<ans[i]<<" ";
-              }
-          return 0;
-      } 
-
-input
-
-.. code:: c++
-
-      5 4
-      0 1 
-      0 2
-      0 3 
-      2 4
-
-output
-
-.. code:: c++
-
-      0 1 2 4 3 
-      
-      
-`Detect cycle in an undirected graph <https://practice.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1#>`_
-==================================
-
-.. code:: c++
-
-      class Solution {
-
-      public:
-          bool checkForCycle(int node, int parent, vector<int> &vis, vector<int> adj[]) {
-              vis[node] = 1; 
-              for(auto it: adj[node]) {
-                  if(!vis[it]) {
-                      if(checkForCycle(it, node, vis, adj)) 
-                          return true; 
-                  }
-                  else if(it!=parent) 
-                      return true; 
-              }
-
-              return false; 
-          }
-      public:
-         bool isCycle(int V, vector<int>adj[]){
-             vector<int> vis(V+1, 0); 
-             for(int i = 0;i<V;i++) {
-                 if(!vis[i]) {
-                     if(checkForCycle(i, -1, vis, adj)) return true; 
-                 }
-             }
-
-             return false; 
-         }
-      };
-
-`Detect cycle in a directed graph <https://practice.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1>`_
-==================================
-
-.. code:: c++
-
-      class Solution {
-      private:
-          bool checkCycle(int node, vector<int> adj[], int vis[], int dfsVis[]) {
-              vis[node] = 1; 
-              dfsVis[node] = 1; 
-              for(auto it : adj[node]) {
-                  if(!vis[it]) {
-                      if(checkCycle(it, adj, vis, dfsVis)) return true;
-                  } else if(dfsVis[it]) {
-                      return true; 
-                  }
-              }
-              dfsVis[node] = 0; 
-              return false;
-          }
-      public:
-         bool isCyclic(int N, vector<int> adj[]) {
-            int vis[N], dfsVis[N]; 
-            memset(vis, 0, sizeof vis); 
-            memset(dfsVis, 0, sizeof dfsVis); 
-
-            for(int i = 0;i<N;i++) {
-                if(!vis[i]) {
-                    // cout << i << endl; 
-                    if(checkCycle(i, adj, vis, dfsVis)) {
-                        return true; 
-                    }
-                }
-            }
-            return false; 
-         }
-      };
-      
-
-`Bipartite Graph(BFS) <https://practice.geeksforgeeks.org/problems/bipartite-graph/1>`_
-==================================
-
-.. code:: c++
-
-      bool bipartiteBfs(int src, vector<int> adj[], int color[]) {
-          queue<int>q;
-          q.push(src); 
-          color[src] = 1; 
-          while(!q.empty()) {
-              int node = q.front(); 
-              q.pop();
-
-              for(auto it : adj[node]) {
-                  if(color[it] == -1) {
-                      color[it] = 1 - color[node]; 
-                      q.push(it); 
-                  } else if(color[it] == color[node]) {
-                      return false; 
-                  }
-              }
-          }
-          return true; 
-      }
-      bool checkBipartite(vector<int> adj[], int n) {
-          int color[n];
-          memset(color, -1, sizeof color); 
-          for(int i = 0;i<n;i++) {
-              if(color[i] == -1) {
-                  if(!bipartiteBfs(i, adj, color)) {
-                      return false;
-                  }
-              }
-          }
-          return true; 
-      }
-
-`Bipartite Graph(DFS) <https://practice.geeksforgeeks.org/problems/bipartite-graph/1>`_
-==================================
-
-.. code:: c++
-
-      bool bipartiteDfs(int node, vector<int> adj[], int color[]) {
-          for(auto it : adj[node]) {
-              if(color[it] == -1) {
-                  color[it] = 1 - color[node];
-                  if(!bipartiteDfs(it, adj, color)) {
-                      return false; 
-                  }
-              } else if(color[it] == color[node]) return false; 
-          }
-          return true; 
-      }
-      bool checkBipartite(vector<int> adj[], int n) {
-          int color[n];
-          memset(color, -1, sizeof color); 
-          for(int i = 0;i<n;i++) {
-              if(color[i] == -1) {
-                  color[i] = 1;
-                  if(!bipartiteDfs(i, adj, color)) {
-                      return false;
-                  }
-              } 
-          }
-          return true; 
-      }
-
-
-`Topological sort(DFS) <https://practice.geeksforgeeks.org/problems/topological-sort/1>`_
-==================================
-
-.. code:: c++
-
-      class Solution{
-          void findTopoSort(int node, vector<int> &vis, stack<int> &st, vector<int> adj[]) {
-              vis[node] = 1; 
-
-              for(auto it : adj[node]) {
-                  if(!vis[it]) {
-                      findTopoSort(it, vis, st, adj); 
-                  }
-              }
-              st.push(node); 
-          }
-         public:
-         vector<int> topoSort(int N, vector<int> adj[]) {
-             stack<int> st; 
-             vector<int> vis(N, 0); 
-             for(int i = 0;i<N;i++) {
-                 if(vis[i] == 0) {
-                     findTopoSort(i, vis, st, adj); 
-                 }
-             }
-             vector<int> topo;
-             while(!st.empty()) {
-                 topo.push_back(st.top()); 
-                 st.pop(); 
-             }
-             return topo; 
-
-         }
-      };
-
-`Topological sort(BFS Kahn's Algorithm) <https://practice.geeksforgeeks.org/problems/topological-sort/1>`_
-==================================
-
-.. code:: c++
-
-      class Solution {
-      public:
-         vector<int> topo(int N, vector<int> adj[]) {
-              queue<int> q; 
-             vector<int> indegree(N, 0); 
-             for(int i = 0;i<N;i++) {
-                 for(auto it: adj[i]) {
-                     indegree[it]++; 
-                 }
-             }
-
-             for(int i = 0;i<N;i++) {
-                 if(indegree[i] == 0) {
-                     q.push(i); 
-                 }
-             }
-             vector<int> topo
-             while(!q.empty()) {
-                 int node = q.front(); 
-                 q.pop(); 
-                 topo.push_back(node)
-                 for(auto it : adj[node]) {
-                     indegree[it]--;
-                     if(indegree[it] == 0) {
-                         q.push(it); 
-                     }
-                 }
-             }
-             return topo;
-         }
-      };
-
-`Detect cycle in a directed graph(BFS) <https://practice.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1>`_
-==================================
-
-.. code:: c++
-
-      class Solution {
-      public:
-         bool isCyclic(int N, vector<int> adj[]) {
-              queue<int> q; 
-             vector<int> indegree(N, 0); 
-             for(int i = 0;i<N;i++) {
-                 for(auto it: adj[i]) {
-                     indegree[it]++; 
-                 }
-             }
-
-             for(int i = 0;i<N;i++) {
-                 if(indegree[i] == 0) {
-                     q.push(i); 
-                 }
-             }
-             int cnt = 0;
-             while(!q.empty()) {
-                 int node = q.front(); 
-                 q.pop(); 
-                 cnt++; 
-                 for(auto it : adj[node]) {
-                     indegree[it]--;
-                     if(indegree[it] == 0) {
-                         q.push(it); 
-                     }
-                 }
-             }
-             if(cnt == N) return false; 
-             return true; 
-         }
-      };
-
-
-
-`number-of-connected-components-in-an-undirected-graph <https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/>`_
-===============================================================================
-
-.. code:: c++
-
-`Course Schedule <https://leetcode.com/problems/course-schedule/>`_
-===============================================================================
-
-.. code:: c++
-
-
-`Possible Bipartition <https://leetcode.com/problems/possible-bipartition/>`_
-===============================================================================
-
-.. code:: c++
-
-`Minimum Height Trees <https://leetcode.com/problems/minimum-height-trees/>`_
-===============================================================================
-
-.. code:: c++
-
-`Reorder Routes to Make All Paths Lead to the City Zero <https://leetcode.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/>`_
-===============================================================================
-
-.. code:: c++
-
-`Minimum Height Trees <https://leetcode.com/problems/minimum-height-trees/description/>`_
-===============================================================================
-
-.. code:: c++
+Problem Overview
+----------------
+Given a reference of a node in a **connected undirected graph**, return a **deep copy**
+(clone) of the graph.
 
+Each node contains:
+- ``val`` : integer value of the node
+- ``neighbors`` : list of connected nodes
 
+Only **one node** (starting node) is provided, but since the graph is connected,
+all nodes can be reached from it.
 
+---
+
+Why This Problem Is Tricky
+--------------------------
+- Graph can contain **cycles**
+- Same node can be reached multiple times
+- Simple recursion can cause **infinite loop**
+- We must ensure **deep copy**, not shallow copy
+
+To solve this safely, we use:
+- **Graph traversal (DFS / BFS)**
+- **HashMap** to track already cloned nodes
+
+---
+
+Node Definition
+---------------
+Each node represents a vertex in the graph.
+
+.. code:: java
+
+   class Node {
+       public int val;
+       public List<Node> neighbors;
+
+       public Node(int val) {
+           this.val = val;
+           this.neighbors = new ArrayList<>();
+       }
+   }
+
+Explanation:
+- ``val`` → unique identifier of node
+- ``neighbors`` → adjacent connected nodes
+- ``neighbors`` is initialized to avoid NullPointerException
+
+---
+
+Key Idea (Most Important)
+------------------------
+We maintain a map:
+
+``Map<OriginalNode, ClonedNode>``
+
+Purpose:
+- Avoid cloning same node multiple times
+- Prevent infinite recursion in cyclic graphs
+
+---
+
+DFS Approach (Recursive)
+------------------------
+
+Algorithm
+~~~~~~~~~
+1. If node is ``null`` → return ``null``
+2. If node already exists in map → return cloned node
+3. Create new node (clone)
+4. Store mapping (original → clone)
+5. Recursively clone all neighbors
+6. Return cloned node
+
+Base Conditions
+~~~~~~~~~~~~~~~
+- ``node == null``
+- ``node already present in map`` → recursion stops
+
+DFS Code
+~~~~~~~~
+
+.. code:: java
+
+   import java.util.*;
+
+   class Solution {
+
+       private Map<Node, Node> map = new HashMap<>();
+
+       public Node cloneGraph(Node node) {
+           if (node == null) return null;
+
+           // Base condition: already cloned
+           if (map.containsKey(node)) {
+               return map.get(node);
+           }
+
+           Node clone = new Node(node.val);
+           map.put(node, clone);
+
+           for (Node neighbor : node.neighbors) {
+               clone.neighbors.add(cloneGraph(neighbor));
+           }
+
+           return clone;
+       }
+   }
+
+Time & Space Complexity
+~~~~~~~~~~~~~~~~~~~~~~~
+- Time: ``O(N + E)``
+- Space: ``O(N)`` (map + recursion stack)
+
+---
+
+BFS Approach (Queue Based)
+--------------------------
+
+When to Use BFS
+~~~~~~~~~~~~~~~
+- Avoid recursion stack overflow
+- Prefer iterative solution
+- Level-by-level traversal
+
+Algorithm
+~~~~~~~~~
+1. Clone starting node
+2. Put it in map
+3. Push original node into queue
+4. While queue is not empty:
+   - Pop node
+   - For each neighbor:
+     - If not cloned → clone and enqueue
+     - Add neighbor clone to current clone
+
+BFS Code
+~~~~~~~~
+
+.. code:: java
+
+   import java.util.*;
+
+   class SolutionBFS {
+
+       public Node cloneGraph(Node node) {
+           if (node == null) return null;
+
+           Map<Node, Node> map = new HashMap<>();
+           Queue<Node> queue = new LinkedList<>();
+
+           Node cloneStart = new Node(node.val);
+           map.put(node, cloneStart);
+           queue.add(node);
+
+           while (!queue.isEmpty()) {
+               Node current = queue.poll();
+
+               for (Node neighbor : current.neighbors) {
+
+                   if (!map.containsKey(neighbor)) {
+                       map.put(neighbor, new Node(neighbor.val));
+                       queue.add(neighbor);
+                   }
+
+                   map.get(current).neighbors.add(map.get(neighbor));
+               }
+           }
+
+           return cloneStart;
+       }
+   }
+
+Complexity
+~~~~~~~~~~
+- Time: ``O(N + E)``
+- Space: ``O(N)``
+
+---
+
+Example Graph
+-------------
+
+Graph structure:
+
+::
+
+   1 -- 2
+   |    |
+   4 -- 3
+
+Adjacency list:
+
+::
+
+   1 -> [2, 4]
+   2 -> [1, 3]
+   3 -> [2, 4]
+   4 -> [1, 3]
+
+---
+
+Test Input Construction (Java)
+------------------------------
+
+.. code:: java
+
+   Node n1 = new Node(1);
+   Node n2 = new Node(2);
+   Node n3 = new Node(3);
+   Node n4 = new Node(4);
+
+   n1.neighbors.add(n2);
+   n1.neighbors.add(n4);
+
+   n2.neighbors.add(n1);
+   n2.neighbors.add(n3);
+
+   n3.neighbors.add(n2);
+   n3.neighbors.add(n4);
+
+   n4.neighbors.add(n1);
+   n4.neighbors.add(n3);
+
+   Node cloned = new Solution().cloneGraph(n1);
+
+---
+
+DFS vs BFS Summary
+------------------
+
++----------------+-------------------+
+| DFS            | BFS               |
++================+===================+
+| Recursion      | Queue             |
++----------------+-------------------+
+| Stack based    | Iterative         |
++----------------+-------------------+
+| Risk of stack  | Safe for deep     |
+| overflow       | graphs            |
++----------------+-------------------+
+
+---
+
+Interview One-Liners
+--------------------
+- *We use a HashMap to store original to cloned node mapping.*
+- *DFS/BFS traversal ensures all nodes are visited exactly once.*
+- *The map prevents infinite loops caused by cycles.*
+
+---
+
+Final Takeaway
+--------------
+Even though only **one node** is provided, the entire graph can be cloned
+because the graph is **connected**.
+
+**Core tools:**
+- Graph traversal (DFS / BFS)
+- HashMap (original → clone)
+
+Once these two are clear, the problem becomes straightforward.
